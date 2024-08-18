@@ -4,13 +4,6 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "paths": {
-      "@atoms/*": ["src/app/components/atoms/*"],
-      "@molecules/*": ["src/app/components/molecules/*"],
-      "@organisms/*": ["src/app/components/organisms/*"],
-      "@templates/*": ["src/app/components/templates/*"],
-      "@pages/*": ["src/app/components/pages/*"]
-    },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

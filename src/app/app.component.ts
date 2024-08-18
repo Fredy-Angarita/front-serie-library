@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BUTTON_COLORS, TYPE_BUTTONS } from './data/constants/constants';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'front-serie-library';
+  text_button = TYPE_BUTTONS.SAVE
+  color = BUTTON_COLORS.PRIMARY
 }
