@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./labels.component.scss']
 })
 export class LabelsComponent {
-  for = '';
+  @Input() for !: string;
   @Input() text !: string;
 }

@@ -11,4 +11,5 @@ export class AppComponent {
   color = BUTTON_COLORS.PRIMARY
   title = TITLES.LOGIN
   label_text = 'Email'
+  type = 'password'
 }

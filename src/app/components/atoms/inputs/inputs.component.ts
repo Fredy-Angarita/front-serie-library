@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-inputs',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./inputs.component.scss']
 })
 export class InputsComponent {
-
+  @Input() type !: string;
+  @Input() name !: string;
+  @Input() placeholder !: string;
+  @Input() id !: string;
 }
