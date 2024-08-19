@@ -1,3 +1,8 @@
+@import "../../../../styles/typography.scss"; 
 button{
     border: none;
+    border-radius: 10px;
+    font-family: $font_buttons;
+    font-size: $font-size;
+    padding: 0 20px;
 }
