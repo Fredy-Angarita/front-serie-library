@@ -9,3 +9,9 @@ export const BUTTON_COLORS = {
     PRIMARY : '#E7BB41',
     DELETE : '#FF0000',
 };
+
+export const TITLES = {
+    LOGIN: 'Welcome Back',
+    REGISTER: 'Create An Account',
+    DASHBOARD: 'Yours Series Library',
+}

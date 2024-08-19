@@ -1,0 +1,7 @@
+@import '../../../../styles/typography.scss';
+h1 {
+    font-family: $font_titles;
+    font-size: $title_font_size;
+    letter-spacing: 3px;
+    color: white;
+}
