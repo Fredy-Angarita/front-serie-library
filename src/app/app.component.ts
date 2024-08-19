@@ -10,4 +10,5 @@ export class AppComponent {
   text_button = TYPE_BUTTONS.SAVE
   color = BUTTON_COLORS.PRIMARY
   title = TITLES.LOGIN
+  label_text = 'Email'
 }

@@ -1,0 +1,8 @@
+@import '../../../../styles/typography.scss';
+label{
+    font-family: $font_titles;
+    font-size: $labels_font_size;
+    margin: 1rem;
+    color: white;
+
+}
