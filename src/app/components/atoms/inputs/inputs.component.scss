@@ -1,9 +1,10 @@
 @import '../../../../styles/typography.scss';
 @import '../../../../styles/colors.scss';
 input{
+    background-color: $inputs_primary;
+    font-family: $font_secondary;
+    font-size: $size-S;
+    color: $text_secondary;
     height: 30px;
     border-radius: 10px;
-    font-family: $font_buttons;
-    font-size: 15px;
-    background-color: $inputs_color;
 }

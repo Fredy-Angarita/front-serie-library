@@ -1,8 +1,11 @@
-@import "../../../../styles/typography.scss"; 
+@import '../../../../styles/typography.scss'; 
+@import '../../../../styles/colors.scss';
 button{
-    border: none;
+    font-family: $font_secondary;
+    font-size: $size-M;
+    background-color: $button_primary;
+    color: $text_secondary;
     border-radius: 10px;
-    font-family: $font_buttons;
-    font-size: $button_font_size;
+    border: none;
     padding: 0 20px;
 }

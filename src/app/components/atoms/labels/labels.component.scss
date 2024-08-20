@@ -1,8 +1,8 @@
 @import '../../../../styles/typography.scss';
+@import '../../../../styles/colors.scss';
 label{
-    font-family: $font_titles;
-    font-size: $labels_font_size;
+    font-family: $font_primary;
+    font-size: $size-M;
+    color: $text_primary;
     margin: 1rem;
-    color: white;
-
 }
