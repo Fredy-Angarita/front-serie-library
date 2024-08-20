@@ -1,0 +1,21 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/typography.scss';
+article{
+    background-color: $card_primary;
+    border-radius: 1rem 1rem 0 0;
+    text-align: center;
+    margin: 1rem;
+    img{
+        border-radius: 2rem 2rem 0 0;
+        padding: 1rem;
+        width: auto;
+        height: auto;
+    }
+    h3{ 
+        color: $text_primary;
+        font-family: $font_primary;
+        font-size: $size-L;
+        letter-spacing: 1px;
+        margin: 0px;
+    }
+}

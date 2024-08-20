@@ -8,6 +8,7 @@ import {PrimaryButtonComponent} from './components/atoms/primary-button/primary-
 import { InputsComponent } from './components/atoms/inputs/inputs.component';
 import { LabelsComponent } from './components/atoms/labels/labels.component';
 import { TitlesComponent } from './components/atoms/titles/titles.component';
+import { CardSeriesComponent } from './components/molecules/card-series/card-series.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TitlesComponent } from './components/atoms/titles/titles.component';
     UserIconComponent,
     InputsComponent,
     LabelsComponent,
-    TitlesComponent
+    TitlesComponent,
+    CardSeriesComponent
   ],
   imports: [
     BrowserModule,
