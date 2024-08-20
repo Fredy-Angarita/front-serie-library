@@ -9,6 +9,7 @@ import { InputsComponent } from './components/atoms/inputs/inputs.component';
 import { LabelsComponent } from './components/atoms/labels/labels.component';
 import { TitlesComponent } from './components/atoms/titles/titles.component';
 import { CardSeriesComponent } from './components/molecules/card-series/card-series.component';
+import { FormFieldComponent } from './components/molecules/form-field/form-field.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CardSeriesComponent } from './components/molecules/card-series/card-ser
     InputsComponent,
     LabelsComponent,
     TitlesComponent,
-    CardSeriesComponent
+    CardSeriesComponent,
+    FormFieldComponent
   ],
   imports: [
     BrowserModule,
