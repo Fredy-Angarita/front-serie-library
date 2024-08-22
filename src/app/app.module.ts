@@ -10,6 +10,9 @@ import { LabelsComponent } from './components/atoms/labels/labels.component';
 import { TitlesComponent } from './components/atoms/titles/titles.component';
 import { CardSeriesComponent } from './components/molecules/card-series/card-series.component';
 import { FormFieldComponent } from './components/molecules/form-field/form-field.component';
+import { SessionActionsComponent } from './components/molecules/session-actions/session-actions.component';
+import { ShowSeriesComponent } from './components/organisms/show-series/show-series.component';
+import { ShowInfoComponent } from './components/molecules/show-info/show-info.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { FormFieldComponent } from './components/molecules/form-field/form-field
     LabelsComponent,
     TitlesComponent,
     CardSeriesComponent,
-    FormFieldComponent
+    FormFieldComponent,
+    SessionActionsComponent,
+    ShowSeriesComponent,
+    ShowInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/typography.scss';
+.container{
+    background-color: $background_secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 10rem;
+        height: 15rem;
+    }
+    .info{
+        color: $text_primary;
+        text-align: center;
+        h3{
+            margin: 0;
+        }
+        p{
+            margin: 0;
+        }
+        
+    }
+}
