@@ -1,13 +1,10 @@
-<article class="container">
-    <img [src]="series_img" alt="">
+<button (click)="showDetails()">+</button>
+<article *ngIf="details" class="container">
+    <img [src]="series.series_img" alt="">
     <div class="info">
-        <h3>Chapters</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, optio illum fugiat cupiditate ad doloribus nam cum offici</p>
-        <h3>Progress</h3>
-        <app-inputs placeholder="1"/>
-        <h3>Synopsis</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto iure tenetur consequuntur reiciendis et inventore ducimus provident pariatur. Voluptas corporis, culpa quo dolores perspiciatis asperiores cum ad at doloribus quas!</p>
-        <h3>Date</h3>
-        <p>N/A</p>
+        <app-show-info subtitle="Chapters" [data]="series.chapters"/>
+        <app-show-info subtitle="Progress" [data]="series.progress"/>
+        <app-show-info subtitle="Date" [data]="series.date"/>
+        <app-show-info subtitle="Synopsis" [data]="series.synopsis"/>
     </div>
 </article>
