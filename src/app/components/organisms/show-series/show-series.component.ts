@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ShowSeries } from 'src/app/data/interfaces/show-series.interface';
 
 @Component({
@@ -11,6 +11,7 @@ export class ShowSeriesComponent {
   details: boolean = false;
   constructor() { 
     this.series = {
+      title: 'Rebuild',
       series_img: 'https://th.bing.com/th/id/OIP.PuC7GBD2hHxHnowUvrnxQgAAAA?rs=1&pid=ImgDetMain',
       chapters: 145,
       progress: 2,

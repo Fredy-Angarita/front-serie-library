@@ -2,6 +2,8 @@
 @import '../../../../styles/typography.scss';
 h3, p {
     color: $text_primary;
+    font-family: $font_secondary;
+    font-size: $size-M;
     text-align: center;
-    margin: 0px;
+    margin: 0.1rem;
 }

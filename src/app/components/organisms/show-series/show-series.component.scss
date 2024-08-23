@@ -1,22 +1,30 @@
 @import '../../../../styles/colors.scss';
 @import '../../../../styles/typography.scss';
-.container{
-    width: 25%;
-    height: 100%;
+.container {
+    padding: 1rem;
     border-radius: 1rem;
     background-color: $background_secondary;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    img {
-        max-width: 100%;
-        max-height: auto;
-        margin: 0.5rem;
-        width: 10rem;
-        height: 15rem;
-        border-radius: 1rem;
+    display: grid;
+    place-items: center;
+    .container_title{
+        text-align: center;
+        color: $text_primary;
+        font-family: $font_primary;
+        font-size: $size-L;
+        letter-spacing: 0.1rem;
     }
-    .info{
+    .container_img {
+        max-width: 300px;
+       img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 1rem;
+       }
+    }
+    .container_info{
         margin: 0.5rem;
+    }
+    .container_progress{
+
     }
 }

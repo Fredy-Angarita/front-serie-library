@@ -1,9 +1,13 @@
-<button (click)="showDetails()">+</button>
-<article *ngIf="details" class="container">
-    <img [src]="series.series_img" alt="">
-    <div class="info">
-        <app-show-info subtitle="Chapters" [data]="series.chapters"/>
-        <app-show-info subtitle="Progress" [data]="series.progress"/>
+<article class="container">
+    <h2 class="container_title">{{series.title}}</h2>
+    <div class="container_img">
+        <img [src]="series.series_img" alt = "">
+    </div>
+    <div class="container_info">
+        <div class="container_progress">
+            <app-show-info subtitle="Chapters" [data]="series.chapters"/>
+            <app-show-info subtitle="Progress" [data]="series.progress"/>
+        </div>
         <app-show-info subtitle="Date" [data]="series.date"/>
         <app-show-info subtitle="Synopsis" [data]="series.synopsis"/>
     </div>
