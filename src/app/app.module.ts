@@ -13,6 +13,7 @@ import { FormFieldComponent } from './components/molecules/form-field/form-field
 import { SessionActionsComponent } from './components/molecules/session-actions/session-actions.component';
 import { ShowSeriesComponent } from './components/organisms/show-series/show-series.component';
 import { ShowInfoComponent } from './components/molecules/show-info/show-info.component';
+import { ParagraphComponent } from './components/atoms/paragraph/paragraph.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ShowInfoComponent } from './components/molecules/show-info/show-info.co
     FormFieldComponent,
     SessionActionsComponent,
     ShowSeriesComponent,
-    ShowInfoComponent
+    ShowInfoComponent,
+    ParagraphComponent
   ],
   imports: [
     BrowserModule,

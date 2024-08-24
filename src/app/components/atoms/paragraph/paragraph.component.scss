@@ -1,0 +1,9 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/typography.scss';
+.atom_paragraph{
+    color: $text_primary;
+    font-family: $font_secondary;
+    font-size: $size-M;
+    text-align: center;
+    margin: 0.1rem;
+}

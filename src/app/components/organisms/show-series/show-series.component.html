@@ -4,11 +4,10 @@
         <img [src]="series.series_img" alt = "">
     </div>
     <div class="container_info">
-        <div class="container_progress">
+        <div class="container_data">
             <app-show-info subtitle="Chapters" [data]="series.chapters"/>
-            <app-show-info subtitle="Progress" [data]="series.progress"/>
+            <app-show-info subtitle="Date" [data]="series.date"/>
         </div>
-        <app-show-info subtitle="Date" [data]="series.date"/>
-        <app-show-info subtitle="Synopsis" [data]="series.synopsis"/>
+        <app-paragraph [paragraph]="series.synopsis"></app-paragraph>
     </div>
 </article>

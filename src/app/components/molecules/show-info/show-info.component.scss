@@ -1,9 +1,16 @@
 @import '../../../../styles/colors.scss';
 @import '../../../../styles/typography.scss';
-h3, p {
-    color: $text_primary;
-    font-family: $font_secondary;
-    font-size: $size-M;
+.data_container {
+    background-color: $background_tertiary;
+    border-radius: 2rem;
+    margin: 0.5rem;
     text-align: center;
-    margin: 0.1rem;
+    .data_subtitle, .data_paragraph{
+        color: $text_secondary;
+        font-family: $font_primary;
+        font-size: $size-M;
+        text-align: center;
+        display: inline;
+        margin: 0.3rem;
+    }
 }

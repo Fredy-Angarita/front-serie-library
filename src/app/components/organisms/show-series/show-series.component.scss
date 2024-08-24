@@ -11,7 +11,6 @@
         color: $text_primary;
         font-family: $font_primary;
         font-size: $size-L;
-        letter-spacing: 0.1rem;
     }
     .container_img {
         max-width: 300px;
@@ -24,7 +23,8 @@
     .container_info{
         margin: 0.5rem;
     }
-    .container_progress{
-
+    .container_data{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
