@@ -3,12 +3,15 @@
 .data_container {
     background-color: $background_tertiary;
     border-radius: 2rem;
-    margin: 0.5rem;
-    text-align: center;
+    margin: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5rem;
     .data_subtitle, .data_paragraph{
         color: $text_secondary;
         font-family: $font_primary;
-        font-size: $size-M;
+        font-size: $size-XXS;
         text-align: center;
         display: inline;
         margin: 0.3rem;

@@ -1,5 +1,7 @@
 
 <div class="data_container">
-    <h3 class="data_subtitle">{{subtitle}}</h3>
+    <h3 class="data_subtitle">
+        <ng-content select="[subtitle]"></ng-content>
+    </h3>
     <p class="data_paragraph">{{data}}</p>
 </div>
