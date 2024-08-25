@@ -14,6 +14,7 @@ import { SessionActionsComponent } from './components/molecules/session-actions/
 import { ShowSeriesComponent } from './components/organisms/show-series/show-series.component';
 import { ShowInfoComponent } from './components/molecules/show-info/show-info.component';
 import { ParagraphComponent } from './components/atoms/paragraph/paragraph.component';
+import { NavBarComponent } from './components/organisms/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ParagraphComponent } from './components/atoms/paragraph/paragraph.compo
     SessionActionsComponent,
     ShowSeriesComponent,
     ShowInfoComponent,
-    ParagraphComponent
+    ParagraphComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

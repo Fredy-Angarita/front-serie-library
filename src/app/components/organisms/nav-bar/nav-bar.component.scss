@@ -1,0 +1,26 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/typography.scss";
+:host{
+    background-image: linear-gradient(to right, $navbar_primary, $navbar_secondary);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    .container_navbar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+@media (width < 800px){
+    :host{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0.3rem;
+        .container_navbar {
+            justify-content: center;
+            gap: 0.5rem;
+        }
+    }
+}

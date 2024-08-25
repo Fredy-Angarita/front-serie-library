@@ -4,6 +4,7 @@ export const TYPE_BUTTONS = {
     BACK : 'Back',
     LOGIN: 'Login',
     REGISTER: 'Register',
+    SEARCH: 'Search',
 };
 export const BUTTON_COLORS = {
     PRIMARY : '#E7BB41',
@@ -13,5 +14,5 @@ export const BUTTON_COLORS = {
 export const TITLES = {
     LOGIN: 'Welcome Back',
     REGISTER: 'Create An Account',
-    DASHBOARD: 'Yours Series Library',
+    NAVBAR: 'Yours Series Library',
 }

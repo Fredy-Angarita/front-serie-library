@@ -7,5 +7,12 @@
     color: $text_secondary;
     border-radius: 10px;
     border: none;
-    padding: 0 20px;
+    padding: 0 1rem;
+}
+
+@media (width < 800px){
+    .button{
+        font-size: $size-XS;
+        padding: 0.5rem;
+    }
 }
