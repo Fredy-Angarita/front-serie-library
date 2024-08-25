@@ -1,8 +1,39 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/typography.scss";
+.menu_container {
+    position: relative;
+    display: inline-block;
+
+}
+
 .menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    border-radius: 1rem;
+    background-color: $background_primary;
+    right: 0;
+    position: absolute;
+    width: 10rem;
     .menu_option{
-        margin: 5px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+        text-align: center;
+        font-size: $size-XM;
+        font-family: $font_secondary;
+        color: $text_secondary;
+        border-radius: 1rem;
+        &:hover{
+            background-color: $navbar_secondary;
+            color: $text_primary;
+        }
+    }
+}
+
+@media (width < 800px){
+    .menu {
+        width: 5rem;
+        .menu_option{
+            font-size: $size-XS;
+        }
     }
 }
