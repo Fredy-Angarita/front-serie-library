@@ -1,6 +1,6 @@
 @import '../../../../styles/typography.scss'; 
 @import '../../../../styles/colors.scss';
-button{
+.button{
     font-family: $font_secondary;
     font-size: $size-M;
     background-color: $button_primary;

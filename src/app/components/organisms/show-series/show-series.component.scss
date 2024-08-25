@@ -1,0 +1,74 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/typography.scss';
+.container {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: $background_secondary;
+    &_title{
+        text-align: center;
+        color: $text_primary;
+        font-family: $font_primary;
+        font-size: $size-L;
+    }
+    &_content{
+        display: flex;
+        flex-direction: column;
+        .container_img {
+            display: grid;
+            place-items: center;
+           img {
+            border-radius: 1rem;
+            max-height: 300px;
+            object-fit: contain;
+           }
+        }
+    }
+    &_data{
+        .container_badges {
+            display: flex;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+    }
+    .container_p{
+        font-family: $font_secondary;
+        font-size: $size-XXS;
+        color: $text_primary;
+        grid-column: 1/-1;
+    }
+}
+
+@media (width < 800px){
+    .container {
+        .container_title{
+            font-size: $size-M;
+            margin-bottom: 1rem;
+        }
+        .container_content{
+            flex-direction: row;
+            gap: 0.5rem;
+            .container_img {
+                img{
+                    max-width: 150px;
+                }
+            }
+            .container_data{
+                overflow-y: scroll;
+                scrollbar-width: none;
+                max-height: 15rem;
+                .container_badges{
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+            }
+            
+            .container_p{
+                font-family: $font_secondary;
+                font-size: $size-XS;
+                color: $text_primary;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,8 +1,7 @@
 @import '../../../../styles/typography.scss';
 @import '../../../../styles/colors.scss';
-h1 {
+.h1 {
     font-family: $font_primary;
-    font-size: $size-XL;
-    letter-spacing: 3px;
+    font-size: $size-XS;
     color: $text_primary;
 }
