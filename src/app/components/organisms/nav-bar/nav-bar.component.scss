@@ -5,6 +5,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 1rem;
+    position: sticky;
+    top: 0;
     .container_navbar {
         display: flex;
         justify-content: flex-end;

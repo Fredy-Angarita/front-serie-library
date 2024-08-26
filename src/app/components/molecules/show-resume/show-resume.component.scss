@@ -1,0 +1,47 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/typography.scss';
+.resume_container{
+    background-color: $background_quaternary;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    justify-items: right;
+    border-radius: 5rem;
+    border: solid 0.2rem $border_primary;
+    .resume_title{
+        font-family: $font_primary;
+        font-size: $size-XM;
+        text-align: center;
+    }
+}
+
+.content{
+    padding: 1rem;
+    border-radius: 1rem;
+    .content_date{
+        font-family: $font_secondary;
+        font-size: $size-M;
+        text-align: center;
+    }
+    .content_resume{
+        font-family: $font_secondary;
+        font-size: $size-M;
+    }
+}
+
+@media (width < 800px){
+    .resume_container{
+        .resume_title{
+            font-size: $size-M;
+        }
+    }
+    .content{
+        padding: 0.5rem;
+        .content_date{
+            font-size: $size-XS;
+        }
+        .content_resume{
+            font-size: $size-XS;
+        }
+    }
+}

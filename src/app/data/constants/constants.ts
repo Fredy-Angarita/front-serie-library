@@ -9,6 +9,7 @@ export const TYPE_BUTTONS = {
 export const BUTTON_COLORS = {
     PRIMARY : '#E7BB41',
     DELETE : '#FF0000',
+    SECONDARY : '#FF9900',
 };
 
 export const TITLES = {
