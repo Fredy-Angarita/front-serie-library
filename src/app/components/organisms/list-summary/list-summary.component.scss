@@ -13,3 +13,11 @@
         color: $text_primary;
     }
 }
+
+@media (width < 800px){
+    :host{
+        .title_list{
+            font-size: $size-M;
+        } 
+    }
+}
