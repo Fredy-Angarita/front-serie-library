@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class PrimaryButtonComponent {
   @Input() text !: string;
+  @Input() border !: string;
   @Input() button_color !: string;
 }

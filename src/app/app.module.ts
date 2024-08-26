@@ -16,6 +16,7 @@ import { ShowInfoComponent } from './components/molecules/show-info/show-info.co
 import { ParagraphComponent } from './components/atoms/paragraph/paragraph.component';
 import { NavBarComponent } from './components/organisms/nav-bar/nav-bar.component';
 import { ShowResumeComponent } from './components/molecules/show-resume/show-resume.component';
+import { ListSummaryComponent } from './components/organisms/list-summary/list-summary.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ShowResumeComponent } from './components/molecules/show-resume/show-res
     ShowInfoComponent,
     ParagraphComponent,
     NavBarComponent,
-    ShowResumeComponent
+    ShowResumeComponent,
+    ListSummaryComponent
   ],
   imports: [
     BrowserModule,

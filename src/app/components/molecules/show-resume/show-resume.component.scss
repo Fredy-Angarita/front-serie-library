@@ -2,30 +2,44 @@
 @import '../../../../styles/typography.scss';
 .resume_container{
     background-color: $background_quaternary;
-    display: grid;
-    grid-template-columns: 1fr 0.8fr;
-    align-items: center;
-    justify-items: right;
+    display: flex;
+    justify-content: space-between;
     border-radius: 5rem;
-    border: solid 0.2rem $border_primary;
+    align-items: center;
+    margin: 1rem 0;
     .resume_title{
         font-family: $font_primary;
         font-size: $size-XM;
         text-align: center;
+        padding: 0 1rem;
+    }
+    .resume_button{
+        font-family: $font_secondary;
+        font-size: $size-M;
+        background-color: $border_primary;
+        color: $text_secondary;
+        border-radius: 0 1rem 1rem 0;
+        border: none;
+        padding: 0 1rem;
     }
 }
-
 .content{
+    overflow-y: scroll;
+    scrollbar-width: none;
+    max-height: 10rem;
     padding: 1rem;
     border-radius: 1rem;
     .content_date{
+        color: $text_primary;
         font-family: $font_secondary;
         font-size: $size-M;
         text-align: center;
     }
     .content_resume{
+        color: $text_primary;
         font-family: $font_secondary;
         font-size: $size-M;
+        text-align: justify;
     }
 }
 
@@ -33,6 +47,10 @@
     .resume_container{
         .resume_title{
             font-size: $size-M;
+        }
+        .resume_button{
+            font-size: $size-XS;
+            padding: 0.5rem;
         }
     }
     .content{

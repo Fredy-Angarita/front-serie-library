@@ -7,7 +7,6 @@ import { BUTTON_COLORS } from 'src/app/data/constants/constants';
   styleUrls: ['./show-resume.component.scss']
 })
 export class ShowResumeComponent {
-  color = BUTTON_COLORS.SECONDARY;
   open_state = false;
 
   @Input() chapter!: string;

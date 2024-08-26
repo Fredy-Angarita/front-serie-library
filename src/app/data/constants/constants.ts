@@ -11,9 +11,15 @@ export const BUTTON_COLORS = {
     DELETE : '#FF0000',
     SECONDARY : '#FF9900',
 };
+export const BORDER_COLORS = {
+    PRIMARY : '#E7BB41',
+    DELETE : '#FF0000',
+    SECONDARY : '#FF9900',
+};
 
 export const TITLES = {
     LOGIN: 'Welcome Back',
     REGISTER: 'Create An Account',
-    NAVBAR: 'Yours Series Library',
+    NAVBAR: 'Your Series Library',
+    SUMMARY: 'Your Summaries',
 }
