@@ -1,0 +1,13 @@
+<div class="form_container">
+  <label for="form-field">{{ labelText }}</label>
+  <input
+    [type]="inputType"
+    [required]="isRequired"
+    placeholder="{{ placeholder }}"
+    [formControl]="control"
+    (input)="onInput($event)"
+  />
+  <section *ngIf="control.invalid && control.touched" class="text-danger">
+    <span> {{ getErrorMessage() }} </span>
+  </section>
+</div>
