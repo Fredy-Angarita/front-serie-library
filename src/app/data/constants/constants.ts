@@ -5,10 +5,12 @@ export const TYPE_BUTTONS = {
     LOGIN: 'Login',
     REGISTER: 'Register',
     SEARCH: 'Search',
+    ADD: '+',
 };
 export const BUTTON_COLORS = {
     PRIMARY : '#E7BB41',
     DELETE : '#FF0000',
+    ADD_SAVE: '#8AFF80',
     SECONDARY : '#FF9900',
 };
 export const BORDER_COLORS = {

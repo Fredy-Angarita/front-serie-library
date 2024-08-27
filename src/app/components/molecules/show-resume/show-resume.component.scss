@@ -13,15 +13,6 @@
         text-align: center;
         padding: 0 1rem;
     }
-    .resume_button{
-        font-family: $font_secondary;
-        font-size: $size-M;
-        background-color: $border_primary;
-        color: $text_secondary;
-        border-radius: 0 1rem 1rem 0;
-        border: none;
-        padding: 0 1rem;
-    }
 }
 .content{
     overflow-y: scroll;
@@ -47,10 +38,6 @@
     .resume_container{
         .resume_title{
             font-size: $size-M;
-        }
-        .resume_button{
-            font-size: $size-XS;
-            padding: 0.5rem;
         }
     }
     .content{

@@ -34,7 +34,7 @@ import { ListSummaryComponent } from './components/organisms/list-summary/list-s
     ParagraphComponent,
     NavBarComponent,
     ShowResumeComponent,
-    ListSummaryComponent
+    ListSummaryComponent,
   ],
   imports: [
     BrowserModule,

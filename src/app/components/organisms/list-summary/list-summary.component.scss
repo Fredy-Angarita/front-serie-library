@@ -4,8 +4,11 @@
 :host{
     display: block;
     background-color: $background_secondary;
-    padding: 1rem;
     border-radius: 1rem;
+    padding: 1rem;
+    .summary_container{
+        display: block;
+    }
     .title_list{
         font-family: $font_primary;
         font-size: $size-L;

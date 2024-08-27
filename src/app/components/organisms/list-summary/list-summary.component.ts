@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TITLES } from 'src/app/data/constants/constants';
+import { BUTTON_COLORS, TITLES, TYPE_BUTTONS } from 'src/app/data/constants/constants';
 import { Summary } from 'src/app/data/interfaces/summary.interface';
 
 @Component({
@@ -10,6 +10,7 @@ import { Summary } from 'src/app/data/interfaces/summary.interface';
 export class ListSummaryComponent {
   summaries: Summary;
   title = TITLES.SUMMARY;
+  color = BUTTON_COLORS.ADD_SAVE;
   constructor() {
     this.summaries = {
       chapter: 'chapter 15',
