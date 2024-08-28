@@ -10,7 +10,6 @@ import {PrimaryButtonComponent} from './components/atoms/primary-button/primary-
 import { InputsComponent } from './components/atoms/inputs/inputs.component';
 import { TitlesComponent } from './components/atoms/titles/titles.component';
 import { CardSeriesComponent } from './components/molecules/card-series/card-series.component';
-import { FormFieldComponent } from './components/molecules/form-field/form-field.component';
 import { SessionActionsComponent } from './components/molecules/session-actions/session-actions.component';
 import { ShowSeriesComponent } from './components/organisms/show-series/show-series.component';
 import { ShowInfoComponent } from './components/molecules/show-info/show-info.component';
@@ -26,7 +25,6 @@ import { ListSummaryComponent } from './components/organisms/list-summary/list-s
     InputsComponent,
     TitlesComponent,
     CardSeriesComponent,
-    FormFieldComponent,
     SessionActionsComponent,
     ShowSeriesComponent,
     ShowInfoComponent,
