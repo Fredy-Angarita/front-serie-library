@@ -1,31 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { BUTTON_COLORS, TITLES, TYPE_BUTTONS } from './data/constants/constants';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  public form: FormGroup = new FormGroup({});
-  public maxLengthName: number = 50;
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      name: ['', Validators.required],
+export class AppComponent{
+  exampleForm: FormGroup;
+  
+  constructor( private fb: FormBuilder) {
+    this.exampleForm = this.fb.nonNullable.group({
+      email: ['',[Validators.required, Validators.email, Validators.minLength(6)]],
+      password: ['',[Validators.required, Validators.minLength(8)]]
     });
   }
-
-  onValueChange(controlName: string, value: string) {
-    this.form.get(controlName)?.setValue(value);
+  get emailControl() {
+    return this.exampleForm.get('email') as FormControl;
+  }
+  get passwordControl() {
+    return this.exampleForm.get('password') as FormControl;
   }
   onSubmit() {
-    if (!this.form.valid) {
-      console.log('Formulario inválido');
+    if (this.exampleForm.invalid) {
       return;
     }
-    console.log(this.form.value);
+    console.log('form works');
   }
+  onValueChange(controlName: string, value: string) {
+    this.exampleForm.get(controlName)?.setValue(value);
+  }
+  
 }

@@ -16,6 +16,7 @@ import { ShowInfoComponent } from './components/molecules/show-info/show-info.co
 import { NavBarComponent } from './components/organisms/nav-bar/nav-bar.component';
 import { ShowResumeComponent } from './components/molecules/show-resume/show-resume.component';
 import { ListSummaryComponent } from './components/organisms/list-summary/list-summary.component';
+import { FormFieldComponent } from './components/molecules/form-field/form-field.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ListSummaryComponent } from './components/organisms/list-summary/list-s
     NavBarComponent,
     ShowResumeComponent,
     ListSummaryComponent,
+    FormFieldComponent,
   ],
   imports: [
     BrowserModule,

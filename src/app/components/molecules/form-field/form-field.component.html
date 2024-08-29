@@ -1,0 +1,14 @@
+<div class="form_container">
+  <label class="form_label" [for]="idInput">{{ label_text }}</label>
+  <input class="form_input"
+    [formControl]="control"
+    [type]="optionType"
+    [name]="nameInput"
+    placeholder="{{ optionPlaceholder }}"
+    (input)="onInput($event)"
+    [id]="idInput"
+  />
+  <div class="form_error" *ngIf="control.invalid && control.touched">
+    <span>{{ getErrorMessage() }}</span>
+  </div>
+</div>
