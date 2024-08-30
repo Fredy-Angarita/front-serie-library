@@ -1,0 +1,29 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/typography.scss';
+
+.loginForm{
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: $card_primary;
+    border-radius: 1rem;
+    .actions{
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p, a{
+            font-family: $font_secondary;
+            font-size: $size-XS;
+            color: $text_primary;
+            text-align: center;
+        }
+        p{
+            padding-top: 1rem;
+        }
+        a{
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+}

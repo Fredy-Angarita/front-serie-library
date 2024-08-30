@@ -25,3 +25,14 @@ export const TITLES = {
     NAVBAR: 'Your Series Library',
     SUMMARY: 'Your Summaries',
 }
+
+export const LABELS = {
+    EMAIL: 'Email',
+    PASSWORD: 'Password',
+    CONFIRM_PASSWORD: 'Confirm Password'
+}
+export const PLACEHOLDERS = {
+    EMAIL: 'Enter your email',
+    PASSWORD: 'Enter your password',
+    CONFIRM_PASSWORD: 'Confirm your password'
+}

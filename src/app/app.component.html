@@ -1,19 +1,2 @@
 <app-nav-bar/>
-<form [formGroup]="exampleForm" (ngSubmit)="onSubmit()">
-    <app-form-field
-    nameInput="userEmail"
-    idInput="idEmail"
-    optionType="email"
-    label_text="Email"
-    optionPlaceholder="ingrese su nombre"
-    [control]="emailControl"
-    />
-    <app-form-field
-    optionType="password"
-    id="password"
-    label_text="password"
-    optionPlaceholder="ingrese su contraseña"
-    [control]="passwordControl"
-    />
-    <app-primary-button text="save"/> 
-</form> 
+<app-login-form/>

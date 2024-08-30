@@ -11,6 +11,4 @@ export class PrimaryButtonComponent {
   @Input() button_color !: string;
   @Input() padding !: string;
   @Input() border_radius !: string;
-
-
 }
