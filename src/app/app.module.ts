@@ -18,6 +18,8 @@ import { ShowResumeComponent } from './components/molecules/show-resume/show-res
 import { ListSummaryComponent } from './components/organisms/list-summary/list-summary.component';
 import { FormFieldComponent } from './components/molecules/form-field/form-field.component';
 import { LoginFormComponent } from './components/organisms/login-form/login-form.component';
+import { RegisterFormComponent } from './components/organisms/register-form/register-form.component';
+import { FormActionsComponent } from './components/molecules/form-actions/form-actions.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { LoginFormComponent } from './components/organisms/login-form/login-form
     ListSummaryComponent,
     FormFieldComponent,
     LoginFormComponent,
+    RegisterFormComponent,
+    FormActionsComponent,
   ],
   imports: [
     BrowserModule,

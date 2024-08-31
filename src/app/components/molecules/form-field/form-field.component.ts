@@ -30,6 +30,9 @@ export class FormFieldComponent {
       return `Debe tener como máximo ${errors?.['maxlength'].requiredLength} caracteres`;
     }else if (errors?.['email']) {
       return `Debe ser un correo electrónico válido`;
+    }else if (errors?.['passwordMatch']){
+      return 'Las contraseñas no coinciden';
+
     }
 
     return '';

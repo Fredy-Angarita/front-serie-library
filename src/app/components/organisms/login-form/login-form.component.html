@@ -1,22 +1,23 @@
 <form class="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <app-form-field
+  <app-titles [title]="title" />
+  <app-form-field
     nameInput="userEmail"
     idInput="idEmail"
     optionType="email"
     [label_text]="email_label"
     [optionPlaceholder]="email_placeholder"
     [control]="emailControl"
-    />
-    <app-form-field
+  />
+  <app-form-field
     optionType="password"
     id="password"
     [label_text]="password_label"
     [optionPlaceholder]="password_placeholder"
     [control]="passwordControl"
-    />
-    <div class="actions">
-        <app-primary-button padding="0.5rem 1rem" border_radius="0.5rem" [text]="button_text"/> 
-        <p>Do you no have account?</p>
-        <a href="">Register</a>
-    </div>
-</form> 
+  />
+  <app-form-actions
+    [paragraph]="question"
+    [action]="action"
+    [button_text]="button_text"
+  />
+</form>

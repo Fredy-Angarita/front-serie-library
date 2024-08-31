@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { LABELS, PLACEHOLDERS, TYPE_BUTTONS } from 'src/app/data/constants/constants';
+import { LABELS, PLACEHOLDERS, QUESTION_ACTIONS, TITLES, TYPE_BUTTONS } from 'src/app/data/constants/constants';
 
 @Component({
   selector: 'app-login-form',
@@ -14,7 +14,9 @@ export class LoginFormComponent {
   button_text = TYPE_BUTTONS.LOGIN;
   email_placeholder = PLACEHOLDERS.EMAIL;
   password_placeholder = PLACEHOLDERS.PASSWORD;
-  
+  title = TITLES.LOGIN;
+  question = QUESTION_ACTIONS.NOT_HAVE_ACCOUNT;
+  action = QUESTION_ACTIONS.REGISTER_ACTION;  
   constructor( private fb: FormBuilder) {
     this.loginForm = this.fb.nonNullable.group({
       email: ['',[Validators.required, Validators.email, Validators.minLength(6)]],
