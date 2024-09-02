@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class TitlesComponent {
   @Input() title !: string ;
+  @Input() text_size !: string;
 }

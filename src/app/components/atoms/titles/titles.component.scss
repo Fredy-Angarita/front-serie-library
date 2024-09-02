@@ -2,6 +2,12 @@
 @import '../../../../styles/colors.scss';
 .h1 {
     font-family: $font_primary;
-    font-size: $size-XS;
+    font-size: $size-XL;
     color: $text_primary;
+    text-align: center;
+}
+@media (width < 800px){
+    .h1 {
+        font-size: $size-L;
+    }
 }

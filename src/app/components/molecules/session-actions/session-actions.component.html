@@ -1,5 +1,8 @@
+<div class="menu_container">
 <app-user-icon (click) = "toggle_menu()"/>
-<ul *ngIf="isActive" class="menu">
-    <li class="menu_option">Profile</li>
-    <li class="menu_option">Logout</li>
-</ul>
+<div *ngIf="isActive" class="menu">
+    <a class="menu_option" href="">Profile</a>
+    <a class="menu_option" href="">Logout</a>
+</div>
+</div>
+    

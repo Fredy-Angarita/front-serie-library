@@ -1,0 +1,52 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/typography.scss';
+.resume_container{
+    background-color: $background_quaternary;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5rem;
+    align-items: center;
+    margin: 1rem 0;
+    .resume_title{
+        font-family: $font_primary;
+        font-size: $size-XM;
+        text-align: center;
+        padding: 0 1rem;
+    }
+}
+.content{
+    overflow-y: scroll;
+    scrollbar-width: none;
+    max-height: 10rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    .content_date{
+        color: $text_primary;
+        font-family: $font_secondary;
+        font-size: $size-M;
+        text-align: center;
+    }
+    .content_resume{
+        color: $text_primary;
+        font-family: $font_secondary;
+        font-size: $size-M;
+        text-align: justify;
+    }
+}
+
+@media (width < 800px){
+    .resume_container{
+        .resume_title{
+            font-size: $size-M;
+        }
+    }
+    .content{
+        padding: 0.5rem;
+        .content_date{
+            font-size: $size-XS;
+        }
+        .content_resume{
+            font-size: $size-XS;
+        }
+    }
+}

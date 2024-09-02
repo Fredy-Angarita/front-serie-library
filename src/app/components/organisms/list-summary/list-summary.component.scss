@@ -1,0 +1,26 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/typography.scss';
+
+:host{
+    display: block;
+    background-color: $background_secondary;
+    border-radius: 1rem;
+    padding: 1rem;
+    .summary_container{
+        display: block;
+    }
+    .title_list{
+        font-family: $font_primary;
+        font-size: $size-L;
+        text-align: center;
+        color: $text_primary;
+    }
+}
+
+@media (width < 800px){
+    :host{
+        .title_list{
+            font-size: $size-M;
+        } 
+    }
+}

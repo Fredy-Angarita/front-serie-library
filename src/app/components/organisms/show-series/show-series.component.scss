@@ -41,6 +41,7 @@
 
 @media (width < 800px){
     .container {
+        border-radius: 0;
         .container_title{
             font-size: $size-M;
             margin-bottom: 1rem;

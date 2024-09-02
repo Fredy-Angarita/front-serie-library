@@ -5,4 +5,12 @@
     height: 4rem;
     border-radius: 50%;
     border: solid 1px;
+    cursor: pointer;
+}
+
+@media (width < 800px){
+    .icon{
+        width: 3rem;
+        height: 3rem;
+    }
 }

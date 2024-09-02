@@ -1,0 +1,9 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/typography.scss';
+
+.registerForm{
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: $card_primary;
+    border-radius: 1rem;
+}

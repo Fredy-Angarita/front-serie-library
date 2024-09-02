@@ -1,0 +1,40 @@
+<form class="registerForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <app-titles [title]="title" />
+  <app-form-field
+    nameInput="userName"
+    idInput="userName"
+    optionType="text"
+    [label_text]="username_label"
+    [optionPlaceholder]="username_placeholder"
+    [control]="usernameControl"
+  />
+  <app-form-field
+    nameInput="email"
+    idInput="idEmail"
+    optionType="email"
+    [label_text]="email_label"
+    [optionPlaceholder]="email_placeholder"
+    [control]="emailControl"
+  />
+  <app-form-field 
+    nameInput="password"
+    idInput="idPassword"
+    optionType="password"
+    [label_text]="password_label"
+    [optionPlaceholder]="password_placeholder"
+    [control]="passwordControl"
+  />
+  <app-form-field 
+    nameInput="confirmation"
+    idInput="idConfirmation"
+    optionType="password"
+    [label_text]="confirmation_label"
+    [optionPlaceholder]="confirmation_placeholder"
+    [control]="confirmationControl"
+  />
+  <app-form-actions
+    [button_text]="button_action"
+    [paragraph]="paragraph"
+    [action]="action"
+  />
+</form>
