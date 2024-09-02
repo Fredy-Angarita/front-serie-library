@@ -1,19 +1,31 @@
-<h3 class="title_list">{{ title }}</h3>
-<div class="summary_container">
-  <app-show-resume
+<div class="list_container">
+  <h3 class="title_list">{{ title }}</h3>
+  <div class="summary_container">
+    <app-show-resume
     [date]="summaries.date"
     [chapter]="summaries.chapter"
     [resume]="summaries.summary"
-  />
-  <app-show-resume
+    />
+    <app-show-resume
     [date]="summaries.date"
     [chapter]="summaries.chapter"
     [resume]="summaries.summary"
-  />
-</div>
-<app-primary-button
+    />
+    <app-show-resume
+    [date]="summaries.date"
+    [chapter]="summaries.chapter"
+    [resume]="summaries.summary"
+    />
+    <app-show-resume
+    [date]="summaries.date"
+    [chapter]="summaries.chapter"
+    [resume]="summaries.summary"
+    />
+  </div>
+  <app-primary-button
   [button_color]="color"
   text="+"
   text_size="1.5rem"
   padding="0rem 1rem"
-/>
+  />
+</div>

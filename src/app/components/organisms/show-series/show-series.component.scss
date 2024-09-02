@@ -1,6 +1,10 @@
 @import '../../../../styles/colors.scss';
 @import '../../../../styles/typography.scss';
 .container {
+    height: 80vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    margin: 1rem;
     padding: 1rem;
     border-radius: 1rem;
     background-color: $background_secondary;
@@ -29,6 +33,7 @@
             justify-content: space-between;
             gap: 0.5rem;
             margin: 1rem 0;
+            
         }
     }
     .container_p{
@@ -41,6 +46,8 @@
 
 @media (width < 800px){
     .container {
+        margin: 0;
+        height: auto;
         border-radius: 0;
         .container_title{
             font-size: $size-M;

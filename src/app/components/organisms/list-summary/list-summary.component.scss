@@ -1,13 +1,19 @@
 @import '../../../../styles/colors.scss';
 @import '../../../../styles/typography.scss';
 
-:host{
-    display: block;
+.list_container{
     background-color: $background_secondary;
+    height: 80vh;
+    max-height: 80vh;
+    margin: 1rem;
+    overflow-y: auto;
+    scrollbar-width: none;
     border-radius: 1rem;
     padding: 1rem;
     .summary_container{
-        display: block;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        
     }
     .title_list{
         font-family: $font_primary;
@@ -18,7 +24,11 @@
 }
 
 @media (width < 800px){
-    :host{
+    .list_container{
+        height: auto;
+        max-width: none;
+        border-radius: 0;
+        margin: 0.5rem 0;
         .title_list{
             font-size: $size-M;
         } 
