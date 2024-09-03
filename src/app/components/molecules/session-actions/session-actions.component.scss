@@ -13,9 +13,7 @@
     position: absolute;
     width: 10rem;
     .menu_option{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        display: block;
         text-decoration: none;
         text-align: center;
         font-size: $size-M;
@@ -27,6 +25,9 @@
             background-color: $navbar_secondary;
             color: $text_primary;
         }
+    }
+    .logout:hover{
+        background-color: $button_cancel;
     }
 }
 

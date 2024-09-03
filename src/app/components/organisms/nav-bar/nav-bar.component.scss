@@ -1,7 +1,7 @@
 @import "../../../../styles/colors.scss";
 @import "../../../../styles/typography.scss";
 :host{
-    background-image: linear-gradient(to right, $navbar_primary, $navbar_secondary);
+    background-color: $navbar_primary;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 1rem;
