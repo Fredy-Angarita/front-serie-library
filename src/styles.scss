@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+html, body, app-root {
+    height: 100%;
     background-color: $background_primary;
 }
-

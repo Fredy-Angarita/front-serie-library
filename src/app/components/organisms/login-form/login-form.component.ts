@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LABELS, PLACEHOLDERS, QUESTION_ACTIONS, TITLES, TYPE_BUTTONS } from 'src/app/data/constants/constants';
 
@@ -17,6 +17,8 @@ export class LoginFormComponent {
   title = TITLES.LOGIN;
   question = QUESTION_ACTIONS.NOT_HAVE_ACCOUNT;
   action = QUESTION_ACTIONS.REGISTER_ACTION;  
+  @Output() changeEvent = new EventEmitter<boolean>();
+
   constructor( private fb: FormBuilder) {
     this.loginForm = this.fb.nonNullable.group({
       email: ['',[Validators.required, Validators.email, Validators.minLength(6)]],
@@ -37,5 +39,8 @@ export class LoginFormComponent {
   }
   onValueChange(controlName: string, value: string) {
     this.loginForm.get(controlName)?.setValue(value);
+  }
+  onChangeEvent(booleanSwitch: boolean) {
+    this.changeEvent.emit(booleanSwitch);
   }
 }

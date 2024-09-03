@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { LABELS, PLACEHOLDERS, QUESTION_ACTIONS, TITLES, TYPE_BUTTONS } from 'src/app/data/constants/constants';
 
@@ -21,7 +21,7 @@ export class RegisterFormComponent {
   confirmation_label = LABELS.CONFIRM_PASSWORD;
   confirmation_placeholder = PLACEHOLDERS.CONFIRM_PASSWORD;
   registerForm: FormGroup;
-
+  @Output() changeEvent = new EventEmitter<boolean>();
   constructor( private fb: FormBuilder) { 
     this.registerForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)],],
@@ -49,5 +49,8 @@ export class RegisterFormComponent {
       return;
     }
     console.log('form works');
+  }
+  onChangeEvent(booleanSwitch: boolean) {
+    this.changeEvent.emit(booleanSwitch);
   }
 }

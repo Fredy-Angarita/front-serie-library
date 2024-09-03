@@ -21,6 +21,7 @@ import { LoginFormComponent } from './components/organisms/login-form/login-form
 import { RegisterFormComponent } from './components/organisms/register-form/register-form.component';
 import { FormActionsComponent } from './components/molecules/form-actions/form-actions.component';
 import { SeriesTemplateComponent } from './components/templates/series-template/series-template.component';
+import { UserFormsComponent } from './components/templates/user-forms/user-forms.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { SeriesTemplateComponent } from './components/templates/series-template/
     RegisterFormComponent,
     FormActionsComponent,
     SeriesTemplateComponent,
+    UserFormsComponent,
   ],
   imports: [
     BrowserModule,
