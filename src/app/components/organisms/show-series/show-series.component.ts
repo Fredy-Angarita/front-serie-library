@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ShowSeries } from 'src/app/data/interfaces/show-series.interface';
 
 @Component({
@@ -8,8 +8,9 @@ import { ShowSeries } from 'src/app/data/interfaces/show-series.interface';
 })
 export class ShowSeriesComponent {
   series: ShowSeries;
-  details: boolean = false;
-  icon_chapters: string = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" d="M10 14h4v-2h-4zm0-3h8V9h-8zm0-3h8V6h-8zM6 18V2h16v16zm2-2h12V4H8zm-6 6V6h2v14h14v2zM8 4v12z"/></svg>';
+  details: boolean = false;  
+  @Input() total: number = 0;
+  @Input() progress: number = 0;
   constructor() { 
     this.series = {
       title: 'Umineko no Naku Koro ni Chiru - Episode 8: Twilight of the Golden Witch:',
