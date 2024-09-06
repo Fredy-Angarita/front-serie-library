@@ -10,7 +10,8 @@ import { Summary } from 'src/app/data/interfaces/summary.interface';
 export class ListSummaryComponent {
   summaries: Summary;
   title = TITLES.SUMMARY;
-  color = BUTTON_COLORS.ADD_SAVE;
+  add_color = BUTTON_COLORS.ADD_SAVE;
+  delete_color = BUTTON_COLORS.DELETE;
   constructor() {
     this.summaries = {
       chapter: 'chapter 15',

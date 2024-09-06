@@ -23,6 +23,8 @@ import { FormActionsComponent } from './components/molecules/form-actions/form-a
 import { SeriesTemplateComponent } from './components/templates/series-template/series-template.component';
 import { UserFormsComponent } from './components/templates/user-forms/user-forms.component';
 import { CollectionTemplateComponent } from './components/templates/collection-template/collection-template.component';
+import { SecondaryButtonComponent } from './components/atoms/button-secondary/button-secondary.component';
+import { TertiaryButtonComponent } from './component/atoms/tertiary-button/tertiary-button.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { CollectionTemplateComponent } from './components/templates/collection-t
     SeriesTemplateComponent,
     UserFormsComponent,
     CollectionTemplateComponent,
+    SecondaryButtonComponent,
+    TertiaryButtonComponent,
   ],
   imports: [
     BrowserModule,

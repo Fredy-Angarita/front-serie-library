@@ -1,0 +1,8 @@
+<button
+  class="secondary-button"
+  [style.background-color]="button_color"
+  [style.font-size]="text_size"
+>
+  {{ text }}
+  <ng-content select="[svg]"></ng-content>
+</button>

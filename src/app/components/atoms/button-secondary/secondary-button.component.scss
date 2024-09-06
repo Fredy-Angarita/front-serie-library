@@ -1,20 +1,19 @@
 @import '../../../../styles/typography.scss'; 
 @import '../../../../styles/colors.scss';
-.button{
+.secondary-button{
     font-family: $font_secondary;
-    font-size: $size-M;
+    font-size: $size-XXS;
     background-color: $button_primary;
     color: $text_secondary;
-    border-radius: 1rem;
+    border-radius: 0 5rem 5rem 0; 
     border: none;
     padding: 0 1rem;
     cursor: pointer;
 }
 
 @media (width < 800px){
-    .button{
-        border-radius: 0.5rem;
-        font-size: $size-XXS;
-        padding: 0.5rem 1rem;
+    .secondary-button{
+        font-size: $size-XS;
+        padding: 0.5rem;
     }
 }

@@ -1,31 +1,48 @@
 <div class="list_container">
   <h3 class="title_list">{{ title }}</h3>
-  <div class="summary_container">
-    <app-show-resume
-    [date]="summaries.date"
-    [chapter]="summaries.chapter"
-    [resume]="summaries.summary"
-    />
-    <app-show-resume
-    [date]="summaries.date"
-    [chapter]="summaries.chapter"
-    [resume]="summaries.summary"
-    />
-    <app-show-resume
-    [date]="summaries.date"
-    [chapter]="summaries.chapter"
-    [resume]="summaries.summary"
-    />
-    <app-show-resume
-    [date]="summaries.date"
-    [chapter]="summaries.chapter"
-    [resume]="summaries.summary"
-    />
+  <div class="actions_menu">
+    <app-primary-button [button_color]="add_color">
+      <ng-container svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.5em"
+          height="1.5em"
+          viewBox="0 -3 24 24"
+        >
+          <rect width="24" height="24" fill="none" />
+          <path
+            fill="#264323"
+            d="M17 19.22H5V7h7V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7h-2z"
+          />
+          <path
+            fill="#264323"
+            d="M19 2h-2v3h-3c.01.01 0 2 0 2h3v2.99c.01.01 2 0 2 0V7h3V5h-3zM7 9h8v2H7zm0 3v2h8v-2h-3zm0 3h8v2H7z"
+          />
+        </svg>
+      </ng-container>
+    </app-primary-button>
+    <app-primary-button [button_color]="delete_color" text="Delete" />
   </div>
-  <app-primary-button
-  [button_color]="color"
-  text="+"
-  text_size="1.5rem"
-  padding="0rem 1rem"
-  />
+  <article class="summary_container">
+    <app-show-resume
+      [date]="summaries.date"
+      [chapter]="summaries.chapter"
+      [resume]="summaries.summary"
+    />
+    <app-show-resume
+      [date]="summaries.date"
+      [chapter]="summaries.chapter"
+      [resume]="summaries.summary"
+    />
+    <app-show-resume
+      [date]="summaries.date"
+      [chapter]="summaries.chapter"
+      [resume]="summaries.summary"
+    />
+    <app-show-resume
+      [date]="summaries.date"
+      [chapter]="summaries.chapter"
+      [resume]="summaries.summary"
+    />
+  </article>
 </div>
