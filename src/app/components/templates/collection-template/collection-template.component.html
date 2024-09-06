@@ -1,8 +1,13 @@
 <app-nav-bar/>
-<section class="collection">
-    <app-card-series
-    [img]="img"
-    [series_title]="series_title"
-    *ngFor="let item of series"
-    />
-</section>
+<div class="di">
+    <div class="search_bar">
+        <input (keyup)="searchSeries($event)" type="text" placeholder="search your series">
+    </div>
+    <section class="collection">
+        <app-card-series
+        *ngFor="let item of series"
+        [img]="item.img"
+        [series_title]="item.series_title"
+        />
+    </section>
+</div>

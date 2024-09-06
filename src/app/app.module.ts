@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserIconComponent } from './components/atoms/user-icon/user-icon.component';
-import {PrimaryButtonComponent} from './components/atoms/primary-button/primary-button.component';
+import { PrimaryButtonComponent } from './components/atoms/primary-button/primary-button.component';
 import { InputsComponent } from './components/atoms/inputs/inputs.component';
 import { TitlesComponent } from './components/atoms/titles/titles.component';
 import { CardSeriesComponent } from './components/molecules/card-series/card-series.component';
@@ -54,6 +54,6 @@ import { CollectionTemplateComponent } from './components/templates/collection-t
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
