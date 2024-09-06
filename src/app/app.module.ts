@@ -24,7 +24,13 @@ import { SeriesTemplateComponent } from './components/templates/series-template/
 import { UserFormsComponent } from './components/templates/user-forms/user-forms.component';
 import { CollectionTemplateComponent } from './components/templates/collection-template/collection-template.component';
 import { SecondaryButtonComponent } from './components/atoms/button-secondary/button-secondary.component';
-import { TertiaryButtonComponent } from './component/atoms/tertiary-button/tertiary-button.component';
+import { TertiaryButtonComponent } from './components/atoms/tertiary-button/tertiary-button.component';
+import { LoginPagesComponent } from './components/pages/login-pages/login-pages.component';
+import { RegisterPagesComponent } from './components/pages/register-pages/register-pages.component';
+import { CollectionPagesComponent } from './components/pages/collection-pages/collection-pages.component';
+import { SeriesPagesComponent } from './components/pages/series-pages/series-pages.component';
+import { NotFoundComponent } from './components/templates/not-found/not-found.component';
+import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-found-pages.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +55,12 @@ import { TertiaryButtonComponent } from './component/atoms/tertiary-button/terti
     CollectionTemplateComponent,
     SecondaryButtonComponent,
     TertiaryButtonComponent,
+    LoginPagesComponent,
+    RegisterPagesComponent,
+    CollectionPagesComponent,
+    SeriesPagesComponent,
+    NotFoundComponent,
+    NotFoundPagesComponent,
   ],
   imports: [
     BrowserModule,
