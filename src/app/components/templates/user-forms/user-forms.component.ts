@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-forms.component.scss']
 })
 export class UserFormsComponent {
-  showLogin: boolean = true;
 }

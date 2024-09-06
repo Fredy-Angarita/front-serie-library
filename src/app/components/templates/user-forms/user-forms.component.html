@@ -1,4 +1,4 @@
 <section class="form_container">
-    <app-login-form (changeEvent)="showLogin = $event"  *ngIf="showLogin" />
-    <app-register-form (changeEvent)="showLogin = !$event" *ngIf="!showLogin"/>
+    <ng-content select="[form]">
+    </ng-content>
 </section>

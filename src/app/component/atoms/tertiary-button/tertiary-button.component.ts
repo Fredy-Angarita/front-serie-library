@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tertiary-button',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./tertiary-button.component.scss']
 })
 export class TertiaryButtonComponent {
-
+  @Input() button_color !: string;
 }

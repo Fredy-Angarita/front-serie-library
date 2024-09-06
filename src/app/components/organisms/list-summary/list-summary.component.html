@@ -1,27 +1,58 @@
 <div class="list_container">
   <h3 class="title_list">{{ title }}</h3>
   <div class="actions_menu">
-    <app-primary-button [button_color]="add_color">
+    <app-tertiary-button>
       <ng-container svg>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1.5em"
-          height="1.5em"
-          viewBox="0 -3 24 24"
+          width="2em"
+          height="2em"
+          viewBox="0 0 16 16"
         >
-          <rect width="24" height="24" fill="none" />
+          <rect width="16" height="16" fill="none" />
           <path
-            fill="#264323"
-            d="M17 19.22H5V7h7V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7h-2z"
-          />
-          <path
-            fill="#264323"
-            d="M19 2h-2v3h-3c.01.01 0 2 0 2h3v2.99c.01.01 2 0 2 0V7h3V5h-3zM7 9h8v2H7zm0 3v2h8v-2h-3zm0 3h8v2H7z"
+            fill="#4f4503"
+            fill-rule="evenodd"
+            d="m2.87 7.75l1.97 1.97a.75.75 0 1 1-1.06 1.06L.53 7.53L0 7l.53-.53l3.25-3.25a.75.75 0 0 1 1.06 1.06L2.87 6.25h9.88a3.25 3.25 0 0 1 0 6.5h-2a.75.75 0 0 1 0-1.5h2a1.75 1.75 0 1 0 0-3.5z"
+            clip-rule="evenodd"
           />
         </svg>
       </ng-container>
-    </app-primary-button>
-    <app-primary-button [button_color]="delete_color" text="Delete" />
+    </app-tertiary-button>
+    <app-tertiary-button [button_color]="add_color">
+      <ng-container svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="2em"
+          height="2em"
+          viewBox="0 0 24 24"
+        >
+          <rect width="24" height="24" fill="none" />
+          <path fill="#103904" d="M20 14h-6v6h-4v-6H4v-4h6V4h4v6h6z" />
+        </svg>
+      </ng-container>
+    </app-tertiary-button>
+    <app-tertiary-button [button_color]="delete_color">
+      <ng-container svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="2em"
+          height="2em"
+          viewBox="0 0 24 24"
+        >
+          <rect width="24" height="24" fill="none" />
+          <g fill="none">
+            <path
+              d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+            />
+            <path
+              fill="#5f0202"
+              d="M20 5a1 1 0 1 1 0 2h-1l-.003.071l-.933 13.071A2 2 0 0 1 16.069 22H7.93a2 2 0 0 1-1.995-1.858l-.933-13.07L5 7H4a1 1 0 0 1 0-2zm-6-3a1 1 0 1 1 0 2h-4a1 1 0 0 1 0-2z"
+            />
+          </g>
+        </svg>
+      </ng-container>
+    </app-tertiary-button>
   </div>
   <article class="summary_container">
     <app-show-resume

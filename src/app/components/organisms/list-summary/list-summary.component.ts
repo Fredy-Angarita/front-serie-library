@@ -11,6 +11,7 @@ export class ListSummaryComponent {
   summaries: Summary;
   title = TITLES.SUMMARY;
   add_color = BUTTON_COLORS.ADD_SAVE;
+  back_color = BUTTON_COLORS.PRIMARY;
   delete_color = BUTTON_COLORS.DELETE;
   constructor() {
     this.summaries = {
