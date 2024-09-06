@@ -5,6 +5,7 @@
     font-size: $size-XL;
     color: $text_primary;
     text-align: center;
+    cursor: pointer;
 }
 @media (width < 800px){
     .h1 {
