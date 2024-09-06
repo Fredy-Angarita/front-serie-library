@@ -1,6 +1,10 @@
 @import '../../../../styles/colors.scss';
 @import '../../../../styles/typography.scss';
 .container {
+    height: 80vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    margin: 1rem;
     padding: 1rem;
     border-radius: 1rem;
     background-color: $background_secondary;
@@ -29,18 +33,35 @@
             justify-content: space-between;
             gap: 0.5rem;
             margin: 1rem 0;
+            
         }
     }
     .container_p{
+        padding: 1rem;
+        text-align: justify;
         font-family: $font_secondary;
         font-size: $size-XXS;
         color: $text_primary;
         grid-column: 1/-1;
     }
+    &_progress{
+        accent-color: #8786c7;
+        text-align: center;
+        padding: 0.5rem;
+        width: 100%;
+        height: 2rem;
+    }
+    &_progress::before{
+        color: rgb(255, 255, 255);
+        font-weight: 1000;
+        content: attr(value)'%';
+    }
 }
 
 @media (width < 800px){
     .container {
+        margin: 0;
+        height: auto;
         border-radius: 0;
         .container_title{
             font-size: $size-M;
@@ -62,9 +83,10 @@
                     flex-direction: column;
                     gap: 0.5rem;
                 }
+
             }
-            
             .container_p{
+                padding: 0.5rem;
                 font-family: $font_secondary;
                 font-size: $size-XS;
                 color: $text_primary;

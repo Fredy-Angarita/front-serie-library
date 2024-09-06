@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserIconComponent } from './components/atoms/user-icon/user-icon.component';
-import {PrimaryButtonComponent} from './components/atoms/primary-button/primary-button.component';
+import { PrimaryButtonComponent } from './components/atoms/primary-button/primary-button.component';
 import { InputsComponent } from './components/atoms/inputs/inputs.component';
 import { TitlesComponent } from './components/atoms/titles/titles.component';
 import { CardSeriesComponent } from './components/molecules/card-series/card-series.component';
@@ -20,6 +20,11 @@ import { FormFieldComponent } from './components/molecules/form-field/form-field
 import { LoginFormComponent } from './components/organisms/login-form/login-form.component';
 import { RegisterFormComponent } from './components/organisms/register-form/register-form.component';
 import { FormActionsComponent } from './components/molecules/form-actions/form-actions.component';
+import { SeriesTemplateComponent } from './components/templates/series-template/series-template.component';
+import { UserFormsComponent } from './components/templates/user-forms/user-forms.component';
+import { CollectionTemplateComponent } from './components/templates/collection-template/collection-template.component';
+import { SecondaryButtonComponent } from './components/atoms/button-secondary/button-secondary.component';
+import { TertiaryButtonComponent } from './component/atoms/tertiary-button/tertiary-button.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +44,11 @@ import { FormActionsComponent } from './components/molecules/form-actions/form-a
     LoginFormComponent,
     RegisterFormComponent,
     FormActionsComponent,
+    SeriesTemplateComponent,
+    UserFormsComponent,
+    CollectionTemplateComponent,
+    SecondaryButtonComponent,
+    TertiaryButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +58,6 @@ import { FormActionsComponent } from './components/molecules/form-actions/form-a
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

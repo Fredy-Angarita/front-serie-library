@@ -16,7 +16,7 @@
     [optionPlaceholder]="email_placeholder"
     [control]="emailControl"
   />
-  <app-form-field 
+  <app-form-field
     nameInput="password"
     idInput="idPassword"
     optionType="password"
@@ -24,7 +24,7 @@
     [optionPlaceholder]="password_placeholder"
     [control]="passwordControl"
   />
-  <app-form-field 
+  <app-form-field
     nameInput="confirmation"
     idInput="idConfirmation"
     optionType="password"
@@ -36,5 +36,6 @@
     [button_text]="button_action"
     [paragraph]="paragraph"
     [action]="action"
+    (onSwitchForm)="onChangeEvent($event)"
   />
 </form>

@@ -21,8 +21,8 @@ export const QUESTION_ACTIONS = {
 }
 
 export const TITLES = {
-    LOGIN: 'Welcome Back',
-    REGISTER: 'Create An Account',
+    LOGIN: 'Welcome',
+    REGISTER: 'Create Account',
     NAVBAR: 'Your Series Library',
     SUMMARY: 'Your Summaries',
 }

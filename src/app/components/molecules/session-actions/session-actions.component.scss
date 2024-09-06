@@ -3,19 +3,16 @@
 .menu_container {
     position: relative;
     display: inline-block;
-
 }
 
 .menu {
     border-radius: 0.5rem;
-    background-color: $background_primary;
+    background-color: $background_tertiary;
     right: 0;
     position: absolute;
     width: 10rem;
     .menu_option{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        display: block;
         text-decoration: none;
         text-align: center;
         font-size: $size-M;
@@ -24,9 +21,12 @@
         border-radius: 0.5rem;
         padding: 1rem 0 1rem 0;
         &:hover{
-            background-color: $navbar_secondary;
+            background-color: $background_secondary;
             color: $text_primary;
         }
+    }
+    .logout:hover{
+        background-color: $button_cancel;
     }
 }
 

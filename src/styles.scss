@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap'); //TITLES
 @import url('https://fonts.googleapis.com/css2?family=Kadwa&display=swap');
+@import 'styles/colors.scss';
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+html, body, app-root {
+    height: 100vh;
+    width: 100vw;
+    scrollbar-width: none;
+}
+body{
+    background-image: url('/assets/background.svg');
+    background-size: cover;
+}

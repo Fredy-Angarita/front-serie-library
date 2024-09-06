@@ -9,13 +9,13 @@
     margin: 1rem 0;
     .resume_title{
         font-family: $font_primary;
-        font-size: $size-XM;
+        font-size: $size-M;
         text-align: center;
         padding: 0 1rem;
     }
 }
 .content{
-    overflow-y: scroll;
+    overflow-y: auto;
     scrollbar-width: none;
     max-height: 10rem;
     padding: 1rem;
@@ -37,7 +37,7 @@
 @media (width < 800px){
     .resume_container{
         .resume_title{
-            font-size: $size-M;
+            font-size: $size-XXS;
         }
     }
     .content{

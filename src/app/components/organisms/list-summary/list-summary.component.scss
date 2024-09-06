@@ -1,25 +1,48 @@
 @import '../../../../styles/colors.scss';
 @import '../../../../styles/typography.scss';
 
-:host{
-    display: block;
+.list_container{
     background-color: $background_secondary;
+    height: 80vh;
+    max-height: 80vh;
+    margin: 1rem;
+    overflow-y: auto;
+    scrollbar-width: none;
     border-radius: 1rem;
-    padding: 1rem;
+    padding: 0 3rem;
     .summary_container{
-        display: block;
+        overflow-y: scroll;
+        scrollbar-width: none;
     }
     .title_list{
+        padding: 1rem 0;
         font-family: $font_primary;
         font-size: $size-L;
         text-align: center;
         color: $text_primary;
     }
+    .actions_menu{
+        background-color: $background_secondary;
+        top: 0;
+        position: fixed;
+        display: flex;
+        justify-content: space-around;
+        position: sticky;
+    }
 }
 
 @media (width < 800px){
-    :host{
+    .list_container{
+        height: auto;
+        max-width: none;
+        margin: 0.5rem;
+        padding: 0 2rem;
+        .summary_container{
+           border-radius: 1rem;
+
+        }
         .title_list{
+            padding: 0.5rem 0;
             font-size: $size-M;
         } 
     }
