@@ -38,4 +38,10 @@
     [action]="action"
     redirect="/auth"
   />
+
+  <div
+    class="form_error"
+    *ngIf="hasError()">
+    <span> {{ formError() }} </span>
+  </div>
 </form>

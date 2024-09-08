@@ -1,11 +1,23 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { LABELS, PLACEHOLDERS, QUESTION_ACTIONS, TITLES, TYPE_BUTTONS } from 'src/app/data/constants/constants';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import {
+  LABELS,
+  PLACEHOLDERS,
+  QUESTION_ACTIONS,
+  TITLES,
+  TYPE_BUTTONS,
+} from 'src/app/data/constants/constants';
+import { AuthValidators } from 'src/app/validators/auth.validators';
 
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.scss']
+  styleUrls: ['./register-form.component.scss'],
 })
 export class RegisterFormComponent {
   title = TITLES.REGISTER;
@@ -21,14 +33,26 @@ export class RegisterFormComponent {
   confirmation_label = LABELS.CONFIRM_PASSWORD;
   confirmation_placeholder = PLACEHOLDERS.CONFIRM_PASSWORD;
   registerForm: FormGroup;
-  @Output() changeEvent = new EventEmitter<boolean>();
-  constructor( private fb: FormBuilder) { 
-    this.registerForm = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)],],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmation: ['',[Validators.required, Validators.minLength(8)]]
-    });
+
+  constructor(private fb: FormBuilder) {
+    this.registerForm = this.fb.group(
+      {
+        username: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(4),
+            Validators.maxLength(20),
+          ],
+        ],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(8)]],
+        confirmation: ['', [Validators.required]],
+      },
+      {
+        validators: AuthValidators.passwordMatch('password', 'confirmation'),
+      }
+    );
   }
 
   get usernameControl() {
@@ -50,7 +74,14 @@ export class RegisterFormComponent {
     }
     console.log('form works');
   }
-  onChangeEvent(booleanSwitch: boolean) {
-    this.changeEvent.emit(booleanSwitch);
+  hasError(){
+    return this.registerForm.errors?.['passwordMatch'] !== undefined;
+  }
+
+  formError(): any {
+    if (this.registerForm.hasError('passwordMatch')) {
+      return 'Las contraseñas no coinciden';
+    }
+    return null;
   }
 }
