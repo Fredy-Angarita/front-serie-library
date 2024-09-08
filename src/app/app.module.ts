@@ -31,7 +31,6 @@ import { CollectionPagesComponent } from './components/pages/collection-pages/co
 import { SeriesPagesComponent } from './components/pages/series-pages/series-pages.component';
 import { NotFoundComponent } from './components/templates/not-found/not-found.component';
 import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-found-pages.component';
-
 @NgModule({
   declarations: [
     AppComponent,
