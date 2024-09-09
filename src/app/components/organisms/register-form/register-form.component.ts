@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import {
   LABELS,
   PLACEHOLDERS,
@@ -12,6 +13,8 @@ import {
   TITLES,
   TYPE_BUTTONS,
 } from 'src/app/data/constants/constants';
+import { PostRegisterRequest } from 'src/app/data/services/auth/register/dtos/request/post.register.request';
+import { RegisterService } from 'src/app/data/services/auth/register/services/register.service';
 import { AuthValidators } from 'src/app/validators/auth.validators';
 
 @Component({
@@ -33,8 +36,11 @@ export class RegisterFormComponent {
   confirmation_label = LABELS.CONFIRM_PASSWORD;
   confirmation_placeholder = PLACEHOLDERS.CONFIRM_PASSWORD;
   registerForm: FormGroup;
-
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private service: RegisterService,
+    private router: Router
+  ) {
     this.registerForm = this.fb.group(
       {
         username: [
@@ -72,9 +78,21 @@ export class RegisterFormComponent {
     if (this.registerForm.invalid) {
       return;
     }
-    console.log('form works');
+    this.register();
   }
-  hasError(){
+
+  register() {
+    const { username, email, password } = this.registerForm.value;
+    this.service
+      .register({ username, email, password } as PostRegisterRequest)
+      .subscribe({
+        next: () =>{
+          this.router.navigate(['/auth']);
+        },
+      });
+  }
+
+  hasError() {
     return this.registerForm.errors?.['passwordMatch'] !== undefined;
   }
 
