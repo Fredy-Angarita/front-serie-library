@@ -10,10 +10,5 @@ export class FormActionsComponent {
   @Input() button_text!: string;
   @Input() paragraph !: string;
   @Input() action !: string;
-  @Output() onSwitchForm = new EventEmitter<boolean>();
-
-  switchForm(){
-    this.changeForm = !this.changeForm;
-    this.onSwitchForm.emit(this.changeForm);
-  }
+  @Input() redirect !: string;
 }

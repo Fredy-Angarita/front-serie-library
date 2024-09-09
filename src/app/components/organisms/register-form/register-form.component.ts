@@ -1,11 +1,26 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { LABELS, PLACEHOLDERS, QUESTION_ACTIONS, TITLES, TYPE_BUTTONS } from 'src/app/data/constants/constants';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import {
+  LABELS,
+  PLACEHOLDERS,
+  QUESTION_ACTIONS,
+  TITLES,
+  TYPE_BUTTONS,
+} from 'src/app/data/constants/constants';
+import { PostRegisterRequest } from 'src/app/data/services/auth/register/dtos/request/post.register.request';
+import { RegisterService } from 'src/app/data/services/auth/register/services/register.service';
+import { AuthValidators } from 'src/app/validators/auth.validators';
 
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.scss']
+  styleUrls: ['./register-form.component.scss'],
 })
 export class RegisterFormComponent {
   title = TITLES.REGISTER;
@@ -21,14 +36,29 @@ export class RegisterFormComponent {
   confirmation_label = LABELS.CONFIRM_PASSWORD;
   confirmation_placeholder = PLACEHOLDERS.CONFIRM_PASSWORD;
   registerForm: FormGroup;
-  @Output() changeEvent = new EventEmitter<boolean>();
-  constructor( private fb: FormBuilder) { 
-    this.registerForm = this.fb.group({
-      username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)],],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmation: ['',[Validators.required, Validators.minLength(8)]]
-    });
+  constructor(
+    private fb: FormBuilder,
+    private service: RegisterService,
+    private router: Router
+  ) {
+    this.registerForm = this.fb.group(
+      {
+        username: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(4),
+            Validators.maxLength(20),
+          ],
+        ],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(8)]],
+        confirmation: ['', [Validators.required]],
+      },
+      {
+        validators: AuthValidators.passwordMatch('password', 'confirmation'),
+      }
+    );
   }
 
   get usernameControl() {
@@ -48,9 +78,28 @@ export class RegisterFormComponent {
     if (this.registerForm.invalid) {
       return;
     }
-    console.log('form works');
+    this.register();
   }
-  onChangeEvent(booleanSwitch: boolean) {
-    this.changeEvent.emit(booleanSwitch);
+
+  register() {
+    const { username, email, password } = this.registerForm.value;
+    this.service
+      .register({ username, email, password } as PostRegisterRequest)
+      .subscribe({
+        next: () =>{
+          this.router.navigate(['/auth']);
+        },
+      });
+  }
+
+  hasError() {
+    return this.registerForm.errors?.['passwordMatch'] !== undefined;
+  }
+
+  formError(): any {
+    if (this.registerForm.hasError('passwordMatch')) {
+      return 'Las contraseñas no coinciden';
+    }
+    return null;
   }
 }

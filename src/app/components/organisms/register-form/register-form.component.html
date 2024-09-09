@@ -36,6 +36,12 @@
     [button_text]="button_action"
     [paragraph]="paragraph"
     [action]="action"
-    (onSwitchForm)="onChangeEvent($event)"
+    redirect="/auth"
   />
+
+  <div
+    class="form_error"
+    *ngIf="hasError()">
+    <span> {{ formError() }} </span>
+  </div>
 </form>

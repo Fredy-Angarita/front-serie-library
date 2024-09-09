@@ -5,10 +5,16 @@ import { RegisterPagesComponent } from './components/pages/register-pages/regist
 import { CollectionPagesComponent } from './components/pages/collection-pages/collection-pages.component';
 import { SeriesPagesComponent } from './components/pages/series-pages/series-pages.component';
 import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-found-pages.component';
+import { UserFormsComponent } from './components/templates/user-forms/user-forms.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
- {path: 'login' , component: LoginPagesComponent},
- {path: 'register' , component: RegisterPagesComponent},
+ {path: 'auth', component: AppComponent,
+  children: [
+    {path: '' , component: LoginPagesComponent},
+    {path: 'register' , component: RegisterPagesComponent},
+  ],
+ },
  {path: 'collection' , component: CollectionPagesComponent},
  {path: 'series' , component: SeriesPagesComponent},
  {path: '**' , component: NotFoundPagesComponent},

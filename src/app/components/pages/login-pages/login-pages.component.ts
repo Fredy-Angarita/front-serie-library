@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-pages.component.scss']
 })
 export class LoginPagesComponent {
-
+  constructor () {}
 }
