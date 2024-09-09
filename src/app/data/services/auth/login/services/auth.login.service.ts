@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthLoginService {
   private apiURL = `${environment.apiBase}/auth/login`;
-  private access_token = '';
+  private tokenKey = 'token';
   constructor(private http: HttpClient) { }
 
   login (loginData: PostLoginRequest): Observable<PostLoginResponse> {
@@ -18,17 +18,17 @@ export class AuthLoginService {
   }
 
   isAuthenticated() {
-    return this.getAccessToken().length > 0;
+    return this.getAccessToken().length !== undefined;
   }
 
   getAccessToken(): string {
-    return localStorage.getItem(this.access_token) || '';
+    return localStorage.getItem(this.tokenKey) || '';
   }
   saveAccessToken(token: string){
-    localStorage.setItem(this.access_token, token);
+    localStorage.setItem(this.tokenKey, token);
   }
 
   logout(){
-    localStorage.removeItem(this.access_token);
+    localStorage.removeItem(this.tokenKey);
   }
 }
