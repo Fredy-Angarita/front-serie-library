@@ -100,13 +100,13 @@ export class RegisterFormComponent {
     return this.registerForm.errors?.['passwordMatch'] !== undefined || this.serverError !== null;
   }
 
-  formError(): any {
+  formError(): string {
     if (this.registerForm.hasError('passwordMatch')) {
       return 'Las contraseñas no coinciden';
     }
     if (this.serverError !== null) {
       return this.serverError;
     }
-    return null;
+    return '';
   }
 }

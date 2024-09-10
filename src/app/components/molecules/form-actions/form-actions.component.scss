@@ -19,4 +19,15 @@
         text-decoration: underline;
         font-weight: bold;
     }
+    .form_error{
+        background-color: $button_cancel;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        span{
+            font-weight: bold;
+            font-size: $size-XXS;
+            color: $text_primary;
+        }
+    }
 }
