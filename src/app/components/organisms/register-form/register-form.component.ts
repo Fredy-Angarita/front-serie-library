@@ -15,7 +15,7 @@ import {
 } from 'src/app/data/constants/constants';
 import { PostRegisterRequest } from 'src/app/data/services/auth/register/dtos/request/post.register.request';
 import { RegisterService } from 'src/app/data/services/auth/register/services/register.service';
-import { AuthValidators } from 'src/app/validators/auth.validators';
+import { AuthValidators } from 'src/app/shared/validators/auth.validators';
 
 @Component({
   selector: 'app-register-form',
@@ -36,6 +36,7 @@ export class RegisterFormComponent {
   confirmation_label = LABELS.CONFIRM_PASSWORD;
   confirmation_placeholder = PLACEHOLDERS.CONFIRM_PASSWORD;
   registerForm: FormGroup;
+  serverError: string | null = null;
   constructor(
     private fb: FormBuilder,
     private service: RegisterService,
@@ -86,19 +87,25 @@ export class RegisterFormComponent {
     this.service
       .register({ username, email, password } as PostRegisterRequest)
       .subscribe({
-        next: () =>{
+        next: () => {
           this.router.navigate(['/auth']);
+        },
+        error: (error) => {
+          this.serverError = error.error.message;
         },
       });
   }
 
-  hasError() {
-    return this.registerForm.errors?.['passwordMatch'] !== undefined;
+  hasError() : boolean{
+    return this.registerForm.errors?.['passwordMatch'] !== undefined || this.serverError !== null;
   }
 
   formError(): any {
     if (this.registerForm.hasError('passwordMatch')) {
       return 'Las contraseñas no coinciden';
+    }
+    if (this.serverError !== null) {
+      return this.serverError;
     }
     return null;
   }

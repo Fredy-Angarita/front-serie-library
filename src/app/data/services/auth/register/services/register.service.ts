@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { PostRegisterRequest } from '../dtos/request/post.register.request';
 import { Observable } from 'rxjs';
 import { PostRegisterResponse } from '../dtos/response/post.register.response';
-import { environment } from 'src/environments/env.develop';
+import { environment } from 'src/app/shared/environments/env.develop';
 
 @Injectable({
   providedIn: 'root',

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/env.develop';
+import { environment } from 'src/app/shared/environments/env.develop';
 import { PostLoginRequest } from '../dtos/request/post.login.request';
 import { Observable } from 'rxjs';
 import { PostLoginResponse } from '../dtos/response/post.login.response.interface';
