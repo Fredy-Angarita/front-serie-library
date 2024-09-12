@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetSeriesResponse } from 'src/app/data/services/series/dtos/response/get.series.interface';
+import { GetCollectionResponse } from 'src/app/data/services/series/dtos/response/get.collection.interface'; 
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 
 @Component({
@@ -8,12 +8,12 @@ import { SeriesService } from 'src/app/data/services/series/services/series.serv
   styleUrls: ['./collection-template.component.scss'],
 })
 export class CollectionTemplateComponent implements OnInit{
-  data : GetSeriesResponse[] = [];
+  data : GetCollectionResponse[] = [];
   private series = this.data;
   constructor(private seriesService: SeriesService) {
   }
   ngOnInit(): void {
-    this.seriesService.getSeries().subscribe((series) => {
+    this.seriesService.getCollection().subscribe((series) => {
       this.data = series;
     });
   }

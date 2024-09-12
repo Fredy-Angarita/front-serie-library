@@ -2,11 +2,11 @@
   <h2 class="container_title">{{ series.title }}</h2>
   <div class="container_content">
     <div class="container_img">
-      <img [src]="series.series_img" alt="" />
+      <img [src]="series.thumbnail" alt="" />
     </div>
     <div class="container_data">
       <div class="container_badges">
-        <app-show-info [data]="series.chapters">
+        <app-show-info [data]="series.totalChapters">
           <ng-container subtitle>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@
             </svg>
           </ng-container>
         </app-show-info>
-        <app-show-info subtitle="Date" [data]="series.date">
+        <app-show-info [data]="series.publicationDate">
           <ng-container subtitle>
             <svg
               xmlns="http://www.w3.org/2000/svg"
