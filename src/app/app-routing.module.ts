@@ -17,7 +17,7 @@ const routes: Routes = [
   ],
  },
  {path: 'collection' , component: CollectionPagesComponent, canActivate: [authGuard]},
- {path: 'series' , component: SeriesPagesComponent, canActivate: [authGuard]},
+ {path: 'series/:id' , component: SeriesPagesComponent, canActivate: [authGuard]},
  {path: '**' , component: NotFoundPagesComponent, canActivate: [authGuard]},
 ];
 
