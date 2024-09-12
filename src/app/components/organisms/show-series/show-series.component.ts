@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ShowSeries } from 'src/app/data/interfaces/show-series.interface';
 import { GetSeriesResponse } from 'src/app/data/services/series/dtos/response/get.series.interface';
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 
@@ -20,11 +19,10 @@ export class ShowSeriesComponent implements OnInit {
   };
   id!: string | null;
   details: boolean = false;
-  @Input() total: number = 0;
-  @Input() progress: number = 0;
+  progress: number = 0;
   constructor(
     private router: ActivatedRoute,
-    private seriesService: SeriesService
+    private seriesService: SeriesService,
   ) {}
   ngOnInit(): void {
     this.id = this.router.snapshot.paramMap.get('id');
