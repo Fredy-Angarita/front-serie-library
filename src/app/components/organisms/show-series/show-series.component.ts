@@ -30,7 +30,6 @@ export class ShowSeriesComponent implements OnInit {
       this.seriesService.getOneSeries(this.id).subscribe({
         next: series =>{
           this.series = series;
-          console.log(this.series);
         },
       });
     }
