@@ -55,25 +55,10 @@
     </app-tertiary-button>
   </div>
   <article class="summary_container">
-    <app-show-resume
-      [date]="summaries.date"
-      [chapter]="summaries.chapter"
-      [resume]="summaries.summary"
-    />
-    <app-show-resume
-      [date]="summaries.date"
-      [chapter]="summaries.chapter"
-      [resume]="summaries.summary"
-    />
-    <app-show-resume
-      [date]="summaries.date"
-      [chapter]="summaries.chapter"
-      [resume]="summaries.summary"
-    />
-    <app-show-resume
-      [date]="summaries.date"
-      [chapter]="summaries.chapter"
-      [resume]="summaries.summary"
+    <app-show-resume *ngFor="let summary of summaries"
+      [date]="summary.dateCreated"
+      [chapter]="summary.chapter"
+      [resume]="summary.resume"
     />
   </article>
 </div>

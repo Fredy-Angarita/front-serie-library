@@ -8,11 +8,11 @@ import { GetProgressResponse } from '../dtos/response/get.progress.interface';
   providedIn: 'root'
 })
 export class ProgressService {
-  url = environment.apiBase + '/progress';
+  url = environment.apiBase + '/progress/';
   constructor(private http: HttpClient) { }
 
-  getProgress(id: string): Observable<GetProgressResponse>{
-    return this.http.get<GetProgressResponse> (this.url + '/' + id);
+  getProgress(id: string): Observable<GetProgressResponse[]>{
+    return this.http.get<GetProgressResponse[]> (this.url + id);
   }
 
 }
