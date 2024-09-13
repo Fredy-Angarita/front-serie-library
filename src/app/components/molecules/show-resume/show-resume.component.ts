@@ -9,7 +9,7 @@ import { BUTTON_COLORS } from 'src/app/data/constants/constants';
 export class ShowResumeComponent {
   open_state = false;
 
-  @Input() chapter!: string;
+  @Input() chapter!: number;
   @Input() date!: string;
   @Input() resume!: string;
 
