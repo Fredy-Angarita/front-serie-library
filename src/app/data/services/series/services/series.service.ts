@@ -13,7 +13,7 @@ export class SeriesService {
   constructor(private http: HttpClient) { }
 
   getCollection() : Observable<GetCollectionResponse[]> {
-    return this.http.get<GetCollectionResponse[]>(`${this.url}/user`);
+    return this.http.get<GetCollectionResponse[]>(`${this.url}/collection`);
   }
 
   getOneSeries(id: string) : Observable<GetSeriesResponse> {
