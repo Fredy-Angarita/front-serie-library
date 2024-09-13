@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BUTTON_COLORS, TITLES, TYPE_BUTTONS } from 'src/app/data/constants/constants';
-import { Summary } from 'src/app/data/interfaces/summary.interface';
+import { BUTTON_COLORS, TITLES } from 'src/app/data/constants/constants';
 import { GetProgressResponse } from 'src/app/data/services/progress/dtos/response/get.progress.interface';
 import { ProgressService } from 'src/app/data/services/progress/services/progress.service';
 
