@@ -8,12 +8,14 @@ import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-f
 import { UserFormsComponent } from './components/templates/user-forms/user-forms.component';
 import { AppComponent } from './app.component';
 import { authGuard } from './data/services/auth/login/guards/auth.guard';
+import { ProgressFormComponent } from './components/organisms/progress-form/progress-form.component';
 
 const routes: Routes = [
  {path: 'auth', component: AppComponent,
   children: [
     {path: '' , component: LoginPagesComponent},
     {path: 'register' , component: RegisterPagesComponent},
+    {path: 'test', component: ProgressFormComponent}
   ],
  },
  {path: 'collection' , component: CollectionPagesComponent, canActivate: [authGuard]},
