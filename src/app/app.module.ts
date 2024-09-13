@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +31,7 @@ import { CollectionPagesComponent } from './components/pages/collection-pages/co
 import { SeriesPagesComponent } from './components/pages/series-pages/series-pages.component';
 import { NotFoundComponent } from './components/templates/not-found/not-found.component';
 import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-found-pages.component';
+import { TokenInterceptor } from './data/services/auth/login/interceptors/token.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,7 +69,13 @@ import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-f
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -7,6 +7,7 @@ import { SeriesPagesComponent } from './components/pages/series-pages/series-pag
 import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-found-pages.component';
 import { UserFormsComponent } from './components/templates/user-forms/user-forms.component';
 import { AppComponent } from './app.component';
+import { authGuard } from './data/services/auth/login/guards/auth.guard';
 
 const routes: Routes = [
  {path: 'auth', component: AppComponent,
@@ -15,9 +16,9 @@ const routes: Routes = [
     {path: 'register' , component: RegisterPagesComponent},
   ],
  },
- {path: 'collection' , component: CollectionPagesComponent},
- {path: 'series' , component: SeriesPagesComponent},
- {path: '**' , component: NotFoundPagesComponent},
+ {path: 'collection' , component: CollectionPagesComponent, canActivate: [authGuard]},
+ {path: 'series/:id' , component: SeriesPagesComponent, canActivate: [authGuard]},
+ {path: '**' , component: NotFoundPagesComponent, canActivate: [authGuard]},
 ];
 
 @NgModule({

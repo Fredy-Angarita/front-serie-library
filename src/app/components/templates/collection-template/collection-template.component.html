@@ -5,9 +5,10 @@
     </div>
     <section class="collection">
         <app-card-series
-        *ngFor="let item of series"
-        [img]="item.img"
-        [series_title]="item.series_title"
+        *ngFor="let item of data"
+        [id]="item.id"
+        [img]="item.thumbnail"
+        [series_title]="item.title"
         />
     </section>
 </div>

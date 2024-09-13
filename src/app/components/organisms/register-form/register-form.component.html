@@ -37,11 +37,7 @@
     [paragraph]="paragraph"
     [action]="action"
     redirect="/auth"
+    [hasError]= hasError()
+    [error]= formError()
   />
-
-  <div
-    class="form_error"
-    *ngIf="hasError()">
-    <span> {{ formError() }} </span>
-  </div>
 </form>

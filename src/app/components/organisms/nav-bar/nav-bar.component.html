@@ -1,5 +1,5 @@
 <app-titles  [title]="webTitle" routerLink="/collection" />
 <div class="container_navbar">  
   <app-primary-button [text]="button_text" [button_color]="color_button" />
-  <app-session-actions />
+  <app-session-actions (isLogout)="logoutHandler()"/>
 </div>
