@@ -1,0 +1,11 @@
+<div class="progress_container">
+    <label [for]="controlID">{{ label }}</label>
+    <textarea
+      [id]="controlID"
+      (input)="onInput($event)"
+      [formControl]="control"
+      [placeholder]="placeholder"
+    ></textarea>
+    <div class="progress_error" *ngIf="control.invalid && control.touched">
+      <span>{{ getErrorMessage() }}</span>
+</div>
