@@ -9,6 +9,7 @@ import { UserFormsComponent } from './components/templates/user-forms/user-forms
 import { AppComponent } from './app.component';
 import { authGuard } from './data/services/auth/login/guards/auth.guard';
 import { ProgressFormComponent } from './components/organisms/progress-form/progress-form.component';
+import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
 
 const routes: Routes = [
  {path: 'auth', component: AppComponent,
@@ -19,6 +20,7 @@ const routes: Routes = [
   ],
  },
  {path: 'collection' , component: CollectionPagesComponent, canActivate: [authGuard]},
+ {path: 'library' , component: LibraryPagesComponent, canActivate: [authGuard]},
  {path: 'series/:id' , component: SeriesPagesComponent, canActivate: [authGuard]},
  {path: '**' , component: NotFoundPagesComponent, canActivate: [authGuard]},
 ];

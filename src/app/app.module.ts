@@ -34,6 +34,8 @@ import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-f
 import { TokenInterceptor } from './data/services/auth/login/interceptors/token.interceptor';
 import { InputSelectComponent } from './components/atoms/input-select/input-select.component';
 import { ProgressFormComponent } from './components/organisms/progress-form/progress-form.component';
+import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
+import { TextAreaComponent } from './components/atoms/text-area/text-area.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,6 +67,8 @@ import { ProgressFormComponent } from './components/organisms/progress-form/prog
     NotFoundPagesComponent,
     InputSelectComponent,
     ProgressFormComponent,
+    LibraryPagesComponent,
+    TextAreaComponent,
   ],
   imports: [
     BrowserModule,

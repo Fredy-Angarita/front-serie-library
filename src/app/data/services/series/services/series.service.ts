@@ -12,6 +12,10 @@ export class SeriesService {
   private url = environment.apiBase + '/series';
   constructor(private http: HttpClient) { }
 
+  getAllSeries() : Observable<GetSeriesResponse[]> {
+    return this.http.get<GetSeriesResponse[]>(this.url);
+  }
+
   getCollection() : Observable<GetCollectionResponse[]> {
     return this.http.get<GetCollectionResponse[]>(`${this.url}/collection`);
   }

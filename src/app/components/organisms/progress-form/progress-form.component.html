@@ -1,3 +1,16 @@
 <form  (ngSubmit)="onSubmit()">
-  <app-primary-button />
+  <app-form-field
+    idInput="idChapter"
+    optionType="number"
+    label_text="Chapter"
+    optionPlaceholder="1"
+    [control]="chapterControl"
+  />
+  <app-text-area
+    id="idTextArea"
+    label="add your summary"
+    placeholder="Type your summary here"
+    [control]="summaryControl"
+  />
+  <app-form-actions button_text="Save" [hasError]="hasError()" action="Cancel" redirect="/library"/>
 </form>
