@@ -36,6 +36,7 @@ import { InputSelectComponent } from './components/atoms/input-select/input-sele
 import { ProgressFormComponent } from './components/organisms/progress-form/progress-form.component';
 import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
 import { TextAreaComponent } from './components/molecules/text-area/text-area.component';
+import { ShowErrorsComponent } from './components/molecules/show-errors/show-errors.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +70,7 @@ import { TextAreaComponent } from './components/molecules/text-area/text-area.co
     ProgressFormComponent,
     LibraryPagesComponent,
     TextAreaComponent,
+    ShowErrorsComponent,
   ],
   imports: [
     BrowserModule,
