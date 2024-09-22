@@ -1,0 +1,23 @@
+@import '../../../../styles/colors.scss';
+@import'../../../../styles/typography.scss';
+.progress_container{
+    padding: 0.5rem;
+    .progress_label{
+        font-family: $font_secondary;
+        font-size: $size-XXS;
+        color: $text_primary;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+    }
+    .progress_textarea{
+        font-family: $font_secondary;
+        background-color: $background_tertiary;
+        resize: none;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        width: 100%;
+        scrollbar-width: none;
+    }
+
+}

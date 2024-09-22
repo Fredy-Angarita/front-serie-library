@@ -9,8 +9,10 @@ import { FormControl } from '@angular/forms';
 export class TextAreaComponent {
   @Input() label: string = '';
   @Input() placeholder: string = '';
-  @Input() controlID: string = '';
+  @Input() idInput: string = '';
   @Input() control!: FormControl;
+  @Input() nameTextArea: string = '';
+  @Input() rows: number = 5;
 
   onInput(event: any) {
     const target = event.target as HTMLTextAreaElement;
