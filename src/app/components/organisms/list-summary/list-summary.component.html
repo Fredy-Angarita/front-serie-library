@@ -1,5 +1,12 @@
 <div class="list_container">
-  <h3 class="title_list">{{ title }}</h3>
+  <article class="summary_container">
+    <h3 class="title_list">{{ title }}</h3>
+    <app-show-resume *ngFor="let summary of summaries"
+      [date]="summary.dateCreated"
+      [chapter]="summary.chapter"
+      [resume]="summary.resume"
+    />
+  </article>
   <div class="actions_menu">
     <app-tertiary-button>
       <ng-container svg>
@@ -54,11 +61,4 @@
       </ng-container>
     </app-tertiary-button>
   </div>
-  <article class="summary_container">
-    <app-show-resume *ngFor="let summary of summaries"
-      [date]="summary.dateCreated"
-      [chapter]="summary.chapter"
-      [resume]="summary.resume"
-    />
-  </article>
 </div>

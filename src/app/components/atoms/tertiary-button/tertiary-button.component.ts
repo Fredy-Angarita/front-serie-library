@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-tertiary-button',
@@ -7,4 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class TertiaryButtonComponent {
   @Input() button_color !: string;
+  @Output() button_click = new EventEmitter<void>();
+
+  onClickEvent(){
+    this.button_click.emit();
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GetCollectionResponse } from 'src/app/data/services/series/dtos/response/get.collection.interface'; 
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 
@@ -7,16 +7,9 @@ import { SeriesService } from 'src/app/data/services/series/services/series.serv
   templateUrl: './collection-template.component.html',
   styleUrls: ['./collection-template.component.scss'],
 })
-export class CollectionTemplateComponent implements OnInit{
-  data : GetCollectionResponse[] = [];
+export class CollectionTemplateComponent{
+  @Input() data : GetCollectionResponse[] = [];
   private series = this.data;
-  constructor(private seriesService: SeriesService) {
-  }
-  ngOnInit(): void {
-    this.seriesService.getCollection().subscribe((series) => {
-      this.data = series;
-    });
-  }
 
   searchSeries(event: KeyboardEvent) {
     /*   const input = event.target as HTMLInputElement;
@@ -24,8 +17,5 @@ export class CollectionTemplateComponent implements OnInit{
   if(input.value === ''){
     this.series = this.data;
   } */
-  }
-  redirect() {
-    console.log('redirect');
   }
 }

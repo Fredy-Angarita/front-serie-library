@@ -1,7 +1,6 @@
 <form class="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <app-titles [title]="title" />
   <app-form-field
-    nameInput="userEmail"
     idInput="idEmail"
     optionType="email"
     [label_text]="email_label"
@@ -10,7 +9,7 @@
   />
   <app-form-field
     optionType="password"
-    id="password"
+    idInput="password"
     [label_text]="password_label"
     [optionPlaceholder]="password_placeholder"
     [control]="passwordControl"
