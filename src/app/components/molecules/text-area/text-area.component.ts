@@ -13,6 +13,7 @@ export class TextAreaComponent {
   @Input() control!: FormControl;
   @Input() nameTextArea: string = '';
   @Input() rows: number = 5;
+  @Input() cols: number = 103;
 
   onInput(event: any) {
     const target = event.target as HTMLTextAreaElement;
@@ -22,7 +23,7 @@ export class TextAreaComponent {
   getErrorMessage(): string {
     const errors = this.control.errors;
     if (errors?.['required']) {
-      return 'This field is required';
+      return 'Este campo es requerido';
     }
     return '';
   }

@@ -8,8 +8,9 @@
     (input)="onInput($event)"
     [placeholder]="placeholder"
     [rows]="rows"
+    [cols]="cols"
   ></textarea>
-  <div class="progress_error" *ngIf="control.invalid && control.touched">
-    <span>{{ getErrorMessage() }}</span>
-  </div>
+  <app-show-errors
+    [message_error]="getErrorMessage()"
+    *ngIf="control.invalid && control.touched"/>
 </div>
