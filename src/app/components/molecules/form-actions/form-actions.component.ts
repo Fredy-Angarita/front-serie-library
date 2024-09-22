@@ -6,8 +6,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./form-actions.component.scss']
 })
 export class FormActionsComponent {
-  @Input() hasError: boolean = true;
-  @Input() error !: string;
   @Input() button_text!: string;
   @Input() paragraph !: string;
   @Input() action !: string;
