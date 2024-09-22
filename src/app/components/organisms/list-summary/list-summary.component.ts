@@ -10,6 +10,7 @@ import { ProgressService } from 'src/app/data/services/progress/services/progres
   styleUrls: ['./list-summary.component.scss'],
 })
 export class ListSummaryComponent implements OnInit {
+  clickedAdd: boolean = false;
   summaries: GetProgressResponse[] = [];
   title = TITLES.SUMMARY;
   add_color = BUTTON_COLORS.ADD_SAVE;
@@ -25,5 +26,9 @@ export class ListSummaryComponent implements OnInit {
         this.summaries = progress;
       },
     });
+  }
+
+  showForm(){
+    this.clickedAdd = !this.clickedAdd;
   }
 }

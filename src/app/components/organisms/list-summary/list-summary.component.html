@@ -1,11 +1,15 @@
 <div class="list_container">
   <article class="summary_container">
     <h3 class="title_list">{{ title }}</h3>
-    <app-show-resume *ngFor="let summary of summaries"
-      [date]="summary.dateCreated"
-      [chapter]="summary.chapter"
-      [resume]="summary.resume"
-    />
+
+    <div class="resumen_container" *ngIf="!clickedAdd">
+      <app-show-resume *ngFor="let summary of summaries"
+        [date]="summary.dateCreated"
+        [chapter]="summary.chapter"
+        [resume]="summary.resume"
+      />
+    </div>
+    <app-progress-form *ngIf="clickedAdd" />
   </article>
   <div class="actions_menu">
     <app-tertiary-button>
@@ -26,7 +30,7 @@
         </svg>
       </ng-container>
     </app-tertiary-button>
-    <app-tertiary-button [button_color]="add_color">
+    <app-tertiary-button [button_color]="add_color" (button_click)="showForm()" >
       <ng-container svg>
         <svg
           xmlns="http://www.w3.org/2000/svg"
