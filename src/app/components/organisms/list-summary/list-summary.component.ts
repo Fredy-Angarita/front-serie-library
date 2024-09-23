@@ -10,8 +10,10 @@ import { ProgressService } from 'src/app/data/services/progress/services/progres
   styleUrls: ['./list-summary.component.scss'],
 })
 export class ListSummaryComponent implements OnInit {
+  clickedEdit: boolean = false;
   clickedAdd: boolean = false;
   summaries: GetProgressResponse[] = [];
+  editProgress: GetProgressResponse | undefined;
   title = TITLES.SUMMARY;
   add_color = BUTTON_COLORS.ADD_SAVE;
   back_color = BUTTON_COLORS.PRIMARY;
@@ -30,5 +32,13 @@ export class ListSummaryComponent implements OnInit {
 
   showForm(){
     this.clickedAdd = !this.clickedAdd;
+  }
+  openModal(){
+    this.clickedEdit = !this.clickedEdit;
+  }
+  editSummary(event: GetProgressResponse){
+    this.editProgress = event;
+    console.log(this.editProgress.chapter);
+    this.openModal();
   }
 }

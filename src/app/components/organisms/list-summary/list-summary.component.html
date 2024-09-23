@@ -1,12 +1,9 @@
 <div class="list_container">
   <article class="summary_container">
     <h3 class="title_list">{{ title }}</h3>
-
     <div class="resumen_container" *ngIf="!clickedAdd">
-      <app-show-resume *ngFor="let summary of summaries"
-        [date]="summary.dateCreated"
-        [chapter]="summary.chapter"
-        [resume]="summary.resume"
+      <app-show-resume (edit)="editSummary($event)" *ngFor="let summary of summaries"
+        [progress]="summary"
       />
     </div>
     <app-progress-form *ngIf="clickedAdd" />
@@ -66,3 +63,8 @@
     </app-tertiary-button>
   </div>
 </div>
+<app-modal title="Edit Summary" *ngIf="clickedEdit" (close)="openModal()">
+  <ng-container modal_content>
+    <app-progress-form [objectEdit]="editProgress" />
+  </ng-container>
+</app-modal>
