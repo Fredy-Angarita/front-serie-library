@@ -37,6 +37,7 @@ import { ProgressFormComponent } from './components/organisms/progress-form/prog
 import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
 import { TextAreaComponent } from './components/molecules/text-area/text-area.component';
 import { ShowErrorsComponent } from './components/molecules/show-errors/show-errors.component';
+import { ModalComponent } from './components/molecules/modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,6 +72,7 @@ import { ShowErrorsComponent } from './components/molecules/show-errors/show-err
     LibraryPagesComponent,
     TextAreaComponent,
     ShowErrorsComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
