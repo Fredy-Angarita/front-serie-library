@@ -2,7 +2,7 @@
   <div class="content_container">
     <div class="header">
       <h2 class="content_title">{{ title }}</h2>
-      <app-tertiary-button button_color="transparent">
+      <app-tertiary-button button_color="transparent" (button_click)="closeModal()" >
         <ng-container svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
