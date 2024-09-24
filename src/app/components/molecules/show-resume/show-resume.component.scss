@@ -1,16 +1,18 @@
 @import '../../../../styles/colors.scss';
 @import '../../../../styles/typography.scss';
 .resume_container{
-    background-color: $background_quaternary;
+    background-color: $background_primary;
     display: flex;
+    cursor: pointer;
     justify-content: space-between;
     border-radius: 5rem;
     align-items: center;
+    padding: 0 1rem;
     margin: 1rem 0;
     .resume_title{
+        width: 100%;
         font-family: $font_primary;
         font-size: $size-M;
-        text-align: center;
         padding: 0 1rem;
     }
 }

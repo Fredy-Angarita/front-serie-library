@@ -1,19 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { GetProgressResponse } from 'src/app/data/services/progress/dtos/response/get.progress.interface';
 
 @Component({
   selector: 'app-progress-form',
   templateUrl: './progress-form.component.html',
   styleUrls: ['./progress-form.component.scss']
 })
-export class ProgressFormComponent {
+export class ProgressFormComponent implements OnInit {
+  @Input() objectEdit: GetProgressResponse | undefined;
   progressForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
-    this.progressForm = this.fb.group({
-      chapter: ['', [Validators.required]],
-      summary: ['', [Validators.required]],
-    })
+      this.progressForm = this.fb.group({
+        chapter: ['', [Validators.required]],
+        summary: ['', [Validators.required]],
+      })
+  }
+  ngOnInit(): void {
+    if(this.objectEdit){
+      this.progressForm = this.fb.group({
+        chapter: [{value: this.objectEdit.chapter, disabled: true}, [Validators.required]],
+        summary: [this.objectEdit.resume, [Validators.required]],
+      })
+    }
   }
 
   hasError(){

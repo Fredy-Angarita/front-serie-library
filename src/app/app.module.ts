@@ -35,7 +35,9 @@ import { TokenInterceptor } from './data/services/auth/login/interceptors/token.
 import { InputSelectComponent } from './components/atoms/input-select/input-select.component';
 import { ProgressFormComponent } from './components/organisms/progress-form/progress-form.component';
 import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
-import { TextAreaComponent } from './components/atoms/text-area/text-area.component';
+import { TextAreaComponent } from './components/molecules/text-area/text-area.component';
+import { ShowErrorsComponent } from './components/molecules/show-errors/show-errors.component';
+import { ModalComponent } from './components/molecules/modal/modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +71,8 @@ import { TextAreaComponent } from './components/atoms/text-area/text-area.compon
     ProgressFormComponent,
     LibraryPagesComponent,
     TextAreaComponent,
+    ShowErrorsComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

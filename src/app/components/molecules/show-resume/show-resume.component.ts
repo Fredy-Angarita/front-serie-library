@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BUTTON_COLORS } from 'src/app/data/constants/constants';
+import { GetProgressResponse } from 'src/app/data/services/progress/dtos/response/get.progress.interface';
 
 @Component({
   selector: 'app-show-resume',
@@ -7,13 +8,14 @@ import { BUTTON_COLORS } from 'src/app/data/constants/constants';
   styleUrls: ['./show-resume.component.scss']
 })
 export class ShowResumeComponent {
+  @Input() progress!: GetProgressResponse;
+  @Output() edit = new EventEmitter<GetProgressResponse>();
   open_state = false;
-
-  @Input() chapter!: number;
-  @Input() date!: string;
-  @Input() resume!: string;
 
   openResume(){
     this.open_state = !this.open_state;
+  }
+  openModal(){
+    this.edit.emit(this.progress);
   }
 }
