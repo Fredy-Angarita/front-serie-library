@@ -1,14 +1,12 @@
 @import '../../../../styles/colors.scss';
 @import '../../../../styles/typography.scss';
 .tertiary_button{
-    background-color: $button_primary;
+    display: flex;
+    background-color: transparent;
     border: none;
-    padding: 0 0.1rem;
+    padding: 0.3rem;
     border-radius: 1rem;
     cursor: pointer;
-    svg{
-        display: block;
-    }
 }
 
 @media (width < 800px){

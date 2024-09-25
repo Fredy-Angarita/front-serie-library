@@ -17,8 +17,8 @@ export class AuthLoginService {
     return this.http.post<PostLoginResponse>(this.apiURL, loginData);
   }
 
-  isAuthenticated() {
-    return this.getAccessToken().length !== undefined;
+  isAuthenticated(): boolean {
+    return this.getAccessToken().length > 0;
   }
 
   getAccessToken(): string {

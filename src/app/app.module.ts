@@ -38,6 +38,7 @@ import { LibraryPagesComponent } from './components/pages/library-pages/library-
 import { TextAreaComponent } from './components/molecules/text-area/text-area.component';
 import { ShowErrorsComponent } from './components/molecules/show-errors/show-errors.component';
 import { ModalComponent } from './components/molecules/modal/modal.component';
+import { ActionsMenuComponent } from './components/molecules/actions-menu/actions-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +74,7 @@ import { ModalComponent } from './components/molecules/modal/modal.component';
     TextAreaComponent,
     ShowErrorsComponent,
     ModalComponent,
+    ActionsMenuComponent,
   ],
   imports: [
     BrowserModule,

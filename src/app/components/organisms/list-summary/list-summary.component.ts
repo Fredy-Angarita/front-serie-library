@@ -15,9 +15,6 @@ export class ListSummaryComponent implements OnInit {
   summaries: GetProgressResponse[] = [];
   editProgress: GetProgressResponse | undefined;
   title = TITLES.SUMMARY;
-  add_color = BUTTON_COLORS.ADD_SAVE;
-  back_color = BUTTON_COLORS.PRIMARY;
-  delete_color = BUTTON_COLORS.DELETE;
   constructor(private progressService: ProgressService, private activeRoute: ActivatedRoute) {
   }
   ngOnInit(): void {

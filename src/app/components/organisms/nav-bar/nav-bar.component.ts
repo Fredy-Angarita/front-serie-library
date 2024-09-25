@@ -9,7 +9,6 @@ import { AuthLoginService } from 'src/app/data/services/auth/login/services/auth
 })
 export class NavBarComponent {
   webTitle = TITLES.NAVBAR;
-  color_button =  BUTTON_COLORS.PRIMARY;
   button_text = TYPE_BUTTONS.SEARCH;
   constructor(private authService: AuthLoginService, private router: Router) { }
 
