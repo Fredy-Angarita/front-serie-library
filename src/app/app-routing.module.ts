@@ -5,20 +5,12 @@ import { RegisterPagesComponent } from './components/pages/register-pages/regist
 import { CollectionPagesComponent } from './components/pages/collection-pages/collection-pages.component';
 import { SeriesPagesComponent } from './components/pages/series-pages/series-pages.component';
 import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-found-pages.component';
-import { UserFormsComponent } from './components/templates/user-forms/user-forms.component';
-import { AppComponent } from './app.component';
 import { authGuard } from './data/services/auth/login/guards/auth.guard';
-import { ProgressFormComponent } from './components/organisms/progress-form/progress-form.component';
 import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
 
 const routes: Routes = [
- {path: 'auth', component: AppComponent,
-  children: [
-    {path: '' , component: LoginPagesComponent},
-    {path: 'register' , component: RegisterPagesComponent},
-    {path: 'test', component: ProgressFormComponent}
-  ],
- },
+ {path: 'login', component: LoginPagesComponent},
+ {path: 'register' , component: RegisterPagesComponent},
  {path: 'collection' , component: CollectionPagesComponent, canActivate: [authGuard]},
  {path: 'library' , component: LibraryPagesComponent, canActivate: [authGuard]},
  {path: 'series/:id' , component: SeriesPagesComponent, canActivate: [authGuard]},
