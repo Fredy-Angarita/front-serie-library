@@ -1,6 +1,7 @@
 @import '../../../../styles/colors.scss';
 @import '../../../../styles/typography.scss';
 .card{
+    transition: transform 0.3s ease;
     background-color: $card_primary;
     border-radius: 1rem;
     text-align: center;
@@ -25,6 +26,9 @@
         font-size: $size-XXS;
         padding: 0 1rem;
     }
+}
+.card:hover{
+    transform: translateY(-1rem); 
 }
 
 @media (width < 800px){
