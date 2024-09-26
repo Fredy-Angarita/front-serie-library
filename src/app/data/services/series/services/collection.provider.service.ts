@@ -5,7 +5,7 @@ import { GetCollectionResponse } from '../dtos/response/get.collection.interface
 @Injectable({
   providedIn: 'root'
 })
-export class SeriesDataService {
+export class CollectionProviderService {
   private parentDataSubject = new BehaviorSubject<any>(null);
   constructor() { }
 
