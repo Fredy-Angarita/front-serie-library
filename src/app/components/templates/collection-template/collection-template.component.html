@@ -1,7 +1,7 @@
 <app-nav-bar/>
 <div class="di">
     <div class="search_bar">
-        <input  (keyup)="searchSeries($event)" type="text" placeholder="search your series">
+        <input id="search" (keyup)="searchSeries($event)" type="text" placeholder="search your series">
     </div>
     <section class="collection">
         <app-card-series
