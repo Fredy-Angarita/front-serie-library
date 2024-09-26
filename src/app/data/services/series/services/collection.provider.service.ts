@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { GetProgressResponse } from '../../progress/dtos/response/get.progress.interface';
-import { GetSeriesResponse } from '../dtos/response/get.series.interface';
+import { GetCollectionResponse } from '../dtos/response/get.collection.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,7 @@ export class SeriesDataService {
   constructor() { }
 
   //TODO: Change the type of data
-  setParentData(data: any) {
+  setParentData(data: GetCollectionResponse[]) {
     this.parentDataSubject.next(data);
   }
   getParentData(): Observable<any> {
