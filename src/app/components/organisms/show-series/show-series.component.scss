@@ -54,7 +54,7 @@
     &_progress::before{
         color: rgb(255, 255, 255);
         font-weight: 1000;
-        content: attr(value)'%';
+        content: attr(value)' / ' attr(max);
     }
 }
 
