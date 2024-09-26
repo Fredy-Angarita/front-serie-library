@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { GetCollectionResponse } from 'src/app/data/services/series/dtos/response/get.collection.interface'; 
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { GetCollectionResponse } from 'src/app/data/services/series/dtos/response/get.collection.interface';
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 
 @Component({
@@ -7,15 +7,21 @@ import { SeriesService } from 'src/app/data/services/series/services/series.serv
   templateUrl: './collection-template.component.html',
   styleUrls: ['./collection-template.component.scss'],
 })
-export class CollectionTemplateComponent{
-  @Input() data : GetCollectionResponse[] = [];
-  private series = this.data;
+export class CollectionTemplateComponent implements OnChanges {
+  @Input() data: GetCollectionResponse[] = [];
+  filter: GetCollectionResponse[] = [];
+  ngOnChanges(): void {
+    this.filter = this.data;
+  }
 
   searchSeries(event: KeyboardEvent) {
-    /*   const input = event.target as HTMLInputElement;
-  this.series = this.data.filter(series => series.series_title.toLowerCase().includes(input.value.toLowerCase()));
-  if(input.value === ''){
-    this.series = this.data;
-  } */
+    const search = event.target as HTMLInputElement;
+    this.filter = this.data.filter((series) => {
+      return series.title.toLowerCase().includes(search.value.toLowerCase());
+    })
+    
+    if(!search.value){
+      this.filter = this.data;
+    }
   }
 }
