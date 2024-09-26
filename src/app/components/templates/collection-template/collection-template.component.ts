@@ -7,21 +7,5 @@ import { SeriesService } from 'src/app/data/services/series/services/series.serv
   templateUrl: './collection-template.component.html',
   styleUrls: ['./collection-template.component.scss'],
 })
-export class CollectionTemplateComponent implements OnChanges {
-  @Input() data: GetCollectionResponse[] = [];
-  filter: GetCollectionResponse[] = [];
-  ngOnChanges(): void {
-    this.filter = this.data;
-  }
-
-  searchSeries(event: KeyboardEvent) {
-    const search = event.target as HTMLInputElement;
-    this.filter = this.data.filter((series) => {
-      return series.title.toLowerCase().includes(search.value.toLowerCase());
-    })
-    
-    if(!search.value){
-      this.filter = this.data;
-    }
-  }
+export class CollectionTemplateComponent {
 }

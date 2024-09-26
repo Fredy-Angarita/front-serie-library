@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetCollectionResponse } from 'src/app/data/services/series/dtos/response/get.collection.interface';
+import { SeriesDataService } from 'src/app/data/services/series/services/series.provider.service';
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 
 @Component({
@@ -8,11 +9,10 @@ import { SeriesService } from 'src/app/data/services/series/services/series.serv
   styleUrls: ['./library-pages.component.scss']
 })
 export class LibraryPagesComponent implements OnInit{
-  data : GetCollectionResponse[] = [];
-  constructor(private seriesService : SeriesService) {}
+  constructor(private dataService: SeriesDataService,private seriesService : SeriesService) {}
   ngOnInit(): void {
     this.seriesService.getAllSeries().subscribe((series) => {
-      this.data = series;
+      this.dataService.setParentData(series);
     });
   }
 }
