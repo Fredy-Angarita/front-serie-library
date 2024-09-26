@@ -39,6 +39,7 @@ import { TextAreaComponent } from './components/molecules/text-area/text-area.co
 import { ShowErrorsComponent } from './components/molecules/show-errors/show-errors.component';
 import { ModalComponent } from './components/molecules/modal/modal.component';
 import { ActionsMenuComponent } from './components/molecules/actions-menu/actions-menu.component';
+import { CollectionOrganismsComponent } from './components/organisms/collection-organisms/collection-organisms.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { ActionsMenuComponent } from './components/molecules/actions-menu/action
     ShowErrorsComponent,
     ModalComponent,
     ActionsMenuComponent,
+    CollectionOrganismsComponent,
   ],
   imports: [
     BrowserModule,
