@@ -40,6 +40,7 @@ import { ShowErrorsComponent } from './components/molecules/show-errors/show-err
 import { ModalComponent } from './components/molecules/modal/modal.component';
 import { ActionsMenuComponent } from './components/molecules/actions-menu/actions-menu.component';
 import { CollectionOrganismsComponent } from './components/organisms/collection-organisms/collection-organisms.component';
+import { LibraryTemplateComponent } from './components/templates/library-template/library-template.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +78,7 @@ import { CollectionOrganismsComponent } from './components/organisms/collection-
     ModalComponent,
     ActionsMenuComponent,
     CollectionOrganismsComponent,
+    LibraryTemplateComponent,
   ],
   imports: [
     BrowserModule,
