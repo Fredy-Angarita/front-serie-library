@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GetSeriesResponse } from 'src/app/data/services/series/dtos/response/get.series.interface';
+import { GetSeriesResponse } from 'src/app/data/services/series/dtos/response/get.series.response.dto';
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 
 @Component({

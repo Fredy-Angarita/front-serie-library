@@ -1,19 +1,20 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { GetCollectionResponse } from '../dtos/response/get.collection.interface';
+import { GetListCollectionResponse } from '../dtos/response/get.list.series.response.dto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CollectionProviderService {
+  private shareDataSignal = signal<any>(null);
   private parentDataSubject = new BehaviorSubject<any>(null);
   constructor() { }
 
   //TODO: Change the type of data
-  setParentData(data: GetCollectionResponse[]) {
-    this.parentDataSubject.next(data);
+  setParentData(data: GetListCollectionResponse[]) {
+    this.shareDataSignal.set(data);
   }
-  getParentData(): Observable<any> {
-    return this.parentDataSubject.asObservable(); ;
+  getParentData(){
+    return this.shareDataSignal;
   }
 }
