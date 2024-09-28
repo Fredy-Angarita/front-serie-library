@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BUTTON_COLORS } from 'src/app/data/constants/constants';
-import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response..dto';
+import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
 
 @Component({
   selector: 'app-show-resume',

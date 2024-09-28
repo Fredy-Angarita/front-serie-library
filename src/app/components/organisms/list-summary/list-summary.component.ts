@@ -3,7 +3,7 @@ import {
   Input,
 } from '@angular/core';
 import { TITLES } from 'src/app/data/constants/constants';
-import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response..dto';
+import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
 
 @Component({
   selector: 'app-list-summary',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { GetProgressResponseDto } from '../dtos/response/get.progress.response..dto';
+import { GetProgressResponseDto } from '../dtos/response/get.progress.response.dto';
 
 @Injectable({
   providedIn: 'root'

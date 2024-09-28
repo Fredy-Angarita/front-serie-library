@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/app/shared/environments/env.develop';
-import { GetProgressResponseDto } from '../dtos/response/get.progress.response..dto';
+import { GetProgressResponseDto } from '../dtos/response/get.progress.response.dto';
 
 @Injectable({
   providedIn: 'root'

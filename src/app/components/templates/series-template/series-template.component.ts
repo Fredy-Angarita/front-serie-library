@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response..dto';
+import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
 import { ProgressProviderService } from 'src/app/data/services/progress/services/progress.provider.service';
 
 @Component({
