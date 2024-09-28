@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CollectionProviderService } from 'src/app/data/services/series/services/collection.provider.service';
+import { LibraryProviderService } from 'src/app/data/services/series/services/library.provider.service';
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 
 @Component({
@@ -9,12 +9,12 @@ import { SeriesService } from 'src/app/data/services/series/services/series.serv
 })
 export class LibraryPagesComponent implements OnInit {
   constructor(
-    private dataProvider: CollectionProviderService,
+    private dataProvider: LibraryProviderService,
     private seriesService: SeriesService
   ) {}
   ngOnInit(): void {
-    this.seriesService.getAllSeries().subscribe((series) => {
-      this.dataProvider.setData(series);
+    this.seriesService.getAllSeries().subscribe((library) => {
+      this.dataProvider.setLibrary(library);
     });
   }
 }
