@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { GetProgressResponse } from 'src/app/data/services/progress/dtos/response/get.progress.interface';
+import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response..dto';
 
 @Component({
   selector: 'app-progress-form',
@@ -8,7 +8,7 @@ import { GetProgressResponse } from 'src/app/data/services/progress/dtos/respons
   styleUrls: ['./progress-form.component.scss']
 })
 export class ProgressFormComponent implements OnInit {
-  @Input() objectEdit: GetProgressResponse | undefined;
+  @Input() objectEdit: GetProgressResponseDto | undefined;
   progressForm: FormGroup;
 
   constructor(private fb: FormBuilder) {

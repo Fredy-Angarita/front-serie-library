@@ -1,7 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BUTTON_COLORS, TITLES } from 'src/app/data/constants/constants';
-import { GetProgressResponse } from 'src/app/data/services/progress/dtos/response/get.progress.interface';
+import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response..dto';
+import { ProgressProviderService } from 'src/app/data/services/progress/services/progress.provider.service';
 import { ProgressService } from 'src/app/data/services/progress/services/progress.service';
 
 @Component({
@@ -9,31 +16,22 @@ import { ProgressService } from 'src/app/data/services/progress/services/progres
   templateUrl: './list-summary.component.html',
   styleUrls: ['./list-summary.component.scss'],
 })
-export class ListSummaryComponent implements OnInit {
+export class ListSummaryComponent {
+  @Input() summaries: GetProgressResponseDto[] = [];
   clickedEdit: boolean = false;
   clickedAdd: boolean = false;
-  summaries: GetProgressResponse[] = [];
-  editProgress: GetProgressResponse | undefined;
+  editProgress: GetProgressResponseDto | undefined;
   title = TITLES.SUMMARY;
-  constructor(private progressService: ProgressService, private activeRoute: ActivatedRoute) {
-  }
-  ngOnInit(): void {
-    const seriesID = this.activeRoute.snapshot.paramMap.get('id');
-    if (seriesID == null) return;
-    this.progressService.getProgress(seriesID).subscribe({
-      next: (progress) => {
-        this.summaries = progress;
-      },
-    });
-  }
-
-  showForm(){
+  constructor(
+    private progressProvider: ProgressProviderService,
+  ) {}
+  showForm() {
     this.clickedAdd = !this.clickedAdd;
   }
-  openModal(){
+  openModal() {
     this.clickedEdit = !this.clickedEdit;
   }
-  editSummary(event: GetProgressResponse){
+  editSummary(event: GetProgressResponseDto) {
     this.editProgress = event;
     console.log(this.editProgress.chapter);
     this.openModal();
