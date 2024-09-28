@@ -1,9 +1,13 @@
 import {
   Component,
+  EventEmitter,
   Input,
+  Output,
 } from '@angular/core';
 import { TITLES } from 'src/app/data/constants/constants';
+import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
 import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
+import { ProgressService } from 'src/app/data/services/progress/services/progress.service';
 
 @Component({
   selector: 'app-list-summary',
@@ -12,6 +16,7 @@ import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/resp
 })
 export class ListSummaryComponent {
   @Input() summaries: GetProgressResponseDto[] = [];
+  @Output() progress = new EventEmitter<PostProgressRequestDto>();
   clickedEdit: boolean = false;
   clickedAdd: boolean = false;
   editProgress: GetProgressResponseDto | undefined;
@@ -27,5 +32,8 @@ export class ListSummaryComponent {
     this.editProgress = event;
     console.log(this.editProgress.chapter);
     this.openModal();
+  }
+  supplier($event: PostProgressRequestDto) {
+    this.progress.emit($event);
   }
 }

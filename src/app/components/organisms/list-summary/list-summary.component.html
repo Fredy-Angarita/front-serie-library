@@ -6,7 +6,7 @@
         [progress]="summary"
       />
     </div>
-    <app-progress-form *ngIf="clickedAdd" />
+    <app-progress-form *ngIf="clickedAdd" (submitProgress)="supplier($event)" />
   </article>
   <app-actions-menu (clickAdd)="showForm()"/>
 </div>
