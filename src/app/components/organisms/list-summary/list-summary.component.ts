@@ -1,15 +1,9 @@
 import {
   Component,
   Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
 } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { BUTTON_COLORS, TITLES } from 'src/app/data/constants/constants';
+import { TITLES } from 'src/app/data/constants/constants';
 import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response..dto';
-import { ProgressProviderService } from 'src/app/data/services/progress/services/progress.provider.service';
-import { ProgressService } from 'src/app/data/services/progress/services/progress.service';
 
 @Component({
   selector: 'app-list-summary',
@@ -22,9 +16,7 @@ export class ListSummaryComponent {
   clickedAdd: boolean = false;
   editProgress: GetProgressResponseDto | undefined;
   title = TITLES.SUMMARY;
-  constructor(
-    private progressProvider: ProgressProviderService,
-  ) {}
+  constructor() {}
   showForm() {
     this.clickedAdd = !this.clickedAdd;
   }
