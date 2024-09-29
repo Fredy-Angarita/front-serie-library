@@ -35,5 +35,6 @@ export class ListSummaryComponent {
   }
   supplier($event: PostProgressRequestDto) {
     this.progress.emit($event);
+    this.showForm();
   }
 }

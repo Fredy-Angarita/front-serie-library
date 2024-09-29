@@ -18,23 +18,34 @@ export class SeriesPagesComponent implements OnInit {
     private seriesProvider: SeriesProviderService,
     private seriesService: SeriesService
   ) {}
+  private url = this.activeRoute.snapshot.paramMap.get('id') as string;
   ngOnInit(): void {
-    const url = this.activeRoute.snapshot.paramMap.get('id') as string;
-    if (!url) return;
-    this.progressService.getProgress(url).subscribe({
+    if (!this.url) return;
+    this.obtainProgress();
+    this.obtainSeries();
+    this.dataProvider.getAddOrUpdateProgress().subscribe({
       next: (progress) => {
-        this.dataProvider.setProgressData(progress);
+        this.progressService.postProgress(progress).subscribe({
+          next: () => {
+            this.obtainProgress();
+          },
+        });
       },
     });
-    this.seriesService.getOneSeries(url).subscribe({
+  }
+  
+  obtainSeries() {
+    this.seriesService.getOneSeries(this.url).subscribe({
       next: (series) => {
         this.seriesProvider.setData(series);
       },
     });
-    this.dataProvider.getAddOrUpdateProgress().subscribe({
+  }
+
+  obtainProgress() {
+    this.progressService.getProgress(this.url).subscribe({
       next: (progress) => {
-        this.progressService.postProgress(progress).subscribe();
-        console.log(progress);
+        this.dataProvider.setProgressData(progress);
       },
     });
   }
