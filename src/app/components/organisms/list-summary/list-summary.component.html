@@ -1,5 +1,5 @@
-<div class="list_container" (scroll)="onScroll($event)">
-  <article class="summary_container">
+<div class="list_container">
+  <article class="summary_container" (scroll)="onScroll($event)">
     <h3 class="title_list">{{ title }}</h3>
     <div class="resumen_container" *ngIf="!clickedAdd">
       <app-show-resume (edit)="editSummary($event)" *ngFor="let summary of summaries"

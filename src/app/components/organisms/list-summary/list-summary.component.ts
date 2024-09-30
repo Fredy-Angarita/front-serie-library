@@ -35,11 +35,10 @@ export class ListSummaryComponent {
     this.openModal();
   }
   onScroll(event: any) {
-    if (
-      event.target.offsetHeight + event.target.scrollTop >=
-      event.target.scrollHeight
-    ) {
-      console.log('end');
+    const scrollTop = event.target.scrollTop;
+    const scrollHeight = event.target.scrollHeight;
+    const clientHeight = event.target.clientHeight;
+    if (scrollTop + clientHeight >= scrollHeight - 1) {
       this.scroll.emit(true);
     }
   }
