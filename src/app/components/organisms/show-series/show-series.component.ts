@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GetSeriesResponse } from 'src/app/data/services/series/dtos/response/get.series.interface';
+import { GetSeriesResponse } from 'src/app/data/services/series/dtos/response/get.series.response.dto';
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 
 @Component({
@@ -9,14 +9,7 @@ import { SeriesService } from 'src/app/data/services/series/services/series.serv
   styleUrls: ['./show-series.component.scss'],
 })
 export class ShowSeriesComponent implements OnInit {
-  series: GetSeriesResponse = {
-    id: '',
-    title: '',
-    synopsis: '',
-    thumbnail: '',
-    publicationDate: '',
-    totalChapters: 0,
-  };
+  @Input() series !: GetSeriesResponse;
   id!: string | null;
   details: boolean = false;
   progress: number = 0;
