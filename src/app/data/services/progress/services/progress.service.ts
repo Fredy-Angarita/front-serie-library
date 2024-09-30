@@ -7,20 +7,36 @@ import { PostProgressRequestDto } from '../dtos/request/post.progress.request.dt
 import { PatchProgressRequestDto } from '../dtos/request/patch.progress.request.dto';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProgressService {
   url = environment.apiBase + '/progress/';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getProgress(id: string): Observable<GetProgressResponseDto[]>{
-    return this.http.get<GetProgressResponseDto[]> (this.url + id);
+  getProgress(
+    id: string,
+    page: number,
+    limit: number
+  ): Observable<GetProgressResponseDto[]> {
+    return this.http.get<GetProgressResponseDto[]>(this.url + 'series/' + id, {
+      params: {
+        page: page.toString(),
+        limit: limit.toString(),
+      },
+    });
   }
-  postProgress(progress: PostProgressRequestDto): Observable<PostProgressRequestDto>{
+  postProgress(
+    progress: PostProgressRequestDto
+  ): Observable<PostProgressRequestDto> {
     return this.http.post<PostProgressRequestDto>(this.url, progress);
   }
-  patchProgress(editProgress: PatchProgressRequestDto): Observable<PatchProgressRequestDto>{
-    const {chapter, resume} = editProgress;
-    return this.http.patch<PatchProgressRequestDto>(this.url + editProgress.id, {chapter, resume});
+  patchProgress(
+    editProgress: PatchProgressRequestDto
+  ): Observable<PatchProgressRequestDto> {
+    const { chapter, resume } = editProgress;
+    return this.http.patch<PatchProgressRequestDto>(
+      this.url + editProgress.id,
+      { chapter, resume }
+    );
   }
 }

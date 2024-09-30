@@ -1,4 +1,4 @@
-<div class="list_container">
+<div class="list_container" (scroll)="onScroll($event)">
   <article class="summary_container">
     <h3 class="title_list">{{ title }}</h3>
     <div class="resumen_container" *ngIf="!clickedAdd">

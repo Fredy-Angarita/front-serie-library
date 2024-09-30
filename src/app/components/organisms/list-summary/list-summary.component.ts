@@ -1,6 +1,7 @@
 import {
   Component,
   EventEmitter,
+  HostListener,
   Input,
   Output,
 } from '@angular/core';
@@ -17,9 +18,10 @@ export class ListSummaryComponent {
   @Input() summaries: GetProgressResponseDto[] = [];
   @Output() progress = new EventEmitter<PostProgressRequestDto>();
   @Output() edit = new EventEmitter<PatchProgressRequestDto>();
+  @Output() scroll = new EventEmitter<boolean>();
   clickedEdit: boolean = false;
   clickedAdd: boolean = false;
-  editProgress !: PatchProgressRequestDto;
+  editProgress!: PatchProgressRequestDto;
   title = TITLES.SUMMARY;
   constructor() {}
   showForm() {
@@ -32,7 +34,17 @@ export class ListSummaryComponent {
     this.editProgress = event;
     this.openModal();
   }
-  supplierEdit($event: PatchProgressRequestDto){
+  onScroll(event: any) {
+    if (
+      event.target.offsetHeight + event.target.scrollTop >=
+      event.target.scrollHeight
+    ) {
+      console.log('end');
+      this.scroll.emit(true);
+    }
+  }
+
+  supplierEdit($event: PatchProgressRequestDto) {
     this.edit.emit($event);
     this.openModal();
   }

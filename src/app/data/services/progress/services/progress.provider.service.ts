@@ -5,13 +5,17 @@ import { PostProgressRequestDto } from '../dtos/request/post.progress.request.dt
 import { PatchProgressRequestDto } from '../dtos/request/patch.progress.request.dto';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProgressProviderService {
-  private listProgressData = new Subject<GetProgressResponseDto[]>();
-  private newProgress = new Subject<PostProgressRequestDto>();
-  private editProgress = new Subject<PatchProgressRequestDto>();
-  constructor() { }
+  private listProgressData;
+  private newProgress;
+  private editProgress;
+  constructor() {
+    this.listProgressData = new Subject<GetProgressResponseDto[]>();
+    this.newProgress = new Subject<PostProgressRequestDto>();
+    this.editProgress = new Subject<PatchProgressRequestDto>();
+  }
 
   getEditProgress(): Observable<PatchProgressRequestDto> {
     return this.editProgress.asObservable();
@@ -31,5 +35,4 @@ export class ProgressProviderService {
   setListProgressData(data: GetProgressResponseDto[]) {
     this.listProgressData.next(data);
   }
-
 }

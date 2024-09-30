@@ -11,16 +11,16 @@ import { SeriesProviderService } from 'src/app/data/services/series/services/ser
   templateUrl: './series-template.component.html',
   styleUrls: ['./series-template.component.scss'],
 })
-export class SeriesTemplateComponent implements OnInit{
+export class SeriesTemplateComponent implements OnInit {
   progressList: GetProgressResponseDto[] = [];
-  private add: PostProgressRequestDto ={
+  private add: PostProgressRequestDto = {
     chapter: 0,
     resume: '',
     series: '',
-  }
+  };
   private update: PatchProgressRequestDto = {
-    id : '',
-  }
+    id: '',
+  };
   series: GetSeriesResponse = {
     id: '',
     title: '',
@@ -37,7 +37,7 @@ export class SeriesTemplateComponent implements OnInit{
     this.progressProvider.getListProgressData().subscribe((progress) => {
       this.progressList = progress;
     });
-    this.seriesProvider.getData().subscribe((series) =>{
+    this.seriesProvider.getData().subscribe((series) => {
       this.series = series;
     });
   }
@@ -45,7 +45,6 @@ export class SeriesTemplateComponent implements OnInit{
   obtainEdit($data: PatchProgressRequestDto) {
     this.update = $data;
     this.progressProvider.setEditProgress(this.update);
-    console.log(this.update);
   }
 
   obtainData($data: PostProgressRequestDto) {
