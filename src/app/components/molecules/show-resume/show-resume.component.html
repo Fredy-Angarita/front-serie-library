@@ -21,7 +21,11 @@
     </ng-container>
   </app-secondary-button>
 </article>
-<div *ngIf="open_state" class="content">
-  <h4 class="content_date">{{ progress.dateCreated }}</h4>
-  <p class="content_resume">{{ progress.resume }}</p>
-</div>
+<app-modal title="chapter {{progress.chapter}}" *ngIf="open_state" (close)="openResume()">
+  <ng-container modal_content>
+    <div class="content">
+      <h4 class="content_date">{{ progress.dateCreated }}</h4>
+      <p class="content_resume">{{ progress.resume }}</p>
+    </div>
+  </ng-container>
+</app-modal>
