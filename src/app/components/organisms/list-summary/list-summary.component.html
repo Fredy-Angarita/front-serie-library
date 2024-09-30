@@ -12,6 +12,6 @@
 </div>
 <app-modal title="Edit Summary" *ngIf="clickedEdit" (close)="openModal()">
   <ng-container modal_content>
-    <app-progress-form [objectEdit]="editProgress" />
+    <app-progress-form [objectEdit]="editProgress" (submitProgress)="supplierEdit($event)" />
   </ng-container>
 </app-modal>

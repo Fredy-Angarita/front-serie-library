@@ -7,8 +7,6 @@ import {
 import { TITLES } from 'src/app/data/constants/constants';
 import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
 import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
-import { ProgressService } from 'src/app/data/services/progress/services/progress.service';
-
 @Component({
   selector: 'app-list-summary',
   templateUrl: './list-summary.component.html',
@@ -30,11 +28,14 @@ export class ListSummaryComponent {
   }
   editSummary(event: GetProgressResponseDto) {
     this.editProgress = event;
-    console.log(this.editProgress.chapter);
     this.openModal();
   }
   supplier($event: PostProgressRequestDto) {
     this.progress.emit($event);
     this.showForm();
+  }
+  supplierEdit($event: PostProgressRequestDto) {
+    this.progress.emit($event);
+    this.openModal();
   }
 }

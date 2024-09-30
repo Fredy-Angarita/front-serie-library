@@ -30,7 +30,7 @@ export class SeriesTemplateComponent implements OnInit{
     private seriesProvider: SeriesProviderService
   ) {}
   ngOnInit(): void {
-    this.progressProvider.getProgressData().subscribe((progress) => {
+    this.progressProvider.getListProgressData().subscribe((progress) => {
       this.progressList = progress;
     });
     this.seriesProvider.getData().subscribe((series) =>{
@@ -39,6 +39,6 @@ export class SeriesTemplateComponent implements OnInit{
   }
   obtainData($data: PostProgressRequestDto) {
     this.addOrUpdate = $data;
-    this.progressProvider.setAddOrUpdateProgress(this.addOrUpdate);
+    this.progressProvider.setAddProgress(this.addOrUpdate);
   }
 }

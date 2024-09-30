@@ -7,22 +7,22 @@ import { PostProgressRequestDto } from '../dtos/request/post.progress.request.dt
   providedIn: 'root'
 })
 export class ProgressProviderService {
-  private progressDataSubject = new Subject<GetProgressResponseDto[]>();
-  private progressData = new Subject<PostProgressRequestDto>();
+  private listProgressData = new Subject<GetProgressResponseDto[]>();
+  private newProgress = new Subject<PostProgressRequestDto>();
+  private editProgress = new Subject<GetProgressResponseDto>();
   constructor() { }
-  setAddOrUpdateProgress(data: PostProgressRequestDto) {
-    this.progressData.next(data);
-  }
-  getAddOrUpdateProgress(): Observable<PostProgressRequestDto> {
-    return this.progressData.asObservable();
-  }
 
-
-  setProgressData(data: GetProgressResponseDto[]) {
-    this.progressDataSubject.next(data);
+  getAddProgress(): Observable<PostProgressRequestDto> {
+    return this.newProgress.asObservable();
   }
-  getProgressData(): Observable<GetProgressResponseDto[]> {
-    return this.progressDataSubject.asObservable();
+  setAddProgress(data: PostProgressRequestDto) {
+    this.newProgress.next(data);
+  }
+  getListProgressData(): Observable<GetProgressResponseDto[]> {
+    return this.listProgressData.asObservable();
+  }
+  setListProgressData(data: GetProgressResponseDto[]) {
+    this.listProgressData.next(data);
   }
 
 }
