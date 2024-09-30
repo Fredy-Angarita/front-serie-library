@@ -5,6 +5,7 @@ import {
   Output,
 } from '@angular/core';
 import { TITLES } from 'src/app/data/constants/constants';
+import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
 import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
 import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
 @Component({
@@ -15,9 +16,10 @@ import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/resp
 export class ListSummaryComponent {
   @Input() summaries: GetProgressResponseDto[] = [];
   @Output() progress = new EventEmitter<PostProgressRequestDto>();
+  @Output() edit = new EventEmitter<PatchProgressRequestDto>();
   clickedEdit: boolean = false;
   clickedAdd: boolean = false;
-  editProgress: GetProgressResponseDto | undefined;
+  editProgress !: PatchProgressRequestDto;
   title = TITLES.SUMMARY;
   constructor() {}
   showForm() {
@@ -26,16 +28,16 @@ export class ListSummaryComponent {
   openModal() {
     this.clickedEdit = !this.clickedEdit;
   }
-  editSummary(event: GetProgressResponseDto) {
+  editSummary(event: PatchProgressRequestDto) {
     this.editProgress = event;
+    this.openModal();
+  }
+  supplierEdit($event: PatchProgressRequestDto){
+    this.edit.emit($event);
     this.openModal();
   }
   supplier($event: PostProgressRequestDto) {
     this.progress.emit($event);
     this.showForm();
-  }
-  supplierEdit($event: PostProgressRequestDto) {
-    this.progress.emit($event);
-    this.openModal();
   }
 }

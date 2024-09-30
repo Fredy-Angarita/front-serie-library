@@ -6,12 +6,12 @@
         [progress]="summary"
       />
     </div>
-    <app-progress-form *ngIf="clickedAdd" (submitProgress)="supplier($event)" />
+    <app-progress-form *ngIf="clickedAdd" (submitProgress)="supplier($event)" addOrEdit="add" />
   </article>
   <app-actions-menu (clickAdd)="showForm()"/>
 </div>
 <app-modal title="Edit Summary" *ngIf="clickedEdit" (close)="openModal()">
   <ng-container modal_content>
-    <app-progress-form [objectEdit]="editProgress" (submitProgress)="supplierEdit($event)" />
+    <app-progress-form [objectEdit]="editProgress" (submitEdit)="supplierEdit($event)" addOrEdit="edit" />
   </ng-container>
 </app-modal>

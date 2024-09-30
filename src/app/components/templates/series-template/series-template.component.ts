@@ -1,4 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
 import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
 import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
 import { ProgressProviderService } from 'src/app/data/services/progress/services/progress.provider.service';
@@ -12,10 +13,13 @@ import { SeriesProviderService } from 'src/app/data/services/series/services/ser
 })
 export class SeriesTemplateComponent implements OnInit{
   progressList: GetProgressResponseDto[] = [];
-  addOrUpdate: PostProgressRequestDto ={
+  private add: PostProgressRequestDto ={
     chapter: 0,
     resume: '',
     series: '',
+  }
+  private update: PatchProgressRequestDto = {
+    id : '',
   }
   series: GetSeriesResponse = {
     id: '',
@@ -37,8 +41,15 @@ export class SeriesTemplateComponent implements OnInit{
       this.series = series;
     });
   }
+
+  obtainEdit($data: PatchProgressRequestDto) {
+    this.update = $data;
+    this.progressProvider.setEditProgress(this.update);
+    console.log(this.update);
+  }
+
   obtainData($data: PostProgressRequestDto) {
-    this.addOrUpdate = $data;
-    this.progressProvider.setAddProgress(this.addOrUpdate);
+    this.add = $data;
+    this.progressProvider.setAddProgress(this.add);
   }
 }

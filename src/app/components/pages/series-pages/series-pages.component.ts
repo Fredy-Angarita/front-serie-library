@@ -23,6 +23,11 @@ export class SeriesPagesComponent implements OnInit {
     if (!this.url) return;
     this.obtainProgress();
     this.obtainSeries();
+    this.addProgress();
+    this.updatedProgress();
+  }
+
+  addProgress(){
     this.dataProvider.getAddProgress().subscribe({
       next: (progress) => {
         this.progressService.postProgress(progress).subscribe({
@@ -32,6 +37,18 @@ export class SeriesPagesComponent implements OnInit {
         });
       },
     });
+  }
+
+  updatedProgress(){
+    this.dataProvider.getEditProgress().subscribe({
+      next: (progress) => {
+        this.progressService.patchProgress(progress).subscribe({
+          next: () => {
+            this.obtainProgress();
+          },
+        });
+      },
+    })
   }
   
   obtainSeries() {
