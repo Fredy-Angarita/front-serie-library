@@ -1,6 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
+import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
 import { ProgressProviderService } from 'src/app/data/services/progress/services/progress.provider.service';
 import { ProgressService } from 'src/app/data/services/progress/services/progress.service';
 import { SeriesProviderService } from 'src/app/data/services/series/services/series.provider.service';
@@ -13,6 +14,11 @@ import { SeriesService } from 'src/app/data/services/series/services/series.serv
 })
 export class SeriesPagesComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
+  private url = this.activeRoute.snapshot.paramMap.get('id') as string;
+  private page = this.activeRoute.snapshot.queryParams['page'];
+  private limit = this.activeRoute.snapshot.queryParams['limit'];
+  private progress: GetProgressResponseDto[] = [];
+  private canFetch = true;
   constructor(
     private readonly activeRoute: ActivatedRoute,
     private readonly progressService: ProgressService,
@@ -20,19 +26,16 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
     private readonly seriesProvider: SeriesProviderService,
     private readonly seriesService: SeriesService
   ) {}
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
-  private url = this.activeRoute.snapshot.paramMap.get('id') as string;
-  private page = this.activeRoute.snapshot.queryParams['page'];
-  private limit = this.activeRoute.snapshot.queryParams['limit'];
   ngOnInit(): void {
     if (!this.url) return;
     this.obtainProgress();
     this.obtainSeries();
     this.addProgress();
     this.updatedProgress();
+  }
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   addProgress() {
@@ -75,14 +78,26 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
         },
       });
   }
-
+  showMore(event: boolean) {
+    if (event) {
+      this.page = parseInt(this.page) + 1;
+      this.obtainProgress();
+    }
+  }
   obtainProgress() {
+    if (!this.canFetch) return;
     this.progressService
       .getProgress(this.url, this.page, this.limit)
       .pipe(takeUntil(this.destroy$))
       .subscribe({
-        next: (progress) => {
-          this.dataProvider.setListProgressData(progress);
+        next: (listProgress) => {
+          if (listProgress.length !== 0) {
+            this.progress = [...this.progress, ...listProgress];
+            console.log(this.progress);
+            this.dataProvider.setListProgressData(this.progress);
+          } else {
+            this.canFetch = false;
+          }
         },
       });
   }

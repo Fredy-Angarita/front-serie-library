@@ -1,4 +1,11 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
 import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
 import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
@@ -12,6 +19,7 @@ import { SeriesProviderService } from 'src/app/data/services/series/services/ser
   styleUrls: ['./series-template.component.scss'],
 })
 export class SeriesTemplateComponent implements OnInit {
+  @Output() showMore = new EventEmitter<boolean>();
   progressList: GetProgressResponseDto[] = [];
   private add: PostProgressRequestDto = {
     chapter: 0,
@@ -46,7 +54,9 @@ export class SeriesTemplateComponent implements OnInit {
     this.update = $data;
     this.progressProvider.setEditProgress(this.update);
   }
-
+  showMoreProgress() {
+    this.showMore.emit(true);
+  }
   obtainData($data: PostProgressRequestDto) {
     this.add = $data;
     this.progressProvider.setAddProgress(this.add);

@@ -3,7 +3,9 @@ import {
   EventEmitter,
   HostListener,
   Input,
+  OnChanges,
   Output,
+  SimpleChanges,
 } from '@angular/core';
 import { TITLES } from 'src/app/data/constants/constants';
 import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
@@ -38,7 +40,7 @@ export class ListSummaryComponent {
     const scrollTop = event.target.scrollTop;
     const scrollHeight = event.target.scrollHeight;
     const clientHeight = event.target.clientHeight;
-    if (scrollTop + clientHeight >= scrollHeight - 1) {
+    if (scrollTop + clientHeight >= scrollHeight - 30) {
       this.scroll.emit(true);
     }
   }
