@@ -20,4 +20,5 @@
     [button_text]="button_text"
     redirect="/register"
   />
+  <app-show-errors [message_error]="showLoginError()" *ngIf="hasError()" />
 </form>

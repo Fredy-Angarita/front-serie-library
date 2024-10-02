@@ -1,5 +1,11 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, EventEmitter, Inject, Output, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  Output,
+  PLATFORM_ID,
+} from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -24,6 +30,7 @@ import { AuthLoginService } from 'src/app/data/services/auth/login/services/auth
 })
 export class LoginFormComponent {
   loginForm: FormGroup;
+  serverError: string | null = null;
   email_label = LABELS.EMAIL;
   password_label = LABELS.PASSWORD;
   button_text = TYPE_BUTTONS.LOGIN;
@@ -32,7 +39,7 @@ export class LoginFormComponent {
   title = TITLES.LOGIN;
   question = QUESTION_ACTIONS.NOT_HAVE_ACCOUNT;
   action = QUESTION_ACTIONS.REGISTER_ACTION;
-  isBrowser !: boolean;
+  isBrowser!: boolean;
   @Output() changeEvent = new EventEmitter<boolean>();
 
   constructor(
@@ -77,6 +84,21 @@ export class LoginFormComponent {
         }
         this.router.navigate(['/collection']);
       },
+      error: (error) => {
+        this.serverError = error.error.message;
+      },
     });
+  }
+  hasError() {
+    return (
+      this.loginForm.errors?.['passwordMatch'] !== undefined ||
+      this.serverError !== null
+    );
+  }
+  showLoginError(): string {
+    if (this.serverError !== null) {
+      return this.serverError;
+    }
+    return '';
   }
 }
