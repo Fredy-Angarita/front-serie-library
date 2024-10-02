@@ -90,12 +90,12 @@ export class LoginFormComponent {
     });
   }
   hasError() {
-    return (
-      this.loginForm.errors?.['passwordMatch'] !== undefined ||
-      this.serverError !== null
-    );
+    return this.loginForm.invalid || this.serverError !== null;
   }
   showLoginError(): string {
+    if (this.loginForm.invalid) {
+      return 'Invalid email or password';
+    }
     if (this.serverError !== null) {
       return this.serverError;
     }

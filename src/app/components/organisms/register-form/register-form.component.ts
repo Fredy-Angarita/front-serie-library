@@ -96,8 +96,12 @@ export class RegisterFormComponent {
       });
   }
 
-  hasError() : boolean{
-    return this.registerForm.errors?.['passwordMatch'] !== undefined || this.serverError !== null;
+  hasError(): boolean {
+    return (
+      this.registerForm.invalid ||
+      this.registerForm.errors?.['passwordMatch'] !== undefined ||
+      this.serverError !== null
+    );
   }
 
   formError(): string {
