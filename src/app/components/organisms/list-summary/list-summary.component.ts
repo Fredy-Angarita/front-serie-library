@@ -42,7 +42,6 @@ export class ListSummaryComponent {
     const offsetHeight = event.target.offsetHeight;
     const scrollTop = event.target.scrollTop;
     const scrollHeight = event.target.scrollHeight;
-    console.log(offsetHeight + scrollTop, scrollHeight);
     if (offsetHeight + scrollTop >= scrollHeight - 50) {
       this.scroll.emit(true);
     }
