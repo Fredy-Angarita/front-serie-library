@@ -10,13 +10,9 @@ export class CardSeriesComponent {
   @Input() id!: string;
   @Input() img!: string;
   @Input() series_title!: string;
-  private page = 0;
-  private limit = 15;
 
   constructor(private router: Router) {}
   showSeries() {
-    this.router.navigate([`series/${this.id}`], {
-      queryParams: { page: this.page, limit: this.limit },
-    });
+    this.router.navigate([`series/${this.id}`]);
   }
 }

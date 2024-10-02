@@ -5,6 +5,7 @@ import { environment } from 'src/app/shared/environments/env.develop';
 import { GetProgressResponseDto } from '../dtos/response/get.progress.response.dto';
 import { PostProgressRequestDto } from '../dtos/request/post.progress.request.dto';
 import { PatchProgressRequestDto } from '../dtos/request/patch.progress.request.dto';
+import { PaginationResponse } from 'src/app/shared/types/pagination.response.type';
 
 @Injectable({
   providedIn: 'root',
@@ -17,13 +18,16 @@ export class ProgressService {
     id: string,
     page: number,
     limit: number
-  ): Observable<GetProgressResponseDto[]> {
-    return this.http.get<GetProgressResponseDto[]>(this.url + 'series/' + id, {
-      params: {
-        page: page.toString(),
-        limit: limit.toString(),
-      },
-    });
+  ): Observable<PaginationResponse<GetProgressResponseDto>> {
+    return this.http.get<PaginationResponse<GetProgressResponseDto>>(
+      this.url + 'series/' + id,
+      {
+        params: {
+          page: page.toString(),
+          limit: limit.toString(),
+        },
+      }
+    );
   }
   postProgress(
     progress: PostProgressRequestDto
