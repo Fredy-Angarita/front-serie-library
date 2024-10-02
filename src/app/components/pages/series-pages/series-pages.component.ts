@@ -106,16 +106,7 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
     }
   }
   updateProgressData() {
-    this.progress = [];
-    this.progressService
-      .getProgress(this.url, 0, this.limit)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: (listProgress) => {
-          this.progress = listProgress.items;
-          this.dataProvider.setListProgressData(this.progress);
-        },
-      });
+    window.location.reload();
   }
   showMore(event: boolean) {
     if (event && this.canFetch) {
