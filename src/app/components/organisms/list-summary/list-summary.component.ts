@@ -21,8 +21,10 @@ export class ListSummaryComponent {
   @Output() progress = new EventEmitter<PostProgressRequestDto>();
   @Output() edit = new EventEmitter<PatchProgressRequestDto>();
   @Output() scroll = new EventEmitter<boolean>();
+  @Output() delete = new EventEmitter<void>();
   clickedEdit: boolean = false;
   clickedAdd: boolean = false;
+
   editProgress!: PatchProgressRequestDto;
   title = TITLES.SUMMARY;
   constructor() {}
@@ -43,6 +45,9 @@ export class ListSummaryComponent {
     if (scrollTop + clientHeight >= scrollHeight - 30) {
       this.scroll.emit(true);
     }
+  }
+  deleteProgress() {
+    this.delete.emit();
   }
 
   supplierEdit($event: PatchProgressRequestDto) {

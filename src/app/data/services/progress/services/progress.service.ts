@@ -39,4 +39,7 @@ export class ProgressService {
       { chapter, resume }
     );
   }
+  deleteProgress(id: string): Observable<void> {
+    return this.http.delete<void>(this.url + 'all/' + id);
+  }
 }

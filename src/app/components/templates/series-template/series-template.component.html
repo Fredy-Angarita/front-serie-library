@@ -1,5 +1,11 @@
-<app-nav-bar/>
+<app-nav-bar />
 <article class="content_article">
-    <app-show-series [series]="series"/>
-    <app-list-summary  [summaries]="progressList" (progress)="obtainData($event)" (edit)="obtainEdit($event)" (scroll)="showMoreProgress()" />
+  <app-show-series [series]="series" />
+  <app-list-summary
+    [summaries]="progressList"
+    (progress)="obtainData($event)"
+    (edit)="obtainEdit($event)"
+    (scroll)="showMoreProgress()"
+    (delete)="deleteProgress()"
+  />
 </article>

@@ -44,6 +44,7 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (progress) => {
+          this.progress = [];
           this.progressService.postProgress(progress).subscribe({
             next: () => {
               this.obtainProgress();
@@ -61,6 +62,7 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
         next: (progress) => {
           this.progressService.patchProgress(progress).subscribe({
             next: () => {
+              this.progress = [];
               this.obtainProgress();
             },
           });
@@ -84,6 +86,18 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
       this.obtainProgress();
     }
   }
+
+  deleteProgress() {
+    const confirmOption = confirm(
+      'Are you sure you want to delete all progress?'
+    );
+    if (confirmOption) {
+      this.progressService.deleteProgress(this.url).subscribe();
+      this.progress = [];
+      this.obtainProgress();
+    }
+  }
+
   obtainProgress() {
     if (!this.canFetch) return;
     this.progressService
@@ -93,7 +107,6 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
         next: (listProgress) => {
           if (listProgress.length !== 0) {
             this.progress = [...this.progress, ...listProgress];
-            console.log(this.progress);
             this.dataProvider.setListProgressData(this.progress);
           } else {
             this.canFetch = false;

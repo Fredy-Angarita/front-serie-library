@@ -20,6 +20,7 @@ import { SeriesProviderService } from 'src/app/data/services/series/services/ser
 })
 export class SeriesTemplateComponent implements OnInit {
   @Output() showMore = new EventEmitter<boolean>();
+  @Output() delete = new EventEmitter<void>();
   progressList: GetProgressResponseDto[] = [];
   private add: PostProgressRequestDto = {
     chapter: 0,
@@ -50,6 +51,9 @@ export class SeriesTemplateComponent implements OnInit {
     });
   }
 
+  deleteProgress() {
+    this.delete.emit();
+  }
   obtainEdit($data: PatchProgressRequestDto) {
     this.update = $data;
     this.progressProvider.setEditProgress(this.update);
