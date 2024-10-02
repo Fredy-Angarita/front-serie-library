@@ -9,11 +9,10 @@
     height: 80vh;
     max-height: 80vh;
     margin: 1rem;
-    overflow-y: auto;
-    scrollbar-width: none;
     border-radius: 1rem;
     padding: 0 3rem;
     .summary_container{
+        height: 70vh;
         overflow-y: scroll;
         scrollbar-width: none;
     }

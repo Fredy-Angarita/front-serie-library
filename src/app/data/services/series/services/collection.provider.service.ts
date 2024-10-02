@@ -1,13 +1,13 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import { GetListCollectionResponse } from '../dtos/response/get.list.series.response.dto';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CollectionProviderService {
-  private shareDataSubject = new BehaviorSubject<GetListCollectionResponse[]>([]);
-  constructor() { }
+  private shareDataSubject = new Subject<GetListCollectionResponse[]>();
+  constructor() {}
 
   setData(data: GetListCollectionResponse[]) {
     this.shareDataSubject.next(data);

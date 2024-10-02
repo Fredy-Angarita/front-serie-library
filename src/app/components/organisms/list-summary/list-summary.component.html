@@ -1,17 +1,31 @@
 <div class="list_container">
-  <article class="summary_container">
-    <h3 class="title_list">{{ title }}</h3>
+  <h3 class="title_list">{{ title }}</h3>
+  <article class="summary_container" #scroll (scroll)="onScroll($event)">
     <div class="resumen_container" *ngIf="!clickedAdd">
-      <app-show-resume (edit)="editSummary($event)" *ngFor="let summary of summaries"
+      <app-show-resume
+        (edit)="editSummary($event)"
+        *ngFor="let summary of summaries"
         [progress]="summary"
       />
     </div>
-    <app-progress-form *ngIf="clickedAdd" (submitProgress)="supplier($event)" />
+    <app-progress-form
+      *ngIf="clickedAdd"
+      (submitProgress)="supplier($event)"
+      addOrEdit="add"
+    />
   </article>
-  <app-actions-menu (clickAdd)="showForm()"/>
+  <app-actions-menu
+    (clickAdd)="showForm()"
+    (clickDelete)="deleteProgress()"
+    (clickBack)="goBack()"
+  />
 </div>
 <app-modal title="Edit Summary" *ngIf="clickedEdit" (close)="openModal()">
   <ng-container modal_content>
-    <app-progress-form [objectEdit]="editProgress" />
+    <app-progress-form
+      [objectEdit]="editProgress"
+      (submitEdit)="supplierEdit($event)"
+      addOrEdit="edit"
+    />
   </ng-container>
 </app-modal>

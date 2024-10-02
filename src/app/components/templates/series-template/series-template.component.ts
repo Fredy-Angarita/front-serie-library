@@ -1,4 +1,12 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
 import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
 import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
 import { ProgressProviderService } from 'src/app/data/services/progress/services/progress.provider.service';
@@ -10,13 +18,18 @@ import { SeriesProviderService } from 'src/app/data/services/series/services/ser
   templateUrl: './series-template.component.html',
   styleUrls: ['./series-template.component.scss'],
 })
-export class SeriesTemplateComponent implements OnInit{
+export class SeriesTemplateComponent implements OnInit {
+  @Output() showMore = new EventEmitter<boolean>();
+  @Output() delete = new EventEmitter<void>();
   progressList: GetProgressResponseDto[] = [];
-  addOrUpdate: PostProgressRequestDto ={
+  private add: PostProgressRequestDto = {
     chapter: 0,
     resume: '',
     series: '',
-  }
+  };
+  private update: PatchProgressRequestDto = {
+    id: '',
+  };
   series: GetSeriesResponse = {
     id: '',
     title: '',
@@ -30,15 +43,26 @@ export class SeriesTemplateComponent implements OnInit{
     private seriesProvider: SeriesProviderService
   ) {}
   ngOnInit(): void {
-    this.progressProvider.getProgressData().subscribe((progress) => {
+    this.progressProvider.getListProgressData().subscribe((progress) => {
       this.progressList = progress;
     });
-    this.seriesProvider.getData().subscribe((series) =>{
+    this.seriesProvider.getData().subscribe((series) => {
       this.series = series;
     });
   }
+
+  deleteProgress() {
+    this.delete.emit();
+  }
+  obtainEdit($data: PatchProgressRequestDto) {
+    this.update = $data;
+    this.progressProvider.setEditProgress(this.update);
+  }
+  showMoreProgress() {
+    this.showMore.emit(true);
+  }
   obtainData($data: PostProgressRequestDto) {
-    this.addOrUpdate = $data;
-    this.progressProvider.setAddOrUpdateProgress(this.addOrUpdate);
+    this.add = $data;
+    this.progressProvider.setAddProgress(this.add);
   }
 }

@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { GetListCollectionResponse } from '../dtos/response/get.list.series.response.dto';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LibraryProviderService {
-  private shareDataSubject = new BehaviorSubject<GetListCollectionResponse[]>([]);
-  
-  constructor() { }
+  private shareDataSubject = new Subject<GetListCollectionResponse[]>();
+
+  constructor() {}
 
   setLibrary(data: GetListCollectionResponse[]) {
     this.shareDataSubject.next(data);
