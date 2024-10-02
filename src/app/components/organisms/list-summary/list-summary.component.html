@@ -1,6 +1,6 @@
 <div class="list_container">
-  <article class="summary_container" (scroll)="onScroll($event)">
-    <h3 class="title_list">{{ title }}</h3>
+  <h3 class="title_list">{{ title }}</h3>
+  <article class="summary_container" #scroll (scroll)="onScroll($event)">
     <div class="resumen_container" *ngIf="!clickedAdd">
       <app-show-resume
         (edit)="editSummary($event)"
@@ -14,7 +14,11 @@
       addOrEdit="add"
     />
   </article>
-  <app-actions-menu (clickAdd)="showForm()" (clickDelete)="deleteProgress()" />
+  <app-actions-menu
+    (clickAdd)="showForm()"
+    (clickDelete)="deleteProgress()"
+    (clickBack)="goBack()"
+  />
 </div>
 <app-modal title="Edit Summary" *ngIf="clickedEdit" (close)="openModal()">
   <ng-container modal_content>

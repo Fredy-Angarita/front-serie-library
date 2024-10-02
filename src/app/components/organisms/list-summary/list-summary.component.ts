@@ -1,11 +1,10 @@
 import {
   Component,
+  ElementRef,
   EventEmitter,
-  HostListener,
   Input,
-  OnChanges,
   Output,
-  SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 import { TITLES } from 'src/app/data/constants/constants';
 import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
@@ -17,6 +16,7 @@ import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/resp
   styleUrls: ['./list-summary.component.scss'],
 })
 export class ListSummaryComponent {
+  @ViewChild('scroll') scrollRef!: ElementRef;
   @Input() summaries: GetProgressResponseDto[] = [];
   @Output() progress = new EventEmitter<PostProgressRequestDto>();
   @Output() edit = new EventEmitter<PatchProgressRequestDto>();
@@ -42,12 +42,15 @@ export class ListSummaryComponent {
     const offsetHeight = event.target.offsetHeight;
     const scrollTop = event.target.scrollTop;
     const scrollHeight = event.target.scrollHeight;
-    console.log(parseInt(offsetHeight) + parseInt(scrollTop), scrollHeight);
     if (offsetHeight + scrollTop > scrollHeight - 50) {
-      console.log('scroll end');
       this.scroll.emit(true);
     }
   }
+
+  goBack() {
+    this.scrollRef.nativeElement.scrollTop = 0;
+  }
+
   deleteProgress() {
     this.delete.emit();
   }
