@@ -1,23 +1,24 @@
-@import '../../../../styles/colors.scss';
-@import '../../../../styles/typography.scss';
-.card{
-    transition: transform 0.3s ease;
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/typography.scss";
+.card {
     background-color: $card_primary;
     border-radius: 1rem;
     text-align: center;
     cursor: pointer;
-    .image_container{
+    transition: transform 0.3s ease;
+    z-index: 1;
+    .image_container {
         display: grid;
-        border-radius: 1rem 1rem 0 0;
+        border-radius: 1rem;
         place-items: center;
-        padding: 1rem 0;
-        .card_image{
-            border-radius: 1rem 1rem 0 0;
+        padding: 0.2rem 0 1rem 0;
+        .card_image {
+            border-radius: 1rem;
             max-height: 200px;
             object-fit: contain;
         }
     }
-    .card_title{ 
+    .card_title {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -27,14 +28,15 @@
         padding: 0 1rem;
     }
 }
-.card:hover{
-    transform: translateY(-1rem); 
+.card:hover {
+    box-shadow: 0 1rem 1rem black;
+    transform: translateY(-0.5rem);
 }
 
-@media (width < 800px){
-    .card{
-        .image_container{
-            .card_image{
+@media (width < 800px) {
+    .card {
+        .image_container {
+            .card_image {
                 max-height: 150px;
             }
         }

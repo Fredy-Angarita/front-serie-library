@@ -1,13 +1,14 @@
 @import "../../../../styles/colors.scss";
 @import "../../../../styles/typography.scss";
-:host{
+:host {
     background-color: $navbar_primary;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 1rem;
     position: sticky;
     top: 0;
-    
+    z-index: 100;
+
     .container_navbar {
         display: flex;
         justify-content: flex-end;
@@ -16,8 +17,8 @@
     }
 }
 
-@media (width < 800px){
-    :host{
+@media (width < 800px) {
+    :host {
         display: grid;
         grid-template-columns: 1fr;
         padding: 0.3rem;
