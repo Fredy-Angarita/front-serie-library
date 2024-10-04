@@ -17,6 +17,7 @@
             margin: 0.2rem 0;
             color: $text_primary;
             text-decoration: none;
+            cursor: pointer;
         }
         .pagination_item.active {
             background-color: $border_primary;
