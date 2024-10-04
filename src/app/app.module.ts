@@ -92,7 +92,7 @@ import { LibraryTemplateComponent } from './components/templates/library-templat
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true,
-    }
+    },
   ],
   bootstrap: [AppComponent],
 })

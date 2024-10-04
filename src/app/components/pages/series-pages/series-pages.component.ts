@@ -20,7 +20,6 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
   private progress: GetProgressResponseDto[] = [];
   private canFetch = true;
   constructor(
-    private route: Router,
     private activeRoute: ActivatedRoute,
     private progressService: ProgressService,
     private dataProvider: ProgressProviderService,

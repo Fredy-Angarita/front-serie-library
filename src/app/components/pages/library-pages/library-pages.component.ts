@@ -14,7 +14,8 @@ export class LibraryPagesComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.seriesService.getAllSeries().subscribe((library) => {
-      this.dataProvider.setLibrary(library);
+      this.dataProvider.setLibrary(library.items);
+      console.log(library);
     });
   }
 }

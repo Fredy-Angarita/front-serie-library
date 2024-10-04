@@ -1,9 +1,8 @@
-@import '../../../../styles/colors.scss';
-@import '../../../../styles/typography.scss';
-
-.search_bar{
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/typography.scss";
+.search_bar {
     padding: 0.5rem;
-    input{
+    input {
         background-color: $background_tertiary;
         width: 100%;
         height: auto;
@@ -14,20 +13,35 @@
         text-align: center;
     }
 }
-
-.collection{
+.collection {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
     gap: 1rem;
     padding: 1rem;
 }
 
-@media (width < 800px){
-    .collection{
+.nose {
+    display: flex;
+    background-color: $background_secondary;
+    border-radius: 1rem 0 0 1rem;
+    padding: 0.2rem;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    .pages_container {
+        .pages_item {
+            color: #ffffff;
+        }
+    }
+}
+
+@media (width < 800px) {
+    .collection {
         grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
     }
-    .search_bar{
-        input{
+    .search_bar {
+        input {
             font-size: $size-XS;
         }
     }

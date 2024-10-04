@@ -1,11 +1,23 @@
 <div class="search_bar">
-    <input id="search" (keyup)="searchSeries($event)" type="text" placeholder="search your series">
+  <input
+    id="search"
+    (keyup)="searchSeries($event)"
+    type="text"
+    placeholder="search your series"
+  />
 </div>
 <section class="collection">
-    <app-card-series
+  <app-card-series
     *ngFor="let item of filter"
     [id]="item.id"
     [img]="item.thumbnail"
     [series_title]="item.title"
-    />
+  />
 </section>
+<div class="nose">
+  <div class="pages_container">
+    <a class="pages_item" href=""></a>
+    <a class="pages_item" href=""></a>
+    <a class="pages_item" href=""></a>
+  </div>
+</div>
