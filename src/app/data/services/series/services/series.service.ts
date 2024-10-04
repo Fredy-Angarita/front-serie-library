@@ -13,25 +13,31 @@ export class SeriesService {
   private url = environment.apiBase + '/series';
   constructor(private http: HttpClient) {}
 
-  getAllSeries(): Observable<PaginationResponse<GetListCollectionResponse>> {
+  getAllSeries(
+    page: number,
+    limit: number
+  ): Observable<PaginationResponse<GetListCollectionResponse>> {
     return this.http.get<PaginationResponse<GetListCollectionResponse>>(
       this.url,
       {
         params: {
-          page: '0',
-          limit: '10',
+          page: page,
+          limit: limit,
         },
       }
     );
   }
 
-  getCollection(): Observable<PaginationResponse<GetListCollectionResponse>> {
+  getCollection(
+    page: number,
+    limit: number
+  ): Observable<PaginationResponse<GetListCollectionResponse>> {
     return this.http.get<PaginationResponse<GetListCollectionResponse>>(
       `${this.url}/collection`,
       {
         params: {
-          page: '0',
-          limit: '10',
+          page: page,
+          limit: limit,
         },
       }
     );

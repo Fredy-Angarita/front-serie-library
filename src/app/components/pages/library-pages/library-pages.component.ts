@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { LibraryProviderService } from 'src/app/data/services/series/services/library.provider.service';
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 
@@ -8,14 +9,18 @@ import { SeriesService } from 'src/app/data/services/series/services/series.serv
   styleUrls: ['./library-pages.component.scss'],
 })
 export class LibraryPagesComponent implements OnInit {
+  private page: number = 0;
   constructor(
     private dataProvider: LibraryProviderService,
-    private seriesService: SeriesService
+    private seriesService: SeriesService,
+    private activatedRoute: ActivatedRoute
   ) {}
   ngOnInit(): void {
-    this.seriesService.getAllSeries().subscribe((library) => {
-      this.dataProvider.setLibrary(library.items);
-      console.log(library);
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.page = params['page'];
+      this.seriesService.getAllSeries(this.page, 30).subscribe((library) => {
+        this.dataProvider.setLibrary(library);
+      });
     });
   }
 }

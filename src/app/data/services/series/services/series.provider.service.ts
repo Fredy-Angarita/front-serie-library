@@ -3,11 +3,11 @@ import { GetSeriesResponse } from '../dtos/response/get.series.response.dto';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SeriesProviderService {
   private shareDataSubject = new Subject<GetSeriesResponse>();
-  constructor() { }
+  constructor() {}
 
   setData(data: GetSeriesResponse) {
     this.shareDataSubject.next(data);

@@ -1,5 +1,5 @@
-<app-titles  [title]="webTitle" routerLink="/collection" />
-<div class="container_navbar">  
-  <app-primary-button [text]="button_text" routerLink="/library" />
-  <app-session-actions (isLogout)="logoutHandler()"/>
+<app-titles (click)="collectionRedirect()" [title]="webTitle" />
+<div class="container_navbar">
+  <app-primary-button [text]="button_text" (click)="libraryRedirect()" />
+  <app-session-actions (isLogout)="logoutHandler()" />
 </div>

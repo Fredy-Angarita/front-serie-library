@@ -5,6 +5,10 @@
     type="text"
     placeholder="search your series"
   />
+  <app-pagination
+    [pages]="totalPage"
+    (changePageEvent)="onChangePage($event)"
+  ></app-pagination>
 </div>
 <section class="collection">
   <app-card-series

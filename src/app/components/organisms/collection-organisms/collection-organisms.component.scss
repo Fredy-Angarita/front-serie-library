@@ -1,16 +1,19 @@
 @import "../../../../styles/colors.scss";
 @import "../../../../styles/typography.scss";
 .search_bar {
+    display: flex;
+    align-items: center;
     padding: 0.5rem;
     input {
+        border: none;
         background-color: $background_tertiary;
         width: 100%;
-        height: auto;
-        border: solid;
+        height: 2rem;
         border-radius: 1rem;
-        padding: 0.5rem;
+        padding: 0 0.5rem;
         font-size: $size-M;
         text-align: center;
+        box-shadow: 0 0.1rem 0.2rem black;
     }
 }
 .collection {
@@ -37,6 +40,9 @@
 }
 
 @media (width < 800px) {
+    .search_bar {
+        flex-direction: column;
+    }
     .collection {
         grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
     }

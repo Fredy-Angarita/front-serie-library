@@ -41,6 +41,7 @@ import { ModalComponent } from './components/molecules/modal/modal.component';
 import { ActionsMenuComponent } from './components/molecules/actions-menu/actions-menu.component';
 import { CollectionOrganismsComponent } from './components/organisms/collection-organisms/collection-organisms.component';
 import { LibraryTemplateComponent } from './components/templates/library-template/library-template.component';
+import { PaginationComponent } from './components/molecules/pagination/pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,6 +80,7 @@ import { LibraryTemplateComponent } from './components/templates/library-templat
     ActionsMenuComponent,
     CollectionOrganismsComponent,
     LibraryTemplateComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,
