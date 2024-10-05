@@ -1,6 +1,6 @@
-@import '../../../../styles/colors.scss';
-@import '../../../../styles/typography.scss';
-.modal{
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/typography.scss";
+.modal {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,8 @@
     height: 100vh;
     padding: 3rem;
     background-color: $background_modal;
-    .content_container{
+    z-index: 11;
+    .content_container {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -22,19 +23,18 @@
         scrollbar-width: none;
         background-color: $background_secondary;
         box-shadow: 1rem brown;
-        .header{
+        .header {
             display: flex;
             width: 100%;
             justify-content: space-between;
         }
-        .content_title{
+        .content_title {
             color: $text_primary;
             font-family: $font_primary;
             font-size: $size-M;
             text-align: justify;
-
         }
-        .separator{
+        .separator {
             margin: 0 0 0.5rem 0;
             border: none;
             width: 100%;
@@ -42,7 +42,7 @@
             height: 0.1rem;
             background-color: $background_tertiary;
         }
-        .close_action{
+        .close_action {
             text-decoration: underline;
             color: $text_primary;
             cursor: pointer;
