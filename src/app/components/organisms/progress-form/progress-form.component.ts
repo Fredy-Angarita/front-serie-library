@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
 import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
@@ -8,7 +13,7 @@ import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/resp
 @Component({
   selector: 'app-progress-form',
   templateUrl: './progress-form.component.html',
-  styleUrls: ['./progress-form.component.scss']
+  styleUrls: ['./progress-form.component.scss'],
 })
 export class ProgressFormComponent implements OnInit {
   @Input() addOrEdit!: string;
@@ -18,22 +23,25 @@ export class ProgressFormComponent implements OnInit {
   progressForm: FormGroup;
   seriesId: string = '';
   constructor(private fb: FormBuilder, private activeRoute: ActivatedRoute) {
-      this.progressForm = this.fb.group({
-        chapter: ['', [Validators.required]],
-        summary: ['', [Validators.required]],
-      })
+    this.progressForm = this.fb.group({
+      chapter: ['', [Validators.required]],
+      summary: ['', [Validators.required]],
+    });
   }
   ngOnInit(): void {
-    if(this.objectEdit){
+    if (this.objectEdit) {
       this.progressForm = this.fb.group({
-        chapter: [{value: this.objectEdit.chapter, disabled: true}, [Validators.required]],
+        chapter: [
+          { value: this.objectEdit.chapter, disabled: true },
+          [Validators.required],
+        ],
         summary: [this.objectEdit.resume, [Validators.required]],
-      })
+      });
     }
     this.seriesId = this.activeRoute.snapshot.paramMap.get('id') as string;
   }
 
-  hasError(){
+  hasError() {
     return this.progressForm.invalid;
   }
 
@@ -44,15 +52,18 @@ export class ProgressFormComponent implements OnInit {
     return this.progressForm.get('summary') as FormControl;
   }
   onSubmit() {
-    if(this.addOrEdit === 'add'){
+    if (this.addOrEdit === 'add') {
       const progress: PostProgressRequestDto = {
         chapter: parseInt(this.chapterControl.value, 10),
         resume: this.summaryControl.value,
-        series: this.seriesId
-      }
+        series: this.seriesId,
+      };
       this.submitProgress.emit(progress);
-    }else if (this.addOrEdit === 'edit'){
-      this.submitEdit.emit({...this.objectEdit, resume: this.summaryControl.value});
+    } else if (this.addOrEdit === 'edit') {
+      this.submitEdit.emit({
+        ...this.objectEdit,
+        resume: this.summaryControl.value,
+      });
     }
   }
 }
