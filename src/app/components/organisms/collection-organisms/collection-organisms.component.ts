@@ -30,6 +30,15 @@ export class CollectionOrganismsComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     this.filter = this.data;
   }
+  addButton() {
+    const activeRoute = this.router.url.split('?')[0];
+    if (activeRoute === '/collection') {
+      this.router.navigate(['library'], {
+        queryParams: { page: 0 },
+      });
+    } else if (activeRoute === '/library') {
+    }
+  }
 
   onChangePage(page: number) {
     this.router.navigate([], {

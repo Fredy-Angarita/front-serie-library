@@ -1,6 +1,13 @@
-<div class="select-container">
-    <label [for]="name">{{name}}</label>
-    <select [name]="name" [id]="selectID">
-        <option *ngFor="let option of options" [value]="option.value" (change)="onSelectOption($event)">{{ option.label }}</option>
-    </select>
+<div class="select_container">
+  <label class="select_label" [for]="selectID">{{ name }}</label>
+  <select class="select" [name]="name" [id]="selectID">
+    <option
+      class="select_option"
+      *ngFor="let option of options"
+      [value]="option.value"
+      (change)="onSelectOption($event)"
+    >
+      {{ option }}
+    </option>
+  </select>
 </div>

@@ -1,0 +1,46 @@
+<form [formGroup]="seriesForm" class="series_form">
+  <div class="picker_container">
+    <app-form-field
+      label_text="Publication Date"
+      idInput="idDate"
+      optionType="date"
+      [control]="publicationDateControl"
+    />
+    <app-input-select
+      name="Type"
+      selectID="typeID"
+      [options]="options"
+      size="2"
+    />
+  </div>
+  <app-form-field
+    idInput="idTitle"
+    label_text="Title"
+    optionType="text"
+    optionPlaceholder="title of the series"
+    [control]="titleControl"
+  />
+  <app-text-area
+    idInput="idSynopsis"
+    label="Synopsis"
+    placeholder="description of the series"
+    [control]="synopsisControl"
+  />
+
+  <app-form-field
+    label_text="Thumbnail"
+    idInput="idThumbnail"
+    optionType="url"
+    optionPlaceholder="https://example.com/image.jpg"
+    [control]="thumbnailControl"
+  />
+
+  <app-form-field
+    label_text="Total Chapters"
+    idInput="idChapters"
+    optionType="number"
+    optionPlaceholder="120"
+    [control]="chaptersControl"
+  />
+  <app-form-actions button_text="Save" />
+</form>

@@ -42,6 +42,7 @@ import { ActionsMenuComponent } from './components/molecules/actions-menu/action
 import { CollectionOrganismsComponent } from './components/organisms/collection-organisms/collection-organisms.component';
 import { LibraryTemplateComponent } from './components/templates/library-template/library-template.component';
 import { PaginationComponent } from './components/molecules/pagination/pagination.component';
+import { SeriesFormComponent } from './components/organisms/series-form/series-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,6 +82,7 @@ import { PaginationComponent } from './components/molecules/pagination/paginatio
     CollectionOrganismsComponent,
     LibraryTemplateComponent,
     PaginationComponent,
+    SeriesFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -23,20 +23,15 @@
     padding: 1rem;
 }
 
-.nose {
+.float_container {
     display: flex;
-    background-color: $background_secondary;
+    background-color: transparent;
     border-radius: 1rem 0 0 1rem;
     padding: 0.2rem;
     justify-content: space-between;
     position: fixed;
     bottom: 0;
     right: 0;
-    .pages_container {
-        .pages_item {
-            color: #ffffff;
-        }
-    }
 }
 
 @media (width < 800px) {

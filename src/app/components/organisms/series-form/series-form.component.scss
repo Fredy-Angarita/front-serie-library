@@ -1,0 +1,12 @@
+.series_form {
+    .picker_container {
+        display: flex;
+        flex-direction: row;
+        app-form-field {
+            flex-grow: 2;
+        }
+        app-input-select {
+            flex-grow: 1;
+        }
+    }
+}

@@ -18,10 +18,26 @@
     [series_title]="item.title"
   />
 </section>
-<div class="nose">
-  <div class="pages_container">
-    <a class="pages_item" href=""></a>
-    <a class="pages_item" href=""></a>
-    <a class="pages_item" href=""></a>
-  </div>
+<div class="float_container">
+  <app-tertiary-button (button_click)="addButton()">
+    <ng-container svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2.5em"
+        height="2.5em"
+        viewBox="0 0 20 20"
+      >
+        <rect width="40" height="40" fill="none" />
+        <path
+          fill="#00940a"
+          d="M11 9V5H9v4H5v2h4v4h2v-4h4V9zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20"
+        />
+      </svg>
+    </ng-container>
+  </app-tertiary-button>
 </div>
+<app-modal>
+  <ng-container modal_content>
+    <app-series-form></app-series-form>
+  </ng-container>
+</app-modal>
