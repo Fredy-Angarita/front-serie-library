@@ -29,12 +29,5 @@
         .form_input {
             font-size: $size-XS;
         }
-        input::-webkit-calendar-picker-indicator {
-            display: none;
-        }
-
-        input[type="date"]::-webkit-input-placeholder {
-            visibility: hidden !important;
-        }
     }
 }
