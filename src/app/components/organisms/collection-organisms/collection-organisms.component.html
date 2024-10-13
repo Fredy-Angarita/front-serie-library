@@ -36,7 +36,7 @@
     </ng-container>
   </app-tertiary-button>
 </div>
-<app-modal>
+<app-modal *ngIf="openForm" (close)="showForm()">
   <ng-container modal_content>
     <app-series-form></app-series-form>
   </ng-container>

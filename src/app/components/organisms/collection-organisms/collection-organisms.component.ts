@@ -19,6 +19,7 @@ export class CollectionOrganismsComponent implements OnInit, OnChanges {
   @Input() data: GetListCollectionResponse[] = [];
   @Input() totalPage!: number;
   filter: GetListCollectionResponse[] = [];
+  openForm: Boolean = false;
 
   constructor(private router: Router) {}
   ngOnInit(): void {
@@ -37,9 +38,12 @@ export class CollectionOrganismsComponent implements OnInit, OnChanges {
         queryParams: { page: 0 },
       });
     } else if (activeRoute === '/library') {
+      this.showForm();
     }
   }
-
+  showForm() {
+    this.openForm = !this.openForm;
+  }
   onChangePage(page: number) {
     this.router.navigate([], {
       queryParams: { page },
