@@ -5,6 +5,7 @@ import { environment } from 'src/app/shared/environments/env.develop';
 import { GetSeriesResponse } from '../dtos/response/get.series.response.dto';
 import { GetListCollectionResponse } from '../dtos/response/get.list.series.response.dto';
 import { PaginationResponse } from 'src/app/shared/types/pagination.response.type';
+import { PostSeriesRequestDto } from '../dtos/request/post.series.dto';
 
 @Injectable({
   providedIn: 'root',
@@ -26,6 +27,10 @@ export class SeriesService {
         },
       }
     );
+  }
+
+  createSeries(series: PostSeriesRequestDto) {
+    return this.http.post(this.url, series);
   }
 
   getCollection(
