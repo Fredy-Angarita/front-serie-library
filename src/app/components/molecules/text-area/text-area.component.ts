@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-text-area',
   templateUrl: './text-area.component.html',
-  styleUrls: ['./text-area.component.scss']
+  styleUrls: ['./text-area.component.scss'],
 })
 export class TextAreaComponent {
   @Input() label: string = '';
@@ -24,6 +24,8 @@ export class TextAreaComponent {
     const errors = this.control.errors;
     if (errors?.['required']) {
       return 'Este campo es requerido';
+    } else if (errors?.['wasEdited']) {
+      return 'No puedes dejar el resumen igual';
     }
     return '';
   }

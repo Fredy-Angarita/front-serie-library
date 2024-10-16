@@ -35,6 +35,7 @@ export class ProgressFormComponent implements OnInit {
   }
   ngOnInit(): void {
     if (this.objectEdit) {
+      console.log(this.objectEdit);
       this.progressForm = this.fb.group({
         chapter: [
           { value: this.objectEdit.chapter, disabled: true },
@@ -42,16 +43,14 @@ export class ProgressFormComponent implements OnInit {
         ],
         summary: [
           this.objectEdit.resume,
-          [Validators.required, EditValidators.wasEdited()],
+          [
+            Validators.required,
+            EditValidators.wasEdited(this.objectEdit.resume),
+          ],
         ],
       });
-      console.log(this.progressForm.value);
     }
     this.seriesId = this.activeRoute.snapshot.paramMap.get('id') as string;
-  }
-
-  hasError() {
-    return this.progressForm.invalid;
   }
 
   get chapterControl() {

@@ -1,13 +1,16 @@
-import { AbstractControl, ValidatorFn, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  ValidationErrors,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 
 export class EditValidators extends Validators {
-  static wasEdited(): ValidatorFn {
-    return (control: AbstractControl) => {
+  static wasEdited(resume?: string): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
       const value = control.value;
-      if (value === null || value === undefined) {
-        return null;
-      }
-      return value ? null : { wasEdited: true };
+      if (resume !== value) return null;
+      return { wasEdited: true };
     };
   }
 }
