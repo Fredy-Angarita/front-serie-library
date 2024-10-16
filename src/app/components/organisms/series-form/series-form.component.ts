@@ -9,7 +9,6 @@ import { PostSeriesRequestDto } from 'src/app/data/services/series/dtos/request/
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 import { GetTypeSeriesResponseDto } from 'src/app/data/services/typeSeries/dtos/response/get.type-series.response.dto';
 import { TypeSeriesService } from 'src/app/data/services/typeSeries/services/type-series.service';
-
 @Component({
   selector: 'app-series-form',
   templateUrl: './series-form.component.html',
@@ -18,6 +17,7 @@ import { TypeSeriesService } from 'src/app/data/services/typeSeries/services/typ
 export class SeriesFormComponent implements OnInit {
   seriesForm: FormGroup;
   options: GetTypeSeriesResponseDto[] = [];
+  serverError: string | null = null;
   private selectedOption: number = 0;
   constructor(
     private fb: FormBuilder,
@@ -25,8 +25,8 @@ export class SeriesFormComponent implements OnInit {
     private typeService: TypeSeriesService
   ) {
     this.seriesForm = this.fb.group({
-      title: ['', [Validators.required]],
-      synopsis: ['', [Validators.required]],
+      title: ['', [Validators.required, Validators.minLength(2)]],
+      synopsis: ['', [Validators.required, Validators.minLength(10)]],
       publicationDate: [''],
       thumbnail: ['', [Validators.required]],
       chapters: ['', [Validators.required]],
@@ -34,8 +34,13 @@ export class SeriesFormComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.typeService.getAllTypes().subscribe((res) => {
-      this.options = res;
+    this.typeService.getAllTypes().subscribe({
+      next: (types) => {
+        this.options = types;
+      },
+      error: (error) => {
+        this.serverError = error.error.message;
+      },
     });
   }
   get selectControl() {
@@ -70,5 +75,14 @@ export class SeriesFormComponent implements OnInit {
     };
     this.seriesService.createSeries(series).subscribe();
     location.reload();
+  }
+  hasError(): boolean {
+    return this.serverError !== null;
+  }
+  messageError(): string {
+    if (this.serverError !== null) {
+      return this.serverError;
+    }
+    return '';
   }
 }

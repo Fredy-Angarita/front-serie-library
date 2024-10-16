@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-form-field',
   templateUrl: './form-field.component.html',
-  styleUrls: ['./form-field.component.scss']
+  styleUrls: ['./form-field.component.scss'],
 })
 export class FormFieldComponent {
   @Input() nameInput!: string;
@@ -13,7 +13,8 @@ export class FormFieldComponent {
   @Input() optionPlaceholder!: string;
   @Input() value_input!: string;
   @Input() label_text!: string;
-  @Input() control !: FormControl;
+  @Input() minNumb!: string;
+  @Input() control!: FormControl;
 
   onInput(event: any) {
     const target = event.target as HTMLInputElement;
@@ -28,11 +29,10 @@ export class FormFieldComponent {
       return `Debe tener al menos ${errors?.['minlength'].requiredLength} caracteres`;
     } else if (errors?.['maxlength']) {
       return `Debe tener como máximo ${errors?.['maxlength'].requiredLength} caracteres`;
-    }else if (errors?.['email']) {
+    } else if (errors?.['email']) {
       return `Debe ser un correo electrónico válido`;
-    }else if (errors?.['passwordMatch']){
+    } else if (errors?.['passwordMatch']) {
       return 'Las contraseñas no coinciden';
-
     }
 
     return '';
