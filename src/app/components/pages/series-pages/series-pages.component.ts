@@ -30,8 +30,6 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
     if (!this.url) return;
     this.obtainProgress();
     this.obtainSeries();
-    this.addProgress();
-    this.updatedProgress();
   }
   ngOnDestroy(): void {
     this.destroy$.next();
@@ -65,35 +63,6 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
         },
       });
   }
-  addProgress() {
-    this.dataProvider
-      .getAddProgress()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: (progress) => {
-          this.progress = [];
-          this.progressService.postProgress(progress).subscribe({
-            next: () => {
-              this.updateProgressData();
-            },
-          });
-        },
-      });
-  }
-  updatedProgress() {
-    this.dataProvider
-      .getEditProgress()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe({
-        next: (progress) => {
-          this.progressService.patchProgress(progress).subscribe({
-            next: () => {
-              this.updateProgressData();
-            },
-          });
-        },
-      });
-  }
   deleteProgress() {
     const confirmOption = confirm(
       'Are you sure you want to delete all progress?'
@@ -105,7 +74,7 @@ export class SeriesPagesComponent implements OnInit, OnDestroy {
     }
   }
   updateProgressData() {
-    window.location.reload();
+    location.reload();
   }
   showMore(event: boolean) {
     if (event && this.canFetch) {

@@ -10,7 +10,7 @@
     </div>
     <app-progress-form
       *ngIf="clickedAdd"
-      (submitProgress)="supplier($event)"
+      (submitProgress)="supplier()"
       addOrEdit="add"
     />
   </article>
@@ -24,7 +24,7 @@
   <ng-container modal_content>
     <app-progress-form
       [objectEdit]="editProgress"
-      (submitEdit)="supplierEdit($event)"
+      (submitProgress)="supplierEdit()"
       addOrEdit="edit"
     />
   </ng-container>

@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="progressForm" (ngSubmit)="onSubmit()">
   <app-form-field
     idInput="idChapter"
     optionType="number"

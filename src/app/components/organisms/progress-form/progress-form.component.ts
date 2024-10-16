@@ -9,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
 import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
 import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
+import { ProgressService } from 'src/app/data/services/progress/services/progress.service';
+import { EditValidators } from 'src/app/shared/validators/edit.validators';
 
 @Component({
   selector: 'app-progress-form',
@@ -18,11 +20,14 @@ import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/resp
 export class ProgressFormComponent implements OnInit {
   @Input() addOrEdit!: string;
   @Input() objectEdit!: PatchProgressRequestDto;
-  @Output() submitProgress = new EventEmitter<PostProgressRequestDto>();
-  @Output() submitEdit = new EventEmitter<PatchProgressRequestDto>();
+  @Output() submitProgress = new EventEmitter<void>();
   progressForm: FormGroup;
   seriesId: string = '';
-  constructor(private fb: FormBuilder, private activeRoute: ActivatedRoute) {
+  constructor(
+    private fb: FormBuilder,
+    private activeRoute: ActivatedRoute,
+    private progress: ProgressService
+  ) {
     this.progressForm = this.fb.group({
       chapter: ['', [Validators.required]],
       summary: ['', [Validators.required]],
@@ -35,8 +40,12 @@ export class ProgressFormComponent implements OnInit {
           { value: this.objectEdit.chapter, disabled: true },
           [Validators.required],
         ],
-        summary: [this.objectEdit.resume, [Validators.required]],
+        summary: [
+          this.objectEdit.resume,
+          [Validators.required, EditValidators.wasEdited()],
+        ],
       });
+      console.log(this.progressForm.value);
     }
     this.seriesId = this.activeRoute.snapshot.paramMap.get('id') as string;
   }
@@ -58,11 +67,17 @@ export class ProgressFormComponent implements OnInit {
         resume: this.summaryControl.value,
         series: this.seriesId,
       };
-      this.submitProgress.emit(progress);
+      this.progress.postProgress(progress).subscribe({
+        next: () => {
+          location.reload();
+        },
+      });
     } else if (this.addOrEdit === 'edit') {
-      this.submitEdit.emit({
-        ...this.objectEdit,
-        resume: this.summaryControl.value,
+      this.objectEdit.resume = this.summaryControl.value;
+      this.progress.patchProgress(this.objectEdit).subscribe({
+        next: () => {
+          location.reload();
+        },
       });
     }
   }

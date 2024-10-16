@@ -54,15 +54,7 @@ export class SeriesTemplateComponent implements OnInit {
   deleteProgress() {
     this.delete.emit();
   }
-  obtainEdit($data: PatchProgressRequestDto) {
-    this.update = $data;
-    this.progressProvider.setEditProgress(this.update);
-  }
   showMoreProgress() {
     this.showMore.emit(true);
-  }
-  obtainData($data: PostProgressRequestDto) {
-    this.add = $data;
-    this.progressProvider.setAddProgress(this.add);
   }
 }
