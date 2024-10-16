@@ -10,9 +10,11 @@ export class AuthValidators extends Validators {
     return (group: AbstractControl): ValidationErrors | null => {
       const passwordControl = group.get(password);
       const confirmPasswordControl = group.get(confirmPassword);
+
       if (!passwordControl || !confirmPasswordControl) {
         return null;
       }
+
       return passwordControl.value === confirmPasswordControl.value
         ? null
         : { passwordMatch: true };

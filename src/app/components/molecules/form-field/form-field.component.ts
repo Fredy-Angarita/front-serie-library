@@ -33,6 +33,8 @@ export class FormFieldComponent {
       return `Debe ser un correo electrónico válido`;
     } else if (errors?.['passwordMatch']) {
       return 'Las contraseñas no coinciden';
+    } else if (errors?.['pattern']) {
+      return 'Debe ser una URL válida';
     }
 
     return '';

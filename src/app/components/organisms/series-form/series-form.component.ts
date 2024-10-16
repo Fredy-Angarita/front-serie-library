@@ -18,6 +18,8 @@ export class SeriesFormComponent implements OnInit {
   seriesForm: FormGroup;
   options: GetTypeSeriesResponseDto[] = [];
   serverError: string | null = null;
+  private urlPattern: string =
+    '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
   private selectedOption: number = 0;
   constructor(
     private fb: FormBuilder,
@@ -28,7 +30,10 @@ export class SeriesFormComponent implements OnInit {
       title: ['', [Validators.required, Validators.minLength(2)]],
       synopsis: ['', [Validators.required, Validators.minLength(10)]],
       publicationDate: [''],
-      thumbnail: ['', [Validators.required]],
+      thumbnail: [
+        '',
+        [Validators.required, Validators.pattern(this.urlPattern)],
+      ],
       chapters: ['', [Validators.required]],
       select: ['', [Validators.required]],
     });
