@@ -35,7 +35,6 @@ export class ProgressFormComponent implements OnInit {
   }
   ngOnInit(): void {
     if (this.objectEdit) {
-      console.log(this.objectEdit);
       this.progressForm = this.fb.group({
         chapter: [
           { value: this.objectEdit.chapter, disabled: true },
