@@ -1,13 +1,19 @@
 <div class="select_container">
   <label class="select_label" [for]="selectID">{{ name }}</label>
-  <select class="select" [name]="name" [id]="selectID">
+  <select
+    class="select"
+    [name]="name"
+    [id]="selectID"
+    (change)="onSelectOption($event)"
+    [formControl]="control"
+  >
+    <option class="select_option" value="" disabled selected></option>
     <option
       class="select_option"
       *ngFor="let option of options"
-      [value]="option.value"
-      (change)="onSelectOption($event)"
+      [value]="option.id"
     >
-      {{ option }}
+      {{ option.type }}
     </option>
   </select>
 </div>

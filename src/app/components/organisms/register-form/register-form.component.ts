@@ -42,23 +42,21 @@ export class RegisterFormComponent {
     private service: RegisterService,
     private router: Router
   ) {
-    this.registerForm = this.fb.group(
-      {
-        username: [
-          '',
-          [
-            Validators.required,
-            Validators.minLength(4),
-            Validators.maxLength(20),
-          ],
+    this.registerForm = this.fb.group({
+      username: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(20),
         ],
-        email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(8)]],
-        confirmation: ['', [Validators.required]],
-      },
-      {
-        validators: AuthValidators.passwordMatch('password', 'confirmation'),
-      }
+      ],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      confirmation: ['', [Validators.required]],
+    });
+    this.registerForm.setValidators(
+      AuthValidators.passwordMatch('password', 'confirmation')
     );
   }
 
@@ -98,7 +96,6 @@ export class RegisterFormComponent {
 
   hasError(): boolean {
     return (
-      this.registerForm.invalid ||
       this.registerForm.errors?.['passwordMatch'] !== undefined ||
       this.serverError !== null
     );

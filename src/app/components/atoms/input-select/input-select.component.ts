@@ -6,6 +6,8 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { GetTypeSeriesResponseDto } from 'src/app/data/services/typeSeries/dtos/response/get.type-series.response.dto';
 
 @Component({
   selector: 'app-input-select',
@@ -13,22 +15,15 @@ import {
   styleUrls: ['./input-select.component.scss'],
 })
 export class InputSelectComponent implements OnChanges {
+  @Input() control!: FormControl;
   @Input() name!: string;
-  @Input() size!: string;
   @Input() selectID!: string;
-  @Input() options!: any[];
-  @Output() selectedOption: EventEmitter<string> = new EventEmitter<string>();
-  showOptions = false;
+  @Input() options!: GetTypeSeriesResponseDto[];
+  @Output() selectedOption: EventEmitter<number> = new EventEmitter<number>();
 
-  showOptionsList() {
-    return (this.showOptions = !this.showOptions);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.options);
-  }
+  ngOnChanges(changes: SimpleChanges): void {}
   onSelectOption(event: Event) {
     const target = event.target as HTMLSelectElement;
-    this.selectedOption.emit(target.value);
+    this.selectedOption.emit(+target.value);
   }
 }

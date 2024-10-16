@@ -1,14 +1,22 @@
-import { AbstractControl, ValidationErrors, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  ValidationErrors,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 
 export class AuthValidators extends Validators {
-  static passwordMatch(
-    password: string,
-    confirmPassword: string
-  ): ValidationErrors | null {
+  static passwordMatch(password: string, confirmPassword: string): ValidatorFn {
     return (group: AbstractControl): ValidationErrors | null => {
       const passwordControl = group.get(password);
       const confirmPasswordControl = group.get(confirmPassword);
-      return passwordControl?.value === confirmPasswordControl?.value
+
+      if (!passwordControl || !confirmPasswordControl) {
+        return null; // Si no existen los controles, no hay validación
+      }
+
+      // Retorna un error si las contraseñas no coinciden
+      return passwordControl.value === confirmPasswordControl.value
         ? null
         : { passwordMatch: true };
     };

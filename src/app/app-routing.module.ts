@@ -14,7 +14,6 @@ const routes: Routes = [
   {
     path: 'collection',
     component: CollectionPagesComponent,
-    data: { page: 0 },
     canActivate: [authGuard],
   },
   {

@@ -1,5 +1,5 @@
 <div class="actions">
-    <app-primary-button [text]="button_text"/> 
-    <p>{{paragraph}}</p>
-    <a [routerLink]="redirect">{{action}}</a>
+  <app-primary-button [text]="button_text" [disabled]="disabled" />
+  <p *ngIf="paragraph">{{ paragraph }}</p>
+  <a *ngIf="action" [routerLink]="redirect">{{ action }}</a>
 </div>

@@ -17,7 +17,7 @@ export class LibraryPagesComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params) => {
-      this.page = params['page'];
+      this.page = params['page'] | 0;
       this.seriesService.getAllSeries(this.page, 30).subscribe((library) => {
         this.dataProvider.setLibrary(library);
       });

@@ -34,9 +34,7 @@ export class CollectionOrganismsComponent implements OnInit, OnChanges {
   addButton() {
     const activeRoute = this.router.url.split('?')[0];
     if (activeRoute === '/collection') {
-      this.router.navigate(['library'], {
-        queryParams: { page: 0 },
-      });
+      this.router.navigate(['library']);
     } else if (activeRoute === '/library') {
       this.showForm();
     }

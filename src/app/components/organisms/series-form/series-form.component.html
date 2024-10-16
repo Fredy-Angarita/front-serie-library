@@ -1,4 +1,4 @@
-<form [formGroup]="seriesForm" class="series_form">
+<form (ngSubmit)="onSubmit()" [formGroup]="seriesForm" class="series_form">
   <div class="picker_container">
     <app-form-field
       label_text="Publication Date"
@@ -10,7 +10,8 @@
       name="Type"
       selectID="typeID"
       [options]="options"
-      size="2"
+      (selectedOption)="onSelect($event)"
+      [control]="selectControl"
     />
   </div>
   <app-form-field
@@ -42,5 +43,5 @@
     optionPlaceholder="120"
     [control]="chaptersControl"
   />
-  <app-form-actions button_text="Save" />
+  <app-form-actions button_text="Add Series" [disabled]="!seriesForm.valid" />
 </form>

@@ -18,7 +18,7 @@ export class CollectionPagesComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params) => {
-      this.page = params['page'];
+      this.page = params['page'] | 0;
       this.seriesService.getCollection(this.page, 30).subscribe((series) => {
         this.totalItems = series.totalItems;
         this.dataSeries.setData(series);

@@ -1,6 +1,6 @@
-@import '../../../../styles/typography.scss'; 
-@import '../../../../styles/colors.scss';
-.button{
+@import "../../../../styles/typography.scss";
+@import "../../../../styles/colors.scss";
+.button {
     font-family: $font_secondary;
     font-size: $size-M;
     background-color: $button_primary;
@@ -10,9 +10,13 @@
     padding: 0 1rem;
     cursor: pointer;
 }
+.button:disabled {
+    background-color: $disabled_primary;
+    cursor: not-allowed;
+}
 
-@media (width < 800px){
-    .button{
+@media (width < 800px) {
+    .button {
         border-radius: 0.5rem;
         font-size: $size-XXS;
     }
