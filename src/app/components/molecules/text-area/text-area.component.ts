@@ -26,6 +26,8 @@ export class TextAreaComponent {
       return 'Este campo es requerido';
     } else if (errors?.['wasEdited']) {
       return 'No puedes dejar el resumen igual';
+    } else if (errors?.['minlength']) {
+      return `Debe tener al menos ${errors?.['minlength'].requiredLength} caracteres`;
     }
     return '';
   }

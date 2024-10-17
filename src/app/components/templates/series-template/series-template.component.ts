@@ -37,6 +37,11 @@ export class SeriesTemplateComponent implements OnInit {
     thumbnail: '',
     totalChapters: 0,
     publicationDate: '',
+    progress: [
+      {
+        chapter: 0,
+      },
+    ],
   };
   constructor(
     private progressProvider: ProgressProviderService,

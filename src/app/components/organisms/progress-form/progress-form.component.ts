@@ -31,7 +31,7 @@ export class ProgressFormComponent implements OnInit {
   ) {
     this.progressForm = this.fb.group({
       chapter: ['', [Validators.required]],
-      summary: ['', [Validators.required]],
+      summary: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
   ngOnInit(): void {
@@ -45,6 +45,7 @@ export class ProgressFormComponent implements OnInit {
           this.objectEdit.resume,
           [
             Validators.required,
+            Validators.minLength(10),
             EditValidators.wasEdited(this.objectEdit.resume),
           ],
         ],
