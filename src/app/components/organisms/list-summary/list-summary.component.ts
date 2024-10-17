@@ -50,13 +50,10 @@ export class ListSummaryComponent {
   }
 
   deleteProgress() {
+    if (this.summaries.length <= 0) {
+      alert('you not have summaries to delete on this series');
+      return;
+    }
     this.delete.emit();
-  }
-
-  supplierEdit() {
-    this.openModal();
-  }
-  supplier() {
-    this.showForm();
   }
 }

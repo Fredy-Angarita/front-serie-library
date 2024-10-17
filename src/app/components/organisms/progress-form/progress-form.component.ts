@@ -22,7 +22,8 @@ export class ProgressFormComponent implements OnInit {
   @Input() objectEdit!: PatchProgressRequestDto;
   @Output() submitProgress = new EventEmitter<void>();
   progressForm: FormGroup;
-  seriesId: string = '';
+  private seriesId: string = '';
+  serverError: string | null = null;
   constructor(
     private fb: FormBuilder,
     private activeRoute: ActivatedRoute,
@@ -58,6 +59,7 @@ export class ProgressFormComponent implements OnInit {
   get summaryControl() {
     return this.progressForm.get('summary') as FormControl;
   }
+
   onSubmit() {
     if (this.addOrEdit === 'add') {
       const progress: PostProgressRequestDto = {
@@ -69,6 +71,9 @@ export class ProgressFormComponent implements OnInit {
         next: () => {
           location.reload();
         },
+        error: (error) => {
+          this.serverError = error.error.message;
+        },
       });
     } else if (this.addOrEdit === 'edit') {
       this.objectEdit.resume = this.summaryControl.value;
@@ -78,5 +83,14 @@ export class ProgressFormComponent implements OnInit {
         },
       });
     }
+  }
+  hasError() {
+    return this.serverError !== null;
+  }
+  showError(): string {
+    if (this.serverError) {
+      return this.serverError;
+    }
+    return '';
   }
 }

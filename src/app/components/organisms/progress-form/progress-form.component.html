@@ -13,4 +13,8 @@
     [control]="summaryControl"
   />
   <app-form-actions button_text="Save" [disabled]="!progressForm.valid" />
+  <app-show-errors
+    [message_error]="showError()"
+    *ngIf="hasError()"
+  ></app-show-errors>
 </form>
