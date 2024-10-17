@@ -18,15 +18,13 @@ import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/resp
 export class ListSummaryComponent {
   @ViewChild('scroll') scrollRef!: ElementRef;
   @Input() summaries: GetProgressResponseDto[] = [];
-  @Output() progress = new EventEmitter<PostProgressRequestDto>();
-  @Output() edit = new EventEmitter<PatchProgressRequestDto>();
   @Output() scroll = new EventEmitter<boolean>();
   @Output() delete = new EventEmitter<void>();
   clickedEdit: boolean = false;
   clickedAdd: boolean = false;
-
   editProgress!: PatchProgressRequestDto;
   title = TITLES.SUMMARY;
+
   constructor() {}
   showForm() {
     this.clickedAdd = !this.clickedAdd;
@@ -52,15 +50,10 @@ export class ListSummaryComponent {
   }
 
   deleteProgress() {
+    if (this.summaries.length <= 0) {
+      alert('you not have summaries to delete on this series');
+      return;
+    }
     this.delete.emit();
-  }
-
-  supplierEdit($event: PatchProgressRequestDto) {
-    this.edit.emit($event);
-    this.openModal();
-  }
-  supplier($event: PostProgressRequestDto) {
-    this.progress.emit($event);
-    this.showForm();
   }
 }

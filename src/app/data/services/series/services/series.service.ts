@@ -4,24 +4,51 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/app/shared/environments/env.develop';
 import { GetSeriesResponse } from '../dtos/response/get.series.response.dto';
 import { GetListCollectionResponse } from '../dtos/response/get.list.series.response.dto';
+import { PaginationResponse } from 'src/app/shared/types/pagination.response.type';
+import { PostSeriesRequestDto } from '../dtos/request/post.series.dto';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SeriesService {
   private url = environment.apiBase + '/series';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllSeries() : Observable<GetListCollectionResponse[]> {
-    return this.http.get<GetListCollectionResponse[]>(this.url);
+  getAllSeries(
+    page: number,
+    limit: number
+  ): Observable<PaginationResponse<GetListCollectionResponse>> {
+    return this.http.get<PaginationResponse<GetListCollectionResponse>>(
+      this.url,
+      {
+        params: {
+          page: page,
+          limit: limit,
+        },
+      }
+    );
   }
 
-  getCollection() : Observable<GetListCollectionResponse[]> {
-    return this.http.get<GetListCollectionResponse[]>(`${this.url}/collection`);
+  createSeries(series: PostSeriesRequestDto) {
+    return this.http.post(this.url, series);
   }
 
-  getOneSeries(id: string) : Observable<GetSeriesResponse> {
+  getCollection(
+    page: number,
+    limit: number
+  ): Observable<PaginationResponse<GetListCollectionResponse>> {
+    return this.http.get<PaginationResponse<GetListCollectionResponse>>(
+      `${this.url}/collection`,
+      {
+        params: {
+          page: page,
+          limit: limit,
+        },
+      }
+    );
+  }
+
+  getOneSeries(id: string): Observable<GetSeriesResponse> {
     return this.http.get<GetSeriesResponse>(`${this.url}/${id}`);
   }
-
 }

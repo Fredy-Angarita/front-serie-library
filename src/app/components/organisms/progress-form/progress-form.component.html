@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()">
+<form [formGroup]="progressForm" (ngSubmit)="onSubmit()">
   <app-form-field
     idInput="idChapter"
     optionType="number"
@@ -12,5 +12,9 @@
     placeholder="Type your summary here"
     [control]="summaryControl"
   />
-  <app-form-actions button_text="Save" />
+  <app-form-actions button_text="Save" [disabled]="!progressForm.valid" />
+  <app-show-errors
+    [message_error]="showError()"
+    *ngIf="hasError()"
+  ></app-show-errors>
 </form>

@@ -1,18 +1,29 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { GetTypeSeriesResponseDto } from 'src/app/data/services/typeSeries/dtos/response/get.type-series.response.dto';
 
 @Component({
   selector: 'app-input-select',
   templateUrl: './input-select.component.html',
-  styleUrls: ['./input-select.component.scss']
+  styleUrls: ['./input-select.component.scss'],
 })
-export class InputSelectComponent {
+export class InputSelectComponent implements OnChanges {
+  @Input() control!: FormControl;
   @Input() name!: string;
   @Input() selectID!: string;
-  @Input() options!: any[];
-  @Output() selectedOption: EventEmitter<string> = new EventEmitter<string>();
+  @Input() options!: GetTypeSeriesResponseDto[];
+  @Output() selectedOption: EventEmitter<number> = new EventEmitter<number>();
 
+  ngOnChanges(changes: SimpleChanges): void {}
   onSelectOption(event: Event) {
     const target = event.target as HTMLSelectElement;
-    this.selectedOption.emit(target.value);
+    this.selectedOption.emit(+target.value);
   }
 }

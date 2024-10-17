@@ -9,16 +9,28 @@ import { authGuard } from './data/services/auth/login/guards/auth.guard';
 import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
 
 const routes: Routes = [
- {path: 'login', component: LoginPagesComponent},
- {path: 'register' , component: RegisterPagesComponent},
- {path: 'collection' , component: CollectionPagesComponent, canActivate: [authGuard]},
- {path: 'library' , component: LibraryPagesComponent, canActivate: [authGuard]},
- {path: 'series/:id' , component: SeriesPagesComponent, canActivate: [authGuard]},
- {path: '**' , component: NotFoundPagesComponent, canActivate: [authGuard]},
+  { path: 'login', component: LoginPagesComponent },
+  { path: 'register', component: RegisterPagesComponent },
+  {
+    path: 'collection',
+    component: CollectionPagesComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'library',
+    component: LibraryPagesComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'series/:id',
+    component: SeriesPagesComponent,
+    canActivate: [authGuard],
+  },
+  { path: '**', component: NotFoundPagesComponent, canActivate: [authGuard] },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

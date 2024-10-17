@@ -8,6 +8,7 @@
     placeholder="{{ optionPlaceholder }}"
     (input)="onInput($event)"
     [id]="idInput"
+    [min]="minNumb"
   />
   <app-show-errors
     [message_error]="getErrorMessage()"

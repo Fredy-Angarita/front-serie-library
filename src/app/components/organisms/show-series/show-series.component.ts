@@ -8,25 +8,12 @@ import { SeriesService } from 'src/app/data/services/series/services/series.serv
   templateUrl: './show-series.component.html',
   styleUrls: ['./show-series.component.scss'],
 })
-export class ShowSeriesComponent implements OnInit {
-  @Input() series !: GetSeriesResponse;
+export class ShowSeriesComponent {
+  @Input() series!: GetSeriesResponse;
   id!: string | null;
   details: boolean = false;
   progress: number = 0;
-  constructor(
-    private router: ActivatedRoute,
-    private seriesService: SeriesService,
-  ) {}
-  ngOnInit(): void {
-    this.id = this.router.snapshot.paramMap.get('id');
-    if (this.id !== null) {
-      this.seriesService.getOneSeries(this.id).subscribe({
-        next: series =>{
-          this.series = series;
-        },
-      });
-    }
-  }
+  constructor() {}
   showDetails() {
     this.details = !this.details;
   }

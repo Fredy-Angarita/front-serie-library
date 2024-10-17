@@ -37,6 +37,11 @@ export class SeriesTemplateComponent implements OnInit {
     thumbnail: '',
     totalChapters: 0,
     publicationDate: '',
+    progress: [
+      {
+        chapter: 0,
+      },
+    ],
   };
   constructor(
     private progressProvider: ProgressProviderService,
@@ -54,15 +59,7 @@ export class SeriesTemplateComponent implements OnInit {
   deleteProgress() {
     this.delete.emit();
   }
-  obtainEdit($data: PatchProgressRequestDto) {
-    this.update = $data;
-    this.progressProvider.setEditProgress(this.update);
-  }
   showMoreProgress() {
     this.showMore.emit(true);
-  }
-  obtainData($data: PostProgressRequestDto) {
-    this.add = $data;
-    this.progressProvider.setAddProgress(this.add);
   }
 }

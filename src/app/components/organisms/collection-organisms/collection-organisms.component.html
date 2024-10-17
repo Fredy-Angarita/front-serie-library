@@ -1,11 +1,43 @@
 <div class="search_bar">
-    <input id="search" (keyup)="searchSeries($event)" type="text" placeholder="search your series">
+  <input
+    id="search"
+    (keyup)="searchSeries($event)"
+    type="text"
+    placeholder="search your series"
+  />
+  <app-pagination
+    [pages]="totalPage"
+    (changePageEvent)="onChangePage($event)"
+  ></app-pagination>
 </div>
 <section class="collection">
-    <app-card-series
+  <app-card-series
     *ngFor="let item of filter"
     [id]="item.id"
     [img]="item.thumbnail"
     [series_title]="item.title"
-    />
+  />
 </section>
+<div class="float_container">
+  <app-tertiary-button (button_click)="addButton()">
+    <ng-container svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2.5em"
+        height="2.5em"
+        viewBox="0 0 20 20"
+      >
+        <rect width="40" height="40" fill="none" />
+        <path
+          fill="#00940a"
+          d="M11 9V5H9v4H5v2h4v4h2v-4h4V9zm-1 11a10 10 0 1 1 0-20a10 10 0 0 1 0 20"
+        />
+      </svg>
+    </ng-container>
+  </app-tertiary-button>
+</div>
+<app-modal title="add series" *ngIf="openForm" (close)="showForm()">
+  <ng-container modal_content>
+    <app-series-form></app-series-form>
+  </ng-container>
+</app-modal>

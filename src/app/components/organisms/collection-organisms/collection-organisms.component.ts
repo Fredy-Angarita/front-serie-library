@@ -1,10 +1,13 @@
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { GetListCollectionResponse } from 'src/app/data/services/series/dtos/response/get.list.series.response.dto';
 
 @Component({
@@ -14,12 +17,36 @@ import { GetListCollectionResponse } from 'src/app/data/services/series/dtos/res
 })
 export class CollectionOrganismsComponent implements OnInit, OnChanges {
   @Input() data: GetListCollectionResponse[] = [];
+  @Input() totalPage!: number;
   filter: GetListCollectionResponse[] = [];
+  openForm: Boolean = false;
 
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private router: Router) {}
+  ngOnInit(): void {
+    this.router.navigate([], {
+      queryParams: { page: 0 },
+      queryParamsHandling: 'merge',
+    });
+  }
   ngOnChanges(changes: SimpleChanges): void {
     this.filter = this.data;
+  }
+  addButton() {
+    const activeRoute = this.router.url.split('?')[0];
+    if (activeRoute === '/collection') {
+      this.router.navigate(['library']);
+    } else if (activeRoute === '/library') {
+      this.showForm();
+    }
+  }
+  showForm() {
+    this.openForm = !this.openForm;
+  }
+  onChangePage(page: number) {
+    this.router.navigate([], {
+      queryParams: { page },
+      queryParamsHandling: 'merge',
+    });
   }
 
   searchSeries(event: KeyboardEvent) {

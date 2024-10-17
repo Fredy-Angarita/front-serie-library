@@ -1,17 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CollectionProviderService } from 'src/app/data/services/series/services/collection.provider.service';
 import { SeriesService } from 'src/app/data/services/series/services/series.service';
 
 @Component({
   selector: 'app-collection-pages',
   templateUrl: './collection-pages.component.html',
-  styleUrls: ['./collection-pages.component.scss']
+  styleUrls: ['./collection-pages.component.scss'],
 })
 export class CollectionPagesComponent implements OnInit {
-  constructor (private dataSeries: CollectionProviderService, private seriesService: SeriesService) {}
+  private page: number = 0;
+  totalItems: number = 0;
+  constructor(
+    private dataSeries: CollectionProviderService,
+    private seriesService: SeriesService,
+    private activatedRoute: ActivatedRoute
+  ) {}
   ngOnInit(): void {
-    this.seriesService.getCollection().subscribe((series) => {
-      this.dataSeries.setData(series);
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.page = params['page'] | 0;
+      this.seriesService.getCollection(this.page, 30).subscribe((series) => {
+        this.totalItems = series.totalItems;
+        this.dataSeries.setData(series);
+      });
     });
   }
 }

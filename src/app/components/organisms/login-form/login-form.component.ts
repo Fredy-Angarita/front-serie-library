@@ -41,7 +41,6 @@ export class LoginFormComponent {
   action = QUESTION_ACTIONS.REGISTER_ACTION;
   isBrowser!: boolean;
   @Output() changeEvent = new EventEmitter<boolean>();
-
   constructor(
     private fb: FormBuilder,
     private loginService: AuthLoginService,
@@ -90,12 +89,9 @@ export class LoginFormComponent {
     });
   }
   hasError() {
-    return this.loginForm.invalid || this.serverError !== null;
+    return this.serverError !== null;
   }
   showLoginError(): string {
-    if (this.loginForm.invalid) {
-      return 'Invalid email or password';
-    }
     if (this.serverError !== null) {
       return this.serverError;
     }

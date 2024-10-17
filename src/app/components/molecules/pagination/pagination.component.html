@@ -1,0 +1,11 @@
+<div class="pagination_container">
+  <div class="pagination">
+    <a
+      (click)="changePage(page)"
+      *ngFor="let page of pagination"
+      [class.active]="isActive(page)"
+      class="pagination_item"
+      >{{ page }}</a
+    >
+  </div>
+</div>

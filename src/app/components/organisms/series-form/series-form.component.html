@@ -1,0 +1,48 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="seriesForm" class="series_form">
+  <div class="picker_container">
+    <app-form-field
+      label_text="Publication Date"
+      idInput="idDate"
+      optionType="date"
+      [control]="publicationDateControl"
+    />
+    <app-input-select
+      name="Type"
+      selectID="typeID"
+      [options]="options"
+      (selectedOption)="onSelect($event)"
+      [control]="selectControl"
+    />
+  </div>
+  <app-form-field
+    label_text="Total Chapters"
+    idInput="idChapters"
+    optionType="number"
+    optionPlaceholder="120"
+    [control]="chaptersControl"
+    minNumb="1"
+  />
+  <app-form-field
+    idInput="idTitle"
+    label_text="Title"
+    optionType="text"
+    optionPlaceholder="title of the series"
+    [control]="titleControl"
+  />
+  <app-form-field
+    label_text="Thumbnail"
+    idInput="idThumbnail"
+    optionType="url"
+    optionPlaceholder="https://example.com/image.jpg"
+    [control]="thumbnailControl"
+  />
+  <app-text-area
+    idInput="idSynopsis"
+    label="Synopsis"
+    placeholder="description of the series"
+    [control]="synopsisControl"
+  />
+
+  <app-form-actions button_text="Add Series" [disabled]="!seriesForm.valid" />
+  <app-show-errors [message_error]="messageError()" *ngIf="hasError()" />
+</form>
