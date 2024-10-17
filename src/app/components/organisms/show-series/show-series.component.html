@@ -40,7 +40,7 @@
       <progress
         class="container_progress"
         [max]="series.totalChapters"
-        [value]="series.progress[0].chapter"
+        [value]="series.progress.length > 0 ? series.progress[0].chapter : 0"
       ></progress>
       <p class="container_p">{{ series.synopsis }}</p>
     </div>

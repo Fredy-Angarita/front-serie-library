@@ -70,16 +70,24 @@ export class SeriesFormComponent implements OnInit {
     this.selectedOption = $event;
   }
   onSubmit() {
+    const date = this.publicationDateControl.value;
+
     const series: PostSeriesRequestDto = {
       title: this.titleControl.value,
       synopsis: this.synopsisControl.value,
-      publicationDate: this.publicationDateControl.value,
       totalChapters: +this.chaptersControl.value,
       thumbnail: this.thumbnailControl.value,
       typeSeries: this.selectedOption,
     };
-    this.seriesService.createSeries(series).subscribe();
-    location.reload();
+    if (date !== '') {
+      series.publicationDate = date;
+    }
+    this.seriesService.createSeries(series).subscribe({
+      next: () => {
+        alert('series created');
+        location.reload();
+      },
+    });
   }
   hasError(): boolean {
     return this.serverError !== null;
