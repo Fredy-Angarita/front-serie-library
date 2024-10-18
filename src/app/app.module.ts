@@ -5,10 +5,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserIconComponent } from './components/atoms/user-icon/user-icon.component';
-import { PrimaryButtonComponent } from './components/atoms/primary-button/primary-button.component';
-import { InputsComponent } from './components/atoms/inputs/inputs.component';
-import { TitlesComponent } from './components/atoms/titles/titles.component';
 import { CardSeriesComponent } from './components/molecules/card-series/card-series.component';
 import { SessionActionsComponent } from './components/molecules/session-actions/session-actions.component';
 import { ShowSeriesComponent } from './components/organisms/show-series/show-series.component';
@@ -23,8 +19,6 @@ import { FormActionsComponent } from './components/molecules/form-actions/form-a
 import { SeriesTemplateComponent } from './components/templates/series-template/series-template.component';
 import { UserFormsComponent } from './components/templates/user-forms/user-forms.component';
 import { CollectionTemplateComponent } from './components/templates/collection-template/collection-template.component';
-import { SecondaryButtonComponent } from './components/atoms/button-secondary/button-secondary.component';
-import { TertiaryButtonComponent } from './components/atoms/tertiary-button/tertiary-button.component';
 import { LoginPagesComponent } from './components/pages/login-pages/login-pages.component';
 import { RegisterPagesComponent } from './components/pages/register-pages/register-pages.component';
 import { CollectionPagesComponent } from './components/pages/collection-pages/collection-pages.component';
@@ -32,7 +26,6 @@ import { SeriesPagesComponent } from './components/pages/series-pages/series-pag
 import { NotFoundComponent } from './components/templates/not-found/not-found.component';
 import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-found-pages.component';
 import { TokenInterceptor } from './data/services/auth/login/interceptors/token.interceptor';
-import { InputSelectComponent } from './components/atoms/input-select/input-select.component';
 import { ProgressFormComponent } from './components/organisms/progress-form/progress-form.component';
 import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
 import { TextAreaComponent } from './components/molecules/text-area/text-area.component';
@@ -43,13 +36,12 @@ import { CollectionOrganismsComponent } from './components/organisms/collection-
 import { LibraryTemplateComponent } from './components/templates/library-template/library-template.component';
 import { PaginationComponent } from './components/molecules/pagination/pagination.component';
 import { SeriesFormComponent } from './components/organisms/series-form/series-form.component';
+import { AtomsModule } from './shared/components/atoms/atoms.module';
+import { InputSelectComponent } from './components/molecules/input-select/input-select.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PrimaryButtonComponent,
-    UserIconComponent,
-    InputsComponent,
-    TitlesComponent,
+    InputSelectComponent,
     CardSeriesComponent,
     SessionActionsComponent,
     ShowSeriesComponent,
@@ -64,15 +56,12 @@ import { SeriesFormComponent } from './components/organisms/series-form/series-f
     SeriesTemplateComponent,
     UserFormsComponent,
     CollectionTemplateComponent,
-    SecondaryButtonComponent,
-    TertiaryButtonComponent,
     LoginPagesComponent,
     RegisterPagesComponent,
     CollectionPagesComponent,
     SeriesPagesComponent,
     NotFoundComponent,
     NotFoundPagesComponent,
-    InputSelectComponent,
     ProgressFormComponent,
     LibraryPagesComponent,
     TextAreaComponent,
@@ -90,6 +79,7 @@ import { SeriesFormComponent } from './components/organisms/series-form/series-f
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AtomsModule,
   ],
   providers: [
     {

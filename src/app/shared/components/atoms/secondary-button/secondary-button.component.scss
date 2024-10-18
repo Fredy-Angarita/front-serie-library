@@ -1,6 +1,6 @@
-@import '../../../../styles/typography.scss'; 
-@import '../../../../styles/colors.scss';
-.secondary-button{
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
+.secondary-button {
     display: flex;
     font-family: $font_secondary;
     font-size: $size-XXS;
@@ -11,8 +11,8 @@
     cursor: pointer;
 }
 
-@media (width < 800px){
-    .secondary-button{
+@media (width < 800px) {
+    .secondary-button {
         font-size: $size-XS;
         padding: 0.5rem;
     }

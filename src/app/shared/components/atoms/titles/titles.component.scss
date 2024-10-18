@@ -1,5 +1,5 @@
-@import '../../../../styles/typography.scss';
-@import '../../../../styles/colors.scss';
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
 .h1 {
     font-family: $font_primary;
     font-size: $size-XL;
@@ -7,7 +7,7 @@
     text-align: center;
     cursor: pointer;
 }
-@media (width < 800px){
+@media (width < 800px) {
     .h1 {
         font-size: $size-L;
     }

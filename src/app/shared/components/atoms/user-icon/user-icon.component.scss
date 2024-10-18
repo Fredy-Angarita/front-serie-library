@@ -1,5 +1,6 @@
-@import '../../../../styles/colors.scss';
-.icon{
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
+.icon {
     background-color: $button_primary;
     width: 4rem;
     height: 4rem;
@@ -8,8 +9,8 @@
     cursor: pointer;
 }
 
-@media (width < 800px){
-    .icon{
+@media (width < 800px) {
+    .icon {
         width: 3rem;
         height: 3rem;
     }
