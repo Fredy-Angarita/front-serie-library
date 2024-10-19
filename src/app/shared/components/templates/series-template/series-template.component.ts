@@ -6,12 +6,12 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
-import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
-import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
-import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
-import { ProgressProviderService } from 'src/app/data/services/progress/services/progress.provider.service';
-import { GetSeriesResponse } from 'src/app/data/services/series/dtos/response/get.series.response.dto';
-import { SeriesProviderService } from 'src/app/data/services/series/services/series.provider.service';
+import { PatchProgressRequestDto } from 'src/app/data/progress/dtos/request/patch.progress.request.dto';
+import { PostProgressRequestDto } from 'src/app/data/progress/dtos/request/post.progress.request.dto';
+import { GetProgressResponseDto } from 'src/app/data/progress/dtos/response/get.progress.response.dto';
+import { ProgressProviderService } from 'src/app/data/progress/services/progress.provider.service';
+import { GetSeriesResponse } from 'src/app/data/series/dtos/response/get.series.response.dto';
+import { SeriesProviderService } from 'src/app/data/series/services/series.provider.service';
 
 @Component({
   selector: 'app-series-template',

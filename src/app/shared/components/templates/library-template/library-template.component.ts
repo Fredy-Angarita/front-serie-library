@@ -5,8 +5,8 @@ import {
   OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { GetListCollectionResponse } from 'src/app/data/services/series/dtos/response/get.list.series.response.dto';
-import { LibraryProviderService } from 'src/app/data/services/series/services/library.provider.service';
+import { GetListCollectionResponse } from 'src/app/data/series/dtos/response/get.list.series.response.dto';
+import { LibraryProviderService } from 'src/app/data/series/services/library.provider.service';
 
 @Component({
   selector: 'app-library-template',

@@ -8,7 +8,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { GetListCollectionResponse } from 'src/app/data/services/series/dtos/response/get.list.series.response.dto';
+import { GetListCollectionResponse } from 'src/app/data/series/dtos/response/get.list.series.response.dto';
 
 @Component({
   selector: 'app-collection-organisms',

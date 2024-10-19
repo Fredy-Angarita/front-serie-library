@@ -20,8 +20,8 @@ import {
   TITLES,
   TYPE_BUTTONS,
 } from 'src/app/data/constants/constants';
-import { PostLoginRequest } from 'src/app/data/services/auth/login/dtos/request/post.login.request';
-import { AuthLoginService } from 'src/app/data/services/auth/login/services/auth.login.service';
+import { PostLoginRequest } from 'src/app/data/auth/login/dtos/request/post.login.request';
+import { AuthLoginService } from 'src/app/data/auth/login/services/auth.login.service';
 
 @Component({
   selector: 'app-login-form',

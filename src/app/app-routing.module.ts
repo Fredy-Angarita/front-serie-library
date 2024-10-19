@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { authGuard } from './data/services/auth/login/guards/auth.guard';
+import { authGuard } from './data/auth/login/guards/auth.guard';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
   {
     path: '',
     loadChildren: () =>
@@ -32,6 +37,7 @@ const routes: Routes = [
     path: '**',
     loadChildren: () =>
       import('./pages/notfound/notfound.module').then((m) => m.NotfoundModule),
+    canActivate: [authGuard],
   },
 ];
 

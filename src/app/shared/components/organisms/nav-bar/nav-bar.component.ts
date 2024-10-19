@@ -5,7 +5,7 @@ import {
   TITLES,
   TYPE_BUTTONS,
 } from 'src/app/data/constants/constants';
-import { AuthLoginService } from 'src/app/data/services/auth/login/services/auth.login.service';
+import { AuthLoginService } from 'src/app/data/auth/login/services/auth.login.service';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',

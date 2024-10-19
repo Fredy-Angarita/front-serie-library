@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CollectionProviderService } from 'src/app/data/services/series/services/collection.provider.service';
-import { SeriesService } from 'src/app/data/services/series/services/series.service';
+import { CollectionProviderService } from 'src/app/data/series/services/collection.provider.service';
+import { SeriesService } from 'src/app/data/series/services/series.service';
 
 @Component({
   selector: 'app-collection-pages',

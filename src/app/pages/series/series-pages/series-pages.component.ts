@@ -1,11 +1,11 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
-import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
-import { ProgressProviderService } from 'src/app/data/services/progress/services/progress.provider.service';
-import { ProgressService } from 'src/app/data/services/progress/services/progress.service';
-import { SeriesProviderService } from 'src/app/data/services/series/services/series.provider.service';
-import { SeriesService } from 'src/app/data/services/series/services/series.service';
+import { GetProgressResponseDto } from 'src/app/data/progress/dtos/response/get.progress.response.dto';
+import { ProgressProviderService } from 'src/app/data/progress/services/progress.provider.service';
+import { ProgressService } from 'src/app/data/progress/services/progress.service';
+import { SeriesProviderService } from 'src/app/data/series/services/series.provider.service';
+import { SeriesService } from 'src/app/data/series/services/series.service';
 
 @Component({
   selector: 'app-series-pages',

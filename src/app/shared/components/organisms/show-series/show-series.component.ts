@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GetSeriesResponse } from 'src/app/data/services/series/dtos/response/get.series.response.dto';
-import { SeriesService } from 'src/app/data/services/series/services/series.service';
+import { GetSeriesResponse } from 'src/app/data/series/dtos/response/get.series.response.dto';
+import { SeriesService } from 'src/app/data/series/services/series.service';
 
 @Component({
   selector: 'app-show-series',

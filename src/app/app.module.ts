@@ -5,7 +5,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TokenInterceptor } from './data/services/auth/login/interceptors/token.interceptor';
+import { TokenInterceptor } from './data/auth/login/interceptors/token.interceptor';
 @NgModule({
   declarations: [AppComponent],
   imports: [

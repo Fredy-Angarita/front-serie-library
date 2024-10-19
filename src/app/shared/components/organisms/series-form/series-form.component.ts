@@ -5,10 +5,10 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { PostSeriesRequestDto } from 'src/app/data/services/series/dtos/request/post.series.dto';
-import { SeriesService } from 'src/app/data/services/series/services/series.service';
-import { GetTypeSeriesResponseDto } from 'src/app/data/services/typeSeries/dtos/response/get.type-series.response.dto';
-import { TypeSeriesService } from 'src/app/data/services/typeSeries/services/type-series.service';
+import { PostSeriesRequestDto } from 'src/app/data/series/dtos/request/post.series.dto';
+import { SeriesService } from 'src/app/data/series/services/series.service';
+import { GetTypeSeriesResponseDto } from 'src/app/data/typeSeries/dtos/response/get.type-series.response.dto';
+import { TypeSeriesService } from 'src/app/data/typeSeries/services/type-series.service';
 @Component({
   selector: 'app-series-form',
   templateUrl: './series-form.component.html',

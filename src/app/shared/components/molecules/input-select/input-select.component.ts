@@ -7,7 +7,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { GetTypeSeriesResponseDto } from 'src/app/data/services/typeSeries/dtos/response/get.type-series.response.dto';
+import { GetTypeSeriesResponseDto } from 'src/app/data/typeSeries/dtos/response/get.type-series.response.dto';
 
 @Component({
   selector: 'app-input-select',

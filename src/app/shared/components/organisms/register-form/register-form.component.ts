@@ -13,8 +13,8 @@ import {
   TITLES,
   TYPE_BUTTONS,
 } from 'src/app/data/constants/constants';
-import { PostRegisterRequest } from 'src/app/data/services/auth/register/dtos/request/post.register.request';
-import { RegisterService } from 'src/app/data/services/auth/register/services/register.service';
+import { PostRegisterRequest } from 'src/app/data/auth/register/dtos/request/post.register.request';
+import { RegisterService } from 'src/app/data/auth/register/services/register.service';
 import { AuthValidators } from 'src/app/shared/validators/auth.validators';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { GetListCollectionResponse } from 'src/app/data/services/series/dtos/response/get.list.series.response.dto';
-import { CollectionProviderService } from 'src/app/data/services/series/services/collection.provider.service';
+import { GetListCollectionResponse } from 'src/app/data/series/dtos/response/get.list.series.response.dto';
+import { CollectionProviderService } from 'src/app/data/series/services/collection.provider.service';
 
 @Component({
   selector: 'app-collection-template',

@@ -7,9 +7,9 @@ import {
   ViewChild,
 } from '@angular/core';
 import { TITLES } from 'src/app/data/constants/constants';
-import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
-import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
-import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
+import { PatchProgressRequestDto } from 'src/app/data/progress/dtos/request/patch.progress.request.dto';
+import { PostProgressRequestDto } from 'src/app/data/progress/dtos/request/post.progress.request.dto';
+import { GetProgressResponseDto } from 'src/app/data/progress/dtos/response/get.progress.response.dto';
 @Component({
   selector: 'app-list-summary',
   templateUrl: './list-summary.component.html',

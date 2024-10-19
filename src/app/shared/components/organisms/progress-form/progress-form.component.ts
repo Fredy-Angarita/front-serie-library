@@ -6,10 +6,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { PatchProgressRequestDto } from 'src/app/data/services/progress/dtos/request/patch.progress.request.dto';
-import { PostProgressRequestDto } from 'src/app/data/services/progress/dtos/request/post.progress.request.dto';
-import { GetProgressResponseDto } from 'src/app/data/services/progress/dtos/response/get.progress.response.dto';
-import { ProgressService } from 'src/app/data/services/progress/services/progress.service';
+import { PatchProgressRequestDto } from 'src/app/data/progress/dtos/request/patch.progress.request.dto';
+import { PostProgressRequestDto } from 'src/app/data/progress/dtos/request/post.progress.request.dto';
+import { GetProgressResponseDto } from 'src/app/data/progress/dtos/response/get.progress.response.dto';
+import { ProgressService } from 'src/app/data/progress/services/progress.service';
 import { EditValidators } from 'src/app/shared/validators/edit.validators';
 
 @Component({
