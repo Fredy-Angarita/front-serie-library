@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CollectionPagesComponent } from './pages/collection/collection-pages/collection-pages.component';
 import { SeriesPagesComponent } from './pages/series-pages/series-pages.component';
 import { authGuard } from './data/services/auth/login/guards/auth.guard';
-import { LibraryPagesComponent } from './pages/library-pages/library-pages.component';
+import { LibraryPagesComponent } from './pages/library/library-pages/library-pages.component';
 
 const routes: Routes = [
   {
@@ -21,7 +21,8 @@ const routes: Routes = [
   },
   {
     path: 'library',
-    component: LibraryPagesComponent,
+    loadChildren: () =>
+      import('./pages/library/library.module').then((m) => m.LibraryModule),
     canActivate: [authGuard],
   },
   {
