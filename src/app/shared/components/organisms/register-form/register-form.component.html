@@ -38,8 +38,5 @@
     [action]="action"
     redirect="/login"
   />
-  <app-show-errors
-    [message_error]="formError()"
-    *ngIf="hasError()"
-  />
+  <app-show-errors [message_error]="formError()" *ngIf="hasError()" />
 </form>
