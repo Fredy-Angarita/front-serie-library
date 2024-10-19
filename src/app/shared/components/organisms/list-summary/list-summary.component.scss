@@ -1,7 +1,7 @@
-@import '../../../../styles/colors.scss';
-@import '../../../../styles/typography.scss';
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
 
-.list_container{
+.list_container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,12 +11,12 @@
     margin: 1rem;
     border-radius: 1rem;
     padding: 0 3rem;
-    .summary_container{
+    .summary_container {
         height: 70vh;
         overflow-y: scroll;
         scrollbar-width: none;
     }
-    .title_list{
+    .title_list {
         padding: 1rem 0;
         font-family: $font_primary;
         font-size: $size-L;
@@ -25,19 +25,18 @@
     }
 }
 
-@media (width < 800px){
-    .list_container{
+@media (width < 800px) {
+    .list_container {
         height: auto;
         max-width: none;
         margin: 0.5rem;
         padding: 0 2rem;
-        .summary_container{
-           border-radius: 1rem;
-
+        .summary_container {
+            border-radius: 1rem;
         }
-        .title_list{
+        .title_list {
             padding: 0.5rem 0;
             font-size: $size-M;
-        } 
+        }
     }
 }

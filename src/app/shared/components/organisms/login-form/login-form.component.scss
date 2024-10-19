@@ -1,7 +1,6 @@
-@import '../../../../styles/colors.scss';
-@import '../../../../styles/typography.scss';
-
-.loginForm{
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
+.loginForm {
     padding: 1rem;
     margin: 0.5rem;
     background-color: $background_secondary;
