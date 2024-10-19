@@ -5,18 +5,14 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NotFoundPagesComponent } from './pages/not-found-pages/not-found-pages.component';
 import { TokenInterceptor } from './data/services/auth/login/interceptors/token.interceptor';
-import { TemplatesModule } from './shared/components/templates/templates.module';
 @NgModule({
-  declarations: [AppComponent, NotFoundPagesComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    TemplatesModule,
   ],
   providers: [
     {

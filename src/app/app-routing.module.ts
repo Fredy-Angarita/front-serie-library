@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CollectionPagesComponent } from './pages/collection/collection-pages/collection-pages.component';
-import { SeriesPagesComponent } from './pages/series/series-pages/series-pages.component';
 import { authGuard } from './data/services/auth/login/guards/auth.guard';
-import { LibraryPagesComponent } from './pages/library/library-pages/library-pages.component';
 
 const routes: Routes = [
   {
@@ -31,7 +28,11 @@ const routes: Routes = [
       import('./pages/series/series.module').then((m) => m.SeriesModule),
     canActivate: [authGuard],
   },
-  { path: '**', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./pages/notfound/notfound.module').then((m) => m.NotfoundModule),
+  },
 ];
 
 @NgModule({
