@@ -1,6 +1,6 @@
-@import '../../../../styles/colors.scss';
-@import '../../../../styles/typography.scss';
-.resume_container{
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
+.resume_container {
     background-color: $background_primary;
     display: flex;
     cursor: pointer;
@@ -9,27 +9,27 @@
     align-items: center;
     padding: 0 1rem;
     margin: 1rem 0;
-    .resume_title{
+    .resume_title {
         width: 100%;
         font-family: $font_primary;
         font-size: $size-M;
         padding: 0 1rem;
     }
 }
-.content{
+.content {
     overflow-y: auto;
     scrollbar-width: none;
     max-height: 50vh;
     max-width: 50vw;
     padding: 1rem;
     border-radius: 1rem;
-    .content_date{
+    .content_date {
         color: $text_primary;
         font-family: $font_secondary;
         font-size: $size-M;
         text-align: center;
     }
-    .content_resume{
+    .content_resume {
         color: $text_primary;
         font-family: $font_secondary;
         font-size: $size-M;
@@ -37,20 +37,20 @@
     }
 }
 
-@media (width < 800px){
-    .resume_container{
-        .resume_title{
+@media (width < 800px) {
+    .resume_container {
+        .resume_title {
             font-size: $size-XXS;
         }
     }
-    .content{
+    .content {
         padding: 0.5rem;
         max-width: 70vw;
         max-height: 70vh;
-        .content_date{
+        .content_date {
             font-size: $size-XS;
         }
-        .content_resume{
+        .content_resume {
             font-size: $size-XS;
         }
     }

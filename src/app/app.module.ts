@@ -5,17 +5,11 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardSeriesComponent } from './components/molecules/card-series/card-series.component';
-import { SessionActionsComponent } from './components/molecules/session-actions/session-actions.component';
 import { ShowSeriesComponent } from './components/organisms/show-series/show-series.component';
-import { ShowInfoComponent } from './components/molecules/show-info/show-info.component';
 import { NavBarComponent } from './components/organisms/nav-bar/nav-bar.component';
-import { ShowResumeComponent } from './components/molecules/show-resume/show-resume.component';
 import { ListSummaryComponent } from './components/organisms/list-summary/list-summary.component';
-import { FormFieldComponent } from './components/molecules/form-field/form-field.component';
 import { LoginFormComponent } from './components/organisms/login-form/login-form.component';
 import { RegisterFormComponent } from './components/organisms/register-form/register-form.component';
-import { FormActionsComponent } from './components/molecules/form-actions/form-actions.component';
 import { SeriesTemplateComponent } from './components/templates/series-template/series-template.component';
 import { UserFormsComponent } from './components/templates/user-forms/user-forms.component';
 import { CollectionTemplateComponent } from './components/templates/collection-template/collection-template.component';
@@ -28,31 +22,19 @@ import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-f
 import { TokenInterceptor } from './data/services/auth/login/interceptors/token.interceptor';
 import { ProgressFormComponent } from './components/organisms/progress-form/progress-form.component';
 import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
-import { TextAreaComponent } from './components/molecules/text-area/text-area.component';
-import { ShowErrorsComponent } from './components/molecules/show-errors/show-errors.component';
-import { ModalComponent } from './components/molecules/modal/modal.component';
-import { ActionsMenuComponent } from './components/molecules/actions-menu/actions-menu.component';
 import { CollectionOrganismsComponent } from './components/organisms/collection-organisms/collection-organisms.component';
 import { LibraryTemplateComponent } from './components/templates/library-template/library-template.component';
-import { PaginationComponent } from './components/molecules/pagination/pagination.component';
 import { SeriesFormComponent } from './components/organisms/series-form/series-form.component';
 import { AtomsModule } from './shared/components/atoms/atoms.module';
-import { InputSelectComponent } from './components/molecules/input-select/input-select.component';
+import { MoleculesModule } from './shared/components/molecules/molecules.module';
 @NgModule({
   declarations: [
     AppComponent,
-    InputSelectComponent,
-    CardSeriesComponent,
-    SessionActionsComponent,
     ShowSeriesComponent,
-    ShowInfoComponent,
     NavBarComponent,
-    ShowResumeComponent,
     ListSummaryComponent,
-    FormFieldComponent,
     LoginFormComponent,
     RegisterFormComponent,
-    FormActionsComponent,
     SeriesTemplateComponent,
     UserFormsComponent,
     CollectionTemplateComponent,
@@ -64,13 +46,8 @@ import { InputSelectComponent } from './components/molecules/input-select/input-
     NotFoundPagesComponent,
     ProgressFormComponent,
     LibraryPagesComponent,
-    TextAreaComponent,
-    ShowErrorsComponent,
-    ModalComponent,
-    ActionsMenuComponent,
     CollectionOrganismsComponent,
     LibraryTemplateComponent,
-    PaginationComponent,
     SeriesFormComponent,
   ],
   imports: [
@@ -80,6 +57,7 @@ import { InputSelectComponent } from './components/molecules/input-select/input-
     ReactiveFormsModule,
     HttpClientModule,
     AtomsModule,
+    MoleculesModule,
   ],
   providers: [
     {

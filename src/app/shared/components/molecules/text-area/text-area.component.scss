@@ -1,18 +1,18 @@
-@import '../../../../styles/colors.scss';
-@import'../../../../styles/typography.scss';
-.progress_container{
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
+.progress_container {
     display: flex;
     flex-direction: column;
     justify-items: center;
     padding: 0.5rem;
-    .progress_label{
+    .progress_label {
         font-family: $font_secondary;
         font-size: $size-XXS;
         color: $text_primary;
         font-weight: bold;
         text-align: center;
     }
-    .progress_textarea{
+    .progress_textarea {
         font-family: $font_secondary;
         background-color: $background_tertiary;
         font-size: $size-XXS;
@@ -23,12 +23,12 @@
         scrollbar-width: none;
     }
 }
-@media (width < 800px){
-    .progress_container{
-        .progress_label{
+@media (width < 800px) {
+    .progress_container {
+        .progress_label {
             font-size: $size-XS;
         }
-        .progress_textarea{
+        .progress_textarea {
             font-size: $size-XS;
         }
     }
