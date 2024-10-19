@@ -5,7 +5,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CollectionPagesComponent } from './pages/collection-pages/collection-pages.component';
 import { SeriesPagesComponent } from './pages/series-pages/series-pages.component';
 import { NotFoundPagesComponent } from './pages/not-found-pages/not-found-pages.component';
 import { TokenInterceptor } from './data/services/auth/login/interceptors/token.interceptor';
@@ -14,7 +13,6 @@ import { TemplatesModule } from './shared/components/templates/templates.module'
 @NgModule({
   declarations: [
     AppComponent,
-    CollectionPagesComponent,
     SeriesPagesComponent,
     NotFoundPagesComponent,
     LibraryPagesComponent,

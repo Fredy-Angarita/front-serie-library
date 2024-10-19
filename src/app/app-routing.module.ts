@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CollectionPagesComponent } from './pages/collection-pages/collection-pages.component';
+import { CollectionPagesComponent } from './pages/collection/collection-pages/collection-pages.component';
 import { SeriesPagesComponent } from './pages/series-pages/series-pages.component';
 import { authGuard } from './data/services/auth/login/guards/auth.guard';
 import { LibraryPagesComponent } from './pages/library-pages/library-pages.component';
@@ -13,7 +13,10 @@ const routes: Routes = [
   },
   {
     path: 'collection',
-    component: CollectionPagesComponent,
+    loadChildren: () =>
+      import('./pages/collection/collection.module').then(
+        (m) => m.CollectionModule
+      ),
     canActivate: [authGuard],
   },
   {
