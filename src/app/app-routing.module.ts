@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPagesComponent } from './components/pages/login-pages/login-pages.component';
-import { RegisterPagesComponent } from './components/pages/register-pages/register-pages.component';
-import { CollectionPagesComponent } from './components/pages/collection-pages/collection-pages.component';
-import { SeriesPagesComponent } from './components/pages/series-pages/series-pages.component';
-import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-found-pages.component';
+import { LoginPagesComponent } from './pages/login-pages/login-pages.component';
+import { RegisterPagesComponent } from './pages/register-pages/register-pages.component';
+import { CollectionPagesComponent } from './pages/collection-pages/collection-pages.component';
+import { SeriesPagesComponent } from './pages/series-pages/series-pages.component';
+import { NotFoundPagesComponent } from './pages/not-found-pages/not-found-pages.component';
 import { authGuard } from './data/services/auth/login/guards/auth.guard';
-import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
+import { LibraryPagesComponent } from './pages/library-pages/library-pages.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginPagesComponent },
