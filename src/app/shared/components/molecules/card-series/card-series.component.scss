@@ -1,0 +1,44 @@
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
+.card {
+    background-color: $card_primary;
+    border-radius: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 1;
+    box-shadow: 0 0.1rem 0.5rem black;
+    .image_container {
+        display: grid;
+        border-radius: 1rem;
+        place-items: center;
+        padding: 0.2rem 0 1rem 0;
+        .card_image {
+            border-radius: 1rem;
+            max-height: 200px;
+            object-fit: contain;
+        }
+    }
+    .card_title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $text_primary;
+        font-family: $font_secondary;
+        font-size: $size-XXS;
+        padding: 0 1rem;
+    }
+}
+.card:hover {
+    transform: translateY(-0.5rem);
+}
+
+@media (width < 800px) {
+    .card {
+        .image_container {
+            .card_image {
+                max-height: 150px;
+            }
+        }
+    }
+}

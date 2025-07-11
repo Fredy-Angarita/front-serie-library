@@ -1,32 +1,44 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPagesComponent } from './components/pages/login-pages/login-pages.component';
-import { RegisterPagesComponent } from './components/pages/register-pages/register-pages.component';
-import { CollectionPagesComponent } from './components/pages/collection-pages/collection-pages.component';
-import { SeriesPagesComponent } from './components/pages/series-pages/series-pages.component';
-import { NotFoundPagesComponent } from './components/pages/not-found-pages/not-found-pages.component';
-import { authGuard } from './data/services/auth/login/guards/auth.guard';
-import { LibraryPagesComponent } from './components/pages/library-pages/library-pages.component';
+import { authGuard } from './data/auth/login/guards/auth.guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginPagesComponent },
-  { path: 'register', component: RegisterPagesComponent },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./pages/auth/auth.module').then((m) => m.AuthModule),
+  },
   {
     path: 'collection',
-    component: CollectionPagesComponent,
+    loadChildren: () =>
+      import('./pages/collection/collection.module').then(
+        (m) => m.CollectionModule
+      ),
     canActivate: [authGuard],
   },
   {
     path: 'library',
-    component: LibraryPagesComponent,
+    loadChildren: () =>
+      import('./pages/library/library.module').then((m) => m.LibraryModule),
     canActivate: [authGuard],
   },
   {
     path: 'series/:id',
-    component: SeriesPagesComponent,
+    loadChildren: () =>
+      import('./pages/series/series.module').then((m) => m.SeriesModule),
     canActivate: [authGuard],
   },
-  { path: '**', component: NotFoundPagesComponent, canActivate: [authGuard] },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./pages/notfound/notfound.module').then((m) => m.NotfoundModule),
+    canActivate: [authGuard],
+  },
 ];
 
 @NgModule({

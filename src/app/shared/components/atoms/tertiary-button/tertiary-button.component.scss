@@ -1,0 +1,16 @@
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
+.tertiary_button {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+@media (width < 800px) {
+    .tertiary_button {
+        padding: 0 0.1rem;
+    }
+}

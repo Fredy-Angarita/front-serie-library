@@ -1,0 +1,8 @@
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
+.loginForm {
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: $background_secondary;
+    border-radius: 1rem;
+}

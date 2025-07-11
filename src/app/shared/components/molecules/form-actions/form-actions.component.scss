@@ -1,0 +1,23 @@
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
+.actions {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p,
+    a {
+        font-family: $font_secondary;
+        font-size: $size-XS;
+        color: $text_primary;
+        text-align: center;
+    }
+    p {
+        padding-top: 1rem;
+    }
+    a {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,29 @@
+@import "../../../../../styles/typography.scss";
+@import "../../../../../styles/colors.scss";
+.content_article {
+    display: flex;
+    gap: 1rem;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    app-show-series {
+        flex: 4;
+    }
+    app-list-summary {
+        flex: 6;
+    }
+    .actions {
+        background-color: white;
+    }
+}
+
+@media (width < 800px) {
+    .content_article {
+        display: block;
+    }
+}
+@media (height > 1200px) {
+    .content_article {
+        height: 100vh;
+    }
+}
