@@ -2,13 +2,11 @@
 
 Este proyecto esta dividido en dos repositorios, el Frontend y el [Backend](https://github.com/Fredy-Angarita/Serie-Library).
 
-Serie Library es un proyecto personal el cual realice principlamente para solucionar uno de los problemas más recurrentes que suelen tener las personas que disfrutan del contenido audiovisual como las series y obras literarias
-como novelas, el cual radica en que mientras que esperan nuevo contenido de sus historias favoritas olvidan acontecimientos importantes de las mismas. Por ello, cree una aplicacion que permite a los 
-usuarios guardar sus series y resumenes, que le faciliten recordar posteriormente detalles importantes de la trama.
+Serie Library es un proyecto personal el cual realice principalmente para solucionar uno de los problemas más recurrentes que suelen tener las personas que disfrutan del contenido audiovisual como las series y obras literarias como novelas, el cual radica en que mientras que esperan nuevo contenido de sus historias favoritas olvidan acontecimientos importantes de las mismas. Por ello, cree una aplicación que permite a los usuarios guardar sus series y resúmenes, que le faciliten recordar posteriormente detalles importantes de la trama.
 
-Para la creacion de las interfaces, use Angular 16, SCSS y Atomic desing.
+Para la creación de las interfaces, use Angular 16, SCSS y Atomic desing.
 
-Las siguientes imagenes son algunas de las interfaces desarrolladas:
+Las siguientes imágenes son algunas de las interfaces desarrolladas:
 
 <p align="center">
   <img width="415" height="923" alt="Login responsive" src="https://github.com/user-attachments/assets/6b3bd543-6f69-4c16-bc30-6810d4c9d5cf" />
@@ -19,9 +17,9 @@ Las siguientes imagenes son algunas de las interfaces desarrolladas:
 
 ## Ejecución.
 
-Para ejecutar este proyecto deberan tener instaldo una version de NODE y haber seguido los pasos que se encuentran en el [backend](https://github.com/Fredy-Angarita/Serie-Library),
-luego tendran que clonar el repositiorio con:  `git clone https://github.com/Fredy-Angarita/front-serie-library.git`
+Para ejecutar este proyecto deberán tener instalado una versión de NODE y haber seguido los pasos que se encuentran en el [backend](https://github.com/Fredy-Angarita/Serie-Library),
+luego tendrán que clonar el repositorio con:  `git clone https://github.com/Fredy-Angarita/front-serie-library.git`
 
-Luego tendra que dirigirse a la raiz del proyecto e instalar las dependencias con: `npm install` o  `npm i`
+Luego tendrá que dirigirse a la raíz del proyecto e instalar las dependencias con: `npm install` o  `npm i`
 
-Finalmente debera ejecutar el comando `ng serve` y navegar a `http://localhost:4200/`.
+Finalmente deberá ejecutar el comando `ng serve` y navegar a `http://localhost:4200/`.
