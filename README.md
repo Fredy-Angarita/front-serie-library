@@ -2,7 +2,7 @@
 
 Este proyecto esta dividido en dos repositorios, el Frontend y el [Backend](https://github.com/Fredy-Angarita/Serie-Library).
 
-Serie Library es un proyecto personal el cual realice principalmente para solucionar uno de los problemas más recurrentes que suelen tener las personas que disfrutan del contenido audiovisual como las series y obras literarias como novelas, el cual radica en que mientras que esperan nuevo contenido de sus historias favoritas olvidan acontecimientos importantes de las mismas. Por ello, cree una aplicación que permite a los usuarios guardar sus series y resúmenes, que le faciliten recordar posteriormente detalles importantes de la trama.
+Serie Library es un proyecto personal el cual realice principalmente para solucionar uno de los problemas más recurrentes que suelen tener las personas que disfrutan del contenido audiovisual como las series y obras literarias como novelas, el cual radica en que olvidan acontecimientos importantes de la trama; esto suele ocurrir mientras esperan la continuación de sus historias favoritas. Por ello, cree una aplicación que permite a los usuarios guardar sus series y resúmenes, que le faciliten recordar posteriormente detalles importantes de la trama.
 
 Para la creación de las interfaces, use Angular 16, SCSS y Atomic desing.
 
